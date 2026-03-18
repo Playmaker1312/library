@@ -1,0 +1,7 @@
+# Abaikan folder plugins karena mengandung kode pihak ketiga & secrets
+.obsidian/plugins/
+
+# Abaikan file internal lainnya
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache
