@@ -28,14 +28,14 @@
 
 ### C. Dasar-Dasar Pemrograman (Syntax Pertama)
 
-13. Variabel dan tipe data (string, integer, float, boolean)
-14. Operasi aritmatika dan operator perbandingan
-15. Input dan output (I/O) dasar
-16. Percabangan: if, else if, else
-17. Perulangan: for loop dan while loop
-18. Nested loops dan nested conditions
-19. Penanganan error dasar (try-catch/try-except)
-20. Komentar kode dan pentingnya readability
+13. [[13.Variabel dan tipe data (string, integer, float, boolean)]]
+14. [[14.Operasi aritmatika dan operator perbandingan]]
+15. [[15. Input dan output (I or O) dasar]]
+16. [[16. Percabangan if, else if, else]]
+17. [[17. Perulangan for loop dan while loop]]
+18. [[18. Nested loops dan nested conditions]]
+19. [[19.Penanganan error dasar (try-catch or try-except)]]
+20. [[20.Komentar kode dan pentingnya readability]]
 
 ---
 
@@ -44,36 +44,36 @@
 
 ### D. Struktur Data Dasar
 
-21. Array / List — konsep, operasi CRUD
-22. String manipulation (slicing, concatenation, formatting)
-23. Tuple dan perbedaannya dengan list
-24. Dictionary / Hash Map — key-value pairs
-25. Set — keunikan data dan operasi himpunan
-26. Stack dan Queue — konsep LIFO & FIFO
-27. Kapan menggunakan struktur data yang tepat
+21. [[21.  Array or List — konsep, operasi CRUD]]
+22. [[22. String manipulation (slicing, concatenation, formatting)]]
+23. [[23.  Tuple dan perbedaannya dengan list]]
+24. [[24. Dictionary or Hash Map — key-value pairs]]
+25. [[25. Set — keunikan data dan operasi himpunan]]
+26. [[26. Stack dan Queue — konsep LIFO & FIFO]]
+27. [[27. Kapan menggunakan struktur data yang tepat]]
 
 ### E. Fungsi & Modularitas
 
-28. Konsep fungsi: deklarasi, parameter, return value
-29. Scope variabel (local vs global)
-30. Parameter default dan keyword arguments
-31. Fungsi rekursif — konsep dan contoh
-32. Lambda / anonymous functions
-33. Higher-order functions (map, filter, reduce)
-34. Modularisasi kode: import dan penggunaan modul
-35. Dokumentasi fungsi (docstrings)
+28. [[28. Konsep fungsi - deklarasi, parameter, dan return value]]
+29. [[29. Scope variable(local vs global)]]
+30. [[30. Parameter default dan keyword arguments]]
+31. [[31. Fungsi rekursif -- konsep dan contoh]]
+32. [[32. lambda or anonymous functions]]
+33. [[33. Higher-order function(map, filter, reduce)]]
+34. [[34. Modularisasi kode import dan penggunaan modul]]
+35. [[35. Dokumentasis fungsi(docstrings)]]
 
 ### F. Pemrograman Berorientasi Objek (OOP) — Dasar
 
-36. Konsep OOP: mengapa dan kapan menggunakannya
-37. Class dan Object — blueprint dan instance
-38. Attributes dan Methods
-39. Constructor (__init__ / constructor method)
-40. Enkapsulasi (public, private, protected)
-41. Inheritance (pewarisan) — single inheritance
-42. Polymorphism — method overriding
-43. Abstraction — abstract class dan interface
-44. Latihan: membangun sistem sederhana dengan OOP
+36. [[36.Konsep OOP mengapa dan kapan menggunakannya]]
+37. [[37. Class dan Object — blueprint dan instance]]
+38. [[38. Attributes dan Methods]]
+39. [[39. Constructor (__init__  or constructor method)]]
+40. [[40. Enkapsulasi (public, private, protected)]]
+41. [[41. Inheritance (pewarisan) — single inheritance]]
+42. [[42. Polymorphism — method overriding]]
+43. [[43. Abstraction — abstract class dan interface]]
+44. [[44. Latihan - membangun sistem sederhana dengan OOP]]
 
 ---
 
@@ -82,49 +82,49 @@
 
 ### G. Algoritma & Kompleksitas
 
-45. Pengantar analisis algoritma
-46. Big-O Notation (Time & Space Complexity)
-47. Algoritma pencarian: Linear Search, Binary Search
-48. Algoritma pengurutan: Bubble Sort, Selection Sort, Insertion Sort
-49. Algoritma pengurutan lanjut: Merge Sort, Quick Sort
-50. Algoritma greedy — konsep dan contoh
-51. Divide and Conquer
-52. Pengantar Dynamic Programming
-53. Latihan soal algoritma (LeetCode/HackerRank level Easy)
+45. [[45. Pengantar analisis algoritma]]
+46. [[46. Big-O Notation (Time & Space Complexity)]]
+47. [[47. Algoritma pencarian - Linear Search, Binary Search]]
+48. [[48. Algoritma pengurutan - Bubble Sort, Selection Sort, Insertion Sort]]
+49. [[49. Algoritma pengurutan lanjut - Merge Sort, Quick Sort]]
+50. [[50. Algoritma greedy — konsep dan contoh]]
+51. [[51. Divide and Conquer]]
+52. [[52. Pengantar Dynamic Programming]]
+53. [[53. Latihan soal algoritma (LeetCode HackerRank level Easy)]]
 
 ### H. Struktur Data Lanjutan
 
-54. Linked List (Singly & Doubly)
-55. Tree — konsep dasar dan terminologi
-56. Binary Tree dan Binary Search Tree (BST)
-57. Tree Traversal (Inorder, Preorder, Postorder)
-58. Heap (Min-Heap, Max-Heap) dan Priority Queue
-59. Hash Table — implementasi internal
-60. Graph — representasi (adjacency list & matrix)
-61. Graph Traversal: BFS dan DFS
-62. Penerapan struktur data dalam kasus nyata
+54. [[54. Linked List (Singly & Doubly)]]
+55. [[55. Tree — konsep dasar dan terminologi]]
+56. [[56. Binary Tree dan Binary Search Tree (BST)]]
+57. [[57. Tree Traversal (Inorder, Preorder, Postorder)]]
+58. [[58. Heap (Min-Heap, Max-Heap) dan Priority Queue]]
+59. [[59. Hash Table — implementasi internal]]
+60. [[60. Graph — representasi (adjacency list & matrix)]]
+61. [[61. Graph Traversal BFS dan DFS]]
+62. [[62. Penerapan struktur data dalam kasus nyata]]
 
 ### I. Manajemen File & Data
 
-63. File I/O: membaca dan menulis file (txt, csv)
-64. Bekerja dengan format JSON dan XML
-65. Serialisasi dan deserialisasi data
-66. Regular Expression (Regex) untuk pattern matching
-67. Pengantar database: SQL vs NoSQL
-68. CRUD Operations dengan SQL (SELECT, INSERT, UPDATE, DELETE)
-69. Normalisasi database (1NF, 2NF, 3NF)
-70. Koneksi database dari kode program (ORM dasar)
+63. [[63. File I or O  membaca dan menulis file (txt, csv)]]
+64. [[64. Bekerja dengan format JSON dan XML]]
+65. [[65. Serialisasi dan deserialisasi data]]
+66. [[66. Regular Expression (Regex) untuk pattern matching]]
+67. [[67. Pengantar database  SQL vs NoSQL]]
+68. [[68. CRUD Operations dengan SQL (SELECT, INSERT, UPDATE, DELETE)]]
+69. [[69. Normalisasi database (1NF, 2NF, 3NF)]]
+70. [[70. Koneksi database dari kode program (ORM dasar)]]
 
 ### J. Version Control & Kolaborasi
 
-71. Pengantar Git — mengapa version control penting
-72. Git dasar: init, add, commit, status, log
-73. Branching dan merging
-74. Mengatasi merge conflicts
-75. GitHub/GitLab: remote repository, push, pull, clone
-76. Pull Request dan code review workflow
-77. .gitignore dan best practices Git
-78. Kolaborasi tim dengan Git Flow
+71. [[71. Pengantar Git — mengapa version control penting]]
+72. [[72. Git dasar init, add, commit, status, log]]
+73. [[73. Branching dan merging]]
+74. [[74. Mengatasi merge conflicts]]
+75. [[75. GitHub or GitLab - remote repository, push, pull, clone]]
+76. [[76. Pull Request dan code review workflow]]
+77. [[77. .gitignore dan best practices Git]]
+78. [[78. Kolaborasi tim dengan Git Flow]]
 
 ---
 
@@ -133,42 +133,42 @@
 
 ### K. Pengembangan Web — Fundamental
 
-79. Arsitektur web: Client-Server, HTTP/HTTPS
-80. HTML5 — struktur semantik halaman web
-81. CSS3 — styling, flexbox, grid layout
-82. Responsive design dan media queries
-83. JavaScript untuk web: DOM manipulation
-84. Event handling dan asynchronous JS (callback, promise, async/await)
-85. REST API — konsep dan penggunaan
-86. Mengonsumsi API dengan fetch/axios
-87. Framework frontend (pilih salah satu: React / Vue / Angular) — dasar
-88. Framework backend (pilih salah satu: Express.js / Django / Flask / Spring Boot) — dasar
-89. Fullstack mini project
+79. [[79. Arsitektur web - Client-Server, HTTP or HTTPS]]
+80. [[80. HTML5 — struktur semantik halaman web]]
+81. [[81. CSS3 — styling, flexbox, grid layout]]
+82. [[82. Responsive design dan media queries]]
+83. [[83. JavaScript untuk web - DOM manipulation]]
+84. [[84. Event handling dan asynchronous JS (callback, promise, async or await)]]
+85. [[85. REST API — konsep dan penggunaan]]
+86. [[86. Mengonsumsi API dengan fetch or axios]]
+87. [[87. Framework frontend (pilih salah satu - React or Vue or Angular) — dasar vue js]]
+88. [[88. Framework backend (pilih salah satu - Express.js or  Django or Flask or Spring Boot) — dasar express.js]]
+89. [[89. Fullstack mini project]]
 
 ### L. Clean Code & Software Engineering Principles
 
-90. Prinsip SOLID
-91. DRY (Don't Repeat Yourself) dan KISS (Keep It Simple, Stupid)
-92. Design Patterns — Creational (Singleton, Factory, Builder)
-93. Design Patterns — Structural (Adapter, Decorator, Facade)
-94. Design Patterns — Behavioral (Observer, Strategy, Command)
-95. Code Refactoring — teknik dan kapan melakukannya
-96. Code Smells — mengenali kode yang buruk
-97. Technical Debt — memahami dan mengelolanya
-98. Menulis unit test (TDD — Test Driven Development)
-99. Integration testing dan end-to-end testing
-100. Debugging systematic — teknik dan tools
+90. [[90. Prinsip SOLID]]
+91. [[91. DRY (Don't Repeat Yourself) dan KISS (Keep It Simple, Stupid)]]
+92. [[92. Design Patterns — Creational (Singleton, Factory, Builder)]]
+93. [[93. Design Patterns — Structural (Adapter, Decorator, Facade)]]
+94. [[94. Design Patterns — Behavioral (Observer, Strategy, Command)]]
+95. [[95. Code Refactoring — teknik dan kapan melakukannya]]
+96. [[96. Code Smells — mengenali kode yang buruk]]
+97. [[97. Technical Debt — memahami dan mengelolanya]]
+98. [[98. Menulis unit test (TDD — Test Driven Development)]]
+99. [[99. Integration testing dan end-to-end testing]]
+100. [[100. Debugging systematic — teknik dan tools]]
 
 ### M. OOP Lanjutan & Arsitektur Software
 
-101. Multiple Inheritance dan Mixins
-102. Composition vs Inheritance — kapan menggunakan yang mana
-103. Dependency Injection
-104. Arsitektur MVC (Model-View-Controller)
-105. Arsitektur Microservices vs Monolith — pengantar
-106. Event-Driven Architecture — konsep
-107. Domain-Driven Design (DDD) — pengantar
-108. Dokumentasi arsitektur (UML Diagram dasar)
+101. [[101. Multiple Inheritance dan Mixins]]
+102. [[102. Composition vs Inheritance — kapan menggunakan yang mana]]
+103. [[103. Dependency Injection]]
+104. [[104. Arsitektur MVC (Model-View-Controller)]]
+105. [[105. Arsitektur Microservices vs Monolith — pengantar]]
+106. [[106. Event-Driven Architecture — konsep]]
+107. [[107. Domain-Driven Design (DDD) — pengantar]]
+108. [[108. Dokumentasi arsitektur (UML Diagram dasar)]]
 
 ---
 
@@ -177,41 +177,41 @@
 
 ### N. Pemrograman Lanjutan
 
-109. Generics / Templates
-110. Metaprogramming dan reflection
-111. Concurrency: Threads dan Processes
-112. Multithreading dan thread safety
-113. Asynchronous Programming secara mendalam
-114. Parallelism vs Concurrency
-115. Memory Management (Garbage Collection, manual memory management)
-116. Functional Programming mendalam (immutability, pure functions, monads)
-117. Reactive Programming — konsep dan library
-118. Pengantar bahasa pemrograman kedua (untuk perspektif berbeda)
+109. [[109. Generics or Templates]]
+110. [[110. Metaprogramming dan reflection]]
+111. [[111. Concurrency - Threads dan Processes]]
+112. [[112. Multithreading dan thread safety]]
+113. [[113. Asynchronous Programming secara mendalam]]
+114. [[114. Parallelism vs Concurrency]]
+115. [[115. Memory Management (Garbage Collection, manual memory management)]]
+116. [[116. Functional Programming mendalam (immutability, pure functions, monads)]]
+117. [[117. Reactive Programming — konsep dan library]]
+118. [[118. Pengantar bahasa pemrograman kedua (untuk perspektif berbeda)]]
 
 ### O. DevOps & Deployment
 
-119. Linux/Unix command line — intermediate
-120. Containerization dengan Docker — dasar hingga intermediate
-121. Docker Compose untuk multi-container
-122. CI/CD Pipeline (GitHub Actions / Jenkins / GitLab CI)
-123. Cloud Computing dasar (AWS / GCP / Azure — pilih satu)
-124. Deployment aplikasi ke cloud (EC2/App Engine/Heroku)
-125. Environment variables dan konfigurasi
-126. Monitoring dan logging aplikasi
-127. Nginx / reverse proxy dasar
-128. Infrastructure as Code — pengantar (Terraform)
+119. [[119. Linux or Unix command line — intermediate]]
+120. [[120. Containerization dengan Docker — dasar hingga intermediate]]
+121. [[121. Docker Compose untuk multi-container]]
+122. [[122. CI or CD Pipeline (GitHub Actions or Jenkins or GitLab CI)]]
+123. [[123. Cloud Computing dasar (AWS or GCP or Azure — pilih satu)]]
+124. [[124. Deployment aplikasi ke cloud (EC2orApp EngineorHeroku)]]
+125. [[125. Environment variables dan konfigurasi]]
+126. [[126. Monitoring dan logging aplikasi]]
+127. [[127. Nginx or reverse proxy dasar]]
+128. [[128. Infrastructure as Code — pengantar (Terraform)]]
 
 ### P. Keamanan (Security)
 
-129. OWASP Top 10 — kerentanan web paling umum
-130. Input validation dan sanitization
-131. SQL Injection — pencegahan
-132. Cross-Site Scripting (XSS) dan Cross-Site Request Forgery (CSRF)
-133. Authentication & Authorization (JWT, OAuth 2.0, session)
-134. Hashing dan enkripsi (bcrypt, AES, RSA — konsep)
-135. HTTPS, SSL/TLS — cara kerja
-136. Secure coding practices
-137. Pengelolaan secrets dan API keys
+129. [[129. OWASP Top 10 — kerentanan web paling umum]]
+130. [[130. Input validation dan sanitization]]
+131. [[131. SQL Injection — pencegahan]]
+132. [[132. Cross-Site Scripting (XSS) dan Cross-Site Request Forgery (CSRF)]]
+133. [[133. Authentication & Authorization (JWT, OAuth 2.0, session)]]
+134. [[134. Hashing dan enkripsi (bcrypt, AES, RSA — konsep)]]
+135. [[135. HTTPS, SSLorTLS — cara kerja]]
+136. [[136. Secure coding practices]]
+137. [[137. Pengelolaan secrets dan API keys]]
 
 ---
 

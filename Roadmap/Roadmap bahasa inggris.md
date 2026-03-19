@@ -8,70 +8,70 @@
 
 ### 1.1 Pengenalan Bahasa Inggris
 
-1. Alfabet Bahasa Inggris (A–Z) & cara pelafalannya
-2. Sistem fonetik dasar (vowels & consonants)
-3. Pengenalan International Phonetic Alphabet (IPA) dasar
-4. Perbedaan huruf cetak (print) & tulis (cursive)
-5. Pengenalan tanda baca dasar (period, comma, question mark, exclamation mark)
+1. [[1. Alfabet Bahasa Inggris (A–Z) & cara pelafalannya]]
+2. [[2. Sistem fonetik dasar (vowels & consonants)]]
+3. [[3. Pengenalan International Phonetic Alphabet (IPA) dasar]]
+4. [[4. Perbedaan huruf cetak (print) & tulis (cursive)]]
+5. [[5. Pengenalan tanda baca dasar (period, comma, question mark, exclamation mark)]]
 
 ### 1.2 Kosakata Dasar (Basic Vocabulary)
 
-6. Angka (Numbers): cardinal (1–1000) & ordinal (1st–100th)
-7. Hari, bulan, tanggal, dan musim
-8. Warna (Colors)
-9. Anggota tubuh (Parts of the body)
-10. Anggota keluarga (Family members)
-11. Salam & sapaan dasar (Greetings & Farewells)
-12. Benda-benda di sekitar (Classroom, home, office objects)
-13. Makanan & minuman (Food & drinks)
-14. Pakaian (Clothes)
-15. Hewan (Animals)
-16. Profesi/Pekerjaan (Jobs & Occupations)
-17. Tempat umum (Public places)
-18. Kata sifat dasar (big, small, hot, cold, happy, sad, dll.)
-19. Kata kerja dasar sehari-hari (eat, drink, sleep, go, come, dll.)
-20. Kata tanya dasar (What, Where, Who, When, How)
+6. [[6. Angka (Numbers) cardinal (1–1000) & ordinal (1st–100th)]]
+7. [[7. Hari, bulan, tanggal, dan musim]]
+8. [[8. Warna (Colors)]]
+9. [[9. Anggota tubuh (Parts of the body)]]
+10. [[10. Anggota keluarga (Family members)]]
+11. [[11. Salam & sapaan dasar (Greetings & Farewells)]]
+12. [[12. Benda-benda di sekitar (Classroom, home, office objects)]]
+13. [[13. Makanan & minuman (Food & drinks)]]
+14. [[14. Pakaian (Clothes)]]
+15. [[15. Hewan (Animals)]]
+16. [[16. Pekerjaan (Jobs & Occupations)]]
+17. [[17. Tempat umum (Public places)]]
+18. [[18. Kata sifat dasar (big, small, hot, cold, happy, sad, dll.)]]
+19. [[19. Kata kerja dasar sehari-hari (eat, drink, sleep, go, come, dll.)]]
+20. [[20. Kata tanya dasar (What, Where, Who, When, How)]]
 
 ### 1.3 Tata Bahasa Dasar (Basic Grammar) — Bagian 1
 
-21. Parts of Speech: pengenalan 8 kelas kata (noun, verb, adjective, adverb, pronoun, preposition, conjunction, interjection)
-22. Subject Pronouns (I, you, he, she, it, we, they)
-23. Object Pronouns (me, you, him, her, it, us, them)
-24. Possessive Adjectives (my, your, his, her, its, our, their)
-25. Possessive Pronouns (mine, yours, his, hers, ours, theirs)
-26. Articles: a, an, the — aturan penggunaan dasar
-27. Demonstratives (this, that, these, those)
-28. To Be (am, is, are) — kalimat positif, negatif, tanya
-29. To Have / Has — penggunaan dasar
-30. Singular & Plural Nouns (aturan reguler & irregular)
-31. Countable & Uncountable Nouns
-32. There is / There are
+21. [[21. Parts of Speech - pengenalan 8 kelas kata (noun, verb, adjective, adverb, pronoun, preposition, conjunction, interjection)]]
+22. [[22. Subject Pronouns (I, you, he, she, it, we, they)]]
+23. [[23. Object Pronouns (me, you, him, her, it, us, them)]]
+24. [[24. Possessive Adjectives (my, your, his, her, its, our, their)]]
+25. [[25. Possessive Pronouns (mine, yours, his, hers, ours, theirs)]]
+26. [[26. Articles a, an, the — aturan penggunaan dasar]]
+27. [[27. Demonstratives (this, that, these, those)]]
+28. [[28. To Be (am, is, are) — kalimat positif, negatif, tanya]]
+29. [[29. To Have or Has — penggunaan dasar]]
+30. [[30. Singular & Plural Nouns (aturan reguler & irregular)]]
+31. [[31. Countable & Uncountable Nouns]]
+32. [[32. There is or There are]]
 
 ### 1.4 Tata Bahasa Dasar (Basic Grammar) — Bagian 2
 
-33. Simple Present Tense — struktur, penggunaan, contoh
-34. Present Continuous Tense — struktur, penggunaan, contoh
-35. Simple Past Tense — regular verbs (penambahan -ed)
-36. Simple Past Tense — irregular verbs (daftar kata kerja tak beraturan)
-37. Simple Future Tense (will & going to)
-38. Imperative Sentences (perintah & larangan)
-39. Basic Prepositions of Place (in, on, at, under, behind, next to, between)
-40. Basic Prepositions of Time (in, on, at)
-41. Basic Conjunctions (and, but, or, so, because)
-42. Adverbs of Frequency (always, usually, often, sometimes, rarely, never)
+33. [[33. Simple Present Tense — struktur, penggunaan, contoh]]
+34. [[34. Present Continuous Tense — struktur, penggunaan, contoh]]
+35. [[35. Simple Past Tense — regular verbs (penambahan -ed)]]
+36. [[36. Simple Past Tense — irregular verbs (daftar kata kerja tak beraturan)]]
+37. [[37. Simple Future Tense (will & going to)]]
+38. [[38. Imperative Sentences (perintah & larangan)]]
+39. [[39. Basic Prepositions of Place (in, on, at, under, behind, next to, between)]]
+40. [[40. Basic Prepositions of Time (in, on, at)]]
+41. [[41. Basic Conjunctions (and, but, or, so, because)]]
+42. [[42. Adverbs of Frequency (always, usually, often, sometimes, rarely, never)]]
 
 ### 1.5 Keterampilan Komunikasi Dasar
 
-43. Memperkenalkan diri (Self-introduction)
-44. Memperkenalkan orang lain
-45. Percakapan di restoran/kafe
-46. Percakapan saat berbelanja
-47. Menanyakan & memberi arah (Asking & giving directions)
-48. Percakapan di telepon (dasar)
-49. Menyatakan suka & tidak suka (Like & Dislike)
-50. Menyatakan kemampuan (Can / Can't)
-51. Meminta izin (Can I...? / May I...?)
-52. Ungkapan waktu (telling the time)
+43. [[43. Memperkenalkan diri (Self-introduction)]]
+44. [[44. Memperkenalkan orang lain]]
+45. [[45. Percakapan di restoran/kafe]]
+46. [[46. Percakapan saat berbelanja]]
+47. [[47. Menanyakan & memberi arah (Asking & giving directions)]]
+48. [[48. Percakapan di telepon (dasar)]]
+49. [[49. Menyatakan suka & tidak suka (Like & Dislike)]]
+50. [[50. Menyatakan kemampuan (Can or Can't)]]
+51. [[51. Meminta izin (Can I... or May I...)]]
+52. [[52. Ungkapan waktu (telling the time)]]
 
 ---
 
@@ -79,78 +79,78 @@
 
 ### 2.1 Pengembangan Kosakata
 
-53. Kata kerja frase dasar (Phrasal Verbs — Level 1): get up, wake up, turn on, turn off, pick up, put down, dll.
-54. Sinonim & antonim dasar
-55. Word families (act → action → active → actively)
-56. Kolokasi dasar (make/do, have/take)
-57. Vocabulary: Travel & Transportation
-58. Vocabulary: Weather & Climate
-59. Vocabulary: Health & Body
-60. Vocabulary: Hobbies & Leisure
-61. Vocabulary: Education & School
-62. Vocabulary: Technology (dasar)
-63. Vocabulary: Emotions & Feelings (diperluas)
+53. [[53. Kata kerja frase dasar (Phrasal Verbs — Level 1): get up, wake up, turn on, turn off, pick up, put down, dll]].
+54. [[52. Sinonim & antonim dasar]]
+55. [[55. Word families (act → action → active → actively)]]
+56. [[56. Kolokasi dasar (make/do, have/take)]]
+57. [[57. Vocabulary: Travel & Transportation]]
+58. [[58. Vocabulary: Weather & Climate]]
+59. [[59. Vocabulary: Health & Body]]
+60. [[60. Vocabulary: Hobbies & Leisure]]
+61. [[61. Vocabulary: Education & School]]
+62. [[62. Vocabulary: Technology (dasar)]]
+63. [[63. Vocabulary: Emotions & Feelings (diperluas)]]
 
 ### 2.2 Grammar — Tenses Diperluas
 
-64. Present Perfect Tense — struktur & penggunaan
-65. Perbedaan Simple Past vs Present Perfect
-66. Past Continuous Tense
-67. Perbedaan Simple Past vs Past Continuous
-68. Future Continuous Tense (pengenalan)
-69. Used to + verb (kebiasaan di masa lalu)
-70. Be going to vs Will (perbedaan mendalam)
+64. [[64. Present Perfect Tense — struktur & penggunaan]]
+65. [[65. Perbedaan Simple Past vs Present Perfect]]
+66. [[66. Past Continuous Tense]]
+67. [[67. Perbedaan Simple Past vs Past Continuous]]
+68. [[68. Future Continuous Tense (pengenalan)]]
+69. [[69. Used to + verb (kebiasaan di masa lalu)]]
+70. [[70. Be going to vs Will (perbedaan mendalam)]]
 
 ### 2.3 Grammar — Struktur Kalimat
 
-71. WH-Questions secara mendalam
-72. Tag Questions (You're a student, aren't you?)
-73. Subject-Verb Agreement (aturan lengkap)
-74. Gerund sebagai subjek & objek (Swimming is fun)
-75. Infinitive vs Gerund (want to go vs enjoy going) — pengenalan
-76. Comparative Adjectives (-er, more)
-77. Superlative Adjectives (-est, most)
-78. Adverbs of Manner (quickly, slowly, carefully)
-79. Too & Enough
-80. So & Such
-81. Modal Verbs — Level 1: can, could, may, might, must, should, would
-82. First Conditional (If + present, will + verb)
-83. Some, Any, No, Every (+ body, thing, where)
+71. [[71. WH-Questions secara mendalam]]
+72. [[72. Tag Questions (You're a student, aren't you?)]]
+73. [[73. Subject-Verb Agreement (aturan lengkap)]]
+74. [[74. Gerund sebagai subjek & objek (Swimming is fun)]]
+75. [[75. Infinitive vs Gerund (want to go vs enjoy going) — pengenalan]]
+76. [[76. Comparative Adjectives (-er, more)]]
+77. [[77. Superlative Adjectives (-est, most)]]
+78. [[78. Adverbs of Manner (quickly, slowly, carefully)]]
+79. [[79. Too & Enough]]
+80. [[80. So & Such]]
+81. [[81. Modal Verbs — Level 1: can, could, may, might, must, should, would]]
+82. [[82. First Conditional (If + present, will + verb)]]
+83. [[83. Some, Any, No, Every (+ body, thing, where)]]
 
 ### 2.4 Keterampilan Membaca (Reading — Elementary)
 
-84. Teknik membaca: skimming & scanning
-85. Memahami teks pendek (short passages)
-86. Membaca menu, jadwal, tanda, dan formulir
-87. Membaca email & pesan singkat
-88. Pengenalan konteks untuk menebak arti kata baru
+84. 84. Teknik membaca: skimming & scanning
+85. 85. Memahami teks pendek (short passages)
+86. 86. Membaca menu, jadwal, tanda, dan formulir
+87. 87. Membaca email & pesan singkat
+88. 88. Pengenalan konteks untuk menebak arti kata baru
 
 ### 2.5 Keterampilan Menulis (Writing — Elementary)
 
-89. Menulis kalimat sederhana yang benar secara tata bahasa
-90. Menulis paragraf pendek (topic sentence, supporting sentences, concluding sentence)
-91. Menulis email informal/pesan
-92. Menulis deskripsi orang, tempat, benda
-93. Pengenalan tanda baca (comma rules, capitalization, apostrophe)
-94. Spelling rules (doubling consonants, dropping -e, changing -y to -i)
+89. 89. Menulis kalimat sederhana yang benar secara tata bahasa
+90. 90. Menulis paragraf pendek (topic sentence, supporting sentences, concluding sentence)
+91. 91. Menulis email informal/pesan
+92. 92. Menulis deskripsi orang, tempat, benda
+93. 93. Pengenalan tanda baca (comma rules, capitalization, apostrophe)
+94. 94. Spelling rules (doubling consonants, dropping -e, changing -y to -i)
 
 ### 2.6 Keterampilan Mendengar (Listening — Elementary)
 
-95. Mendengarkan & memahami instruksi sederhana
-96. Mendengarkan percakapan pendek sehari-hari
-97. Membedakan bunyi vokal pendek & panjang
-98. Pengenalan linking sounds & connected speech
-99. Latihan mendengarkan lagu berbahasa Inggris (dengan lirik)
+95. 95. Mendengarkan & memahami instruksi sederhana
+96. 96. Mendengarkan percakapan pendek sehari-hari
+97. 97. Membedakan bunyi vokal pendek & panjang
+98. 98. Pengenalan linking sounds & connected speech
+99. 99. Latihan mendengarkan lagu berbahasa Inggris (dengan lirik)
 
 ### 2.7 Keterampilan Berbicara (Speaking — Elementary)
 
-100. Pronunciation: word stress (penekanan kata)
-101. Pronunciation: sentence stress
-102. Intonation dasar (rising & falling)
-103. Percakapan transaksional (di hotel, bandara, rumah sakit)
-104. Menceritakan rutinitas harian
-105. Menceritakan pengalaman masa lalu (sederhana)
-106. Menyampaikan rencana masa depan
+100. 100. Pronunciation: word stress (penekanan kata)
+101. 101. Pronunciation: sentence stress
+102. 102. Intonation dasar (rising & falling)
+103. 103. Percakapan transaksional (di hotel, bandara, rumah sakit)
+104. 104. Menceritakan rutinitas harian
+105. 105. Menceritakan pengalaman masa lalu (sederhana)
+106. 106. Menyampaikan rencana masa depan
 
 ---
 
