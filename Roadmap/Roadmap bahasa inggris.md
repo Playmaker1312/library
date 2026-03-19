@@ -64,7 +64,7 @@
 
 43. [[43. Memperkenalkan diri (Self-introduction)]]
 44. [[44. Memperkenalkan orang lain]]
-45. [[45. Percakapan di restoran/kafe]]
+45. [[45. Percakapan di restorankafe]]
 46. [[46. Percakapan saat berbelanja]]
 47. [[47. Menanyakan & memberi arah (Asking & giving directions)]]
 48. [[48. Percakapan di telepon (dasar)]]
