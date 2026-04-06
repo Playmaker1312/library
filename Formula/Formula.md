@@ -629,3 +629,66 @@ Setelah AI generate, pastikan output punya elemen ini:
 ---
 
 Apakah ada jenis prompt spesifik lain yang Anda butuhkan? Atau ada bidang tertentu yang mau kita bikin "custom prompt template" nya? 🎯
+
+Tentu! Sebagai sesama orang IT, kita tahu bahwa kualitas *output* bergantung pada kualitas *input* (**GIGO**: *Garbage In, Garbage Out*). Untuk membangun perpustakaan 600+ bidang ilmu, Anda butuh prompt yang **terstruktur, konsisten, dan mudah di-copas** ke aplikasi catatan.
+
+Berikut adalah rangkaian prompt yang bisa Anda gunakan secara estafet:
+
+---
+
+### 1. Prompt Fase Inisiasi (Mendapatkan Silabus)
+
+Gunakan ini untuk mendapatkan daftar materi dari suatu bidang ilmu.
+
+> **Prompt:**
+> "Saya sedang membangun perpustakaan digital pribadi untuk bidang **[Nama Bidang Ilmu, misal: TypeScript]**. Bertindaklah sebagai ahli kurikulum pendidikan. Buatkan daftar materi belajar yang komprehensif, urutkan secara logis dari level dasar (fundamental) hingga tingkat lanjut (advanced). Pecah menjadi poin-poin bernomor agar mudah saya pelajari satu per satu."
+
+---
+
+### 2. Prompt Fase Pendalaman (Generate Penjelasan Materi)
+
+Setelah Anda punya list (misal nomor 1-20), gunakan prompt ini untuk setiap nomor. Prompt ini didesain agar hasilnya rapi dalam format **Markdown** (sangat cocok untuk anak IT).
+
+> **Prompt:**
+> "Jelaskan materi nomor **[Isi Nomor, misal: 3. Generics]** dari daftar materi **[Nama Bidang Ilmu]** yang sebelumnya.
+> Berikan penjelasan dengan struktur berikut:
+> 1. **Definisi Singkat:** Apa itu konsep ini dalam 1-2 kalimat.
+> 2. **Analogi:** Jelaskan konsep ini menggunakan analogi dunia nyata atau dunia IT agar mudah dipahami.
+> 3. **Poin-Poin Penting:** Gunakan bullet points untuk detail teknis/teori utama.
+> 4. **Contoh Implementasi:** (Jika IT, berikan code snippet. Jika non-IT, berikan contoh kasus nyata).
+> 5. **Koneksi:** Apa hubungannya materi ini dengan bidang **[Sebutkan Bidang IT Anda, misal: Web Development]**?
+> 
+> 
+> Gunakan format Markdown yang rapi."
+
+---
+
+### 3. Prompt Fase "Super-Quick" (Untuk Bidang Non-Prioritas)
+
+Jika Anda ingin mengisi 600 bidang tersebut dengan cepat untuk bidang yang tidak terlalu Anda kuasai (misal: Arkeologi), gunakan prompt ringkasan ini:
+
+> **Prompt:**
+> "Saya ingin tahu inti sari dari bidang **[Nama Bidang Ilmu]**. Berikan ringkasan 'Executive Summary' yang mencakup:
+> * Apa tujuan utama ilmu ini?
+> * 5 Konsep kunci yang wajib diketahui orang awam.
+> * Mengapa ilmu ini penting bagi perkembangan peradaban manusia?
+> Tuliskan secara padat dan informatif."
+> 
+> 
+
+---
+
+### 4. Tips Optimasi untuk Perpustakaan Digital Anda:
+
+* **Gunakan Custom Instructions:** Jika Anda menggunakan ChatGPT/Gemini secara rutin, Anda bisa menset di pengaturan agar AI selalu menjawab dalam format Markdown.
+* **Minta Referensi:** Di akhir prompt penjelasan (No. 2), Anda bisa tambahkan: *"Berikan 3 kata kunci atau istilah teknis terkait materi ini untuk saya riset lebih lanjut."*
+* **Penyimpanan di Word/Obsidian:**
+* Jika di **Word**: Gunakan gaya tulisan *Heading 1* untuk judul ilmu dan *Heading 2* untuk nomor materi agar navigasi di panel kiri Word tetap rapi.
+* Jika di **Obsidian/Notion**: Cukup copas hasil Markdown-nya, maka format kode dan tebal-tipis tulisan akan otomatis terbentuk.
+
+
+
+---
+
+**Langkah Selanjutnya:**
+Apakah Anda ingin mencoba prompt nomor 1 sekarang untuk salah satu dari 600 bidang tersebut? (Misal kita mulai dari **TypeScript** atau bidang IT lainnya?)
