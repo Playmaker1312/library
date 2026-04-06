@@ -13,23 +13,23 @@
 8. [[8.Cara menyimpan, mempublikasikan, dan mengelola Place & Experience]]
 
 ### Modul 2: Alat Bangun Dasar (Building Primitives)
-9. Mengenal Part (Block, Sphere, Cylinder, Wedge, Corner Wedge)
-10. Manipulasi Part: Move, Scale, Rotate tool
-11. Snap to Grid & pengaturan increment
-12. Properties dasar Part: Size, Position, Orientation, Color, Material
-13. Anchored, CanCollide, Transparency, Reflectance
-14. Menggunakan Surface types (Smooth, Weld, Glue, Studs, dll.)
-15. Grouping dengan Model dan Folder untuk organisasi
-16. Duplikasi, Copy-Paste, dan teknik building cepat
+9. [[9.Mengenal Part (Block, Sphere, Cylinder, Wedge, Corner Wedge)]]
+10. [[10.Manipulasi Part - Move, Scale, Rotate tool]]
+11. [[11.Snap to Grid & pengaturan increment]]
+12. [[12.Properties dasar Part - Size, Position, Orientation, Color, Material]]
+13. [[13.Anchored, CanCollide, Transparency, Reflectance]]
+14. [[14.Menggunakan Surface types (Smooth, Weld, Glue, Studs, dll.)]]
+15. [[15.Grouping dengan Model dan Folder untuk organisasi]]
+16. [[16.Duplikasi, Copy-Paste, dan teknik building cepat]]
 
 ### Modul 3: Terrain & Lingkungan
-17. Terrain Editor: Generate, Paint, Sculpt, Region
-18. Material terrain (Grass, Sand, Rock, Water, Snow, dll.)
-19. Pengaturan Lighting: Ambient, Brightness, ClockTime, GeographicLatitude
-20. Atmosphere effect (Density, Offset, Decay, Glare, Haze)
-21. Sky & Skybox: konfigurasi langit kustom
-22. Post-processing effects: Bloom, Blur, ColorCorrection, DepthOfField, SunRays
-23. Fog dan efek cuaca dasar
+17. [[17.Terrain Editor - Generate, Paint, Sculpt, Region]]
+18. [[18.Material terrain (Grass, Sand, Rock, Water, Snow, dll.)]]
+19. [[19.Pengaturan Lighting - Ambient, Brightness, ClockTime, GeographicLatitude]]
+20. [[20.Atmosphere effect (Density, Offset, Decay, Glare, Haze)]]
+21. [[21.Sky & Skybox - konfigurasi langit kustom]]
+22. [[22.Post-processing effects - Bloom, Blur, ColorCorrection, DepthOfField, SunRays]]
+23. [[23.Fog dan efek cuaca dasar]]
 
 ---
 
