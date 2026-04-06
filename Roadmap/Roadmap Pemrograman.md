@@ -90,7 +90,7 @@
 50. [[50. Algoritma greedy — konsep dan contoh]]
 51. [[51. Divide and Conquer]]
 52. [[52. Pengantar Dynamic Programming]]
-53. [[53. Latihan soal algoritma (LeetCode HackerRank level Easy)]]
+53. [[IT/Pemrograman/Fundamental/G.Algoritma dan Kompleksitas/53. Latihan soal algoritma (LeetCode HackerRank level Easy)]]
 
 ### H. Struktur Data Lanjutan
 
