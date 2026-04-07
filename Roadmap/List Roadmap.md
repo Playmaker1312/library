@@ -2,3 +2,6 @@
 2. [[Roadmap bahasa inggris]]
 3. [[Roadmap Learn To Learn]]
 4. [[Roadmap Roblox Studio]]
+5. [[Roadmap TypeScript]]
+6. [[Roadmap nest Js]]
+7. [[Roadmap vue js]]
