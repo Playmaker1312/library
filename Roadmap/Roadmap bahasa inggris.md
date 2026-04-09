@@ -34,7 +34,7 @@
 
 ### 1.3 Tata Bahasa Dasar (Basic Grammar) — Bagian 1
 
-21. [[21. Parts of Speech - pengenalan 8 kelas kata (noun, verb, adjective, adverb, pronoun, preposition, conjunction, interjection)]]
+21. [[21. Parts of Speech - pengenalan 8 kelas kata]]
 22. [[22. Subject Pronouns (I, you, he, she, it, we, they)]]
 23. [[23. Object Pronouns (me, you, him, her, it, us, them)]]
 24. [[24. Possessive Adjectives (my, your, his, her, its, our, their)]]

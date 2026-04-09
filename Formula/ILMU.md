@@ -430,28 +430,28 @@ Berikut adalah daftar komprehensif bidang-bidang keilmuan yang ada di dunia, dik
 
 ### B. Psikologi
 
-| No | Bidang | Penjelasan Singkat |
-|----|--------|-------------------|
-| 1 | Psikologi Umum | Mempelajari perilaku dan proses mental manusia |
-| 2 | Psikologi Klinis | Diagnosis dan terapi gangguan mental |
-| 3 | Psikologi Perkembangan | Mempelajari perubahan psikologis sepanjang hidup manusia |
-| 4 | Psikologi Sosial | Mempelajari pengaruh orang lain terhadap perilaku individu |
-| 5 | Psikologi Pendidikan | Mempelajari proses belajar dan mengajar |
-| 6 | Psikologi Industri & Organisasi | Mempelajari perilaku manusia di tempat kerja |
-| 7 | Psikologi Kognitif | Mempelajari proses mental (memori, persepsi, berpikir) |
-| 8 | Psikologi Abnormal | Mempelajari perilaku dan kondisi mental yang tidak normal |
-| 9 | Psikologi Forensik | Penerapan psikologi dalam sistem hukum |
-| 10 | Psikologi Olahraga | Mempelajari faktor psikologis dalam performa olahraga |
-| 11 | Psikologi Positif | Mempelajari faktor yang membuat hidup bermakna dan bahagia |
-| 12 | Psikologi Kesehatan | Mempelajari faktor psikologis dalam kesehatan dan penyakit |
-| 13 | Neuropsikologi | Mempelajari hubungan antara fungsi otak dan perilaku |
-| 14 | Psikologi Lintas Budaya | Membandingkan perilaku manusia antar budaya |
-| 15 | Psikologi Eksperimental | Menggunakan metode eksperimen untuk meneliti perilaku |
-| 16 | Psikologi Evolusioner | Menjelaskan perilaku manusia dari perspektif evolusi |
-| 17 | Psikologi Komunitas | Mempelajari kesejahteraan individu dalam konteks komunitas |
-| 18 | Psikoterapi | Teknik pengobatan gangguan mental melalui percakapan |
-| 19 | Psikologi Anak | Khusus mempelajari perkembangan dan perilaku anak |
-| 20 | Parapsikologi | Meneliti fenomena paranormal secara ilmiah (kontroversial) |
+| No  | Bidang                          | Penjelasan Singkat                                         |
+| --- | ------------------------------- | ---------------------------------------------------------- |
+| 1   | Psikologi Umum                  | Mempelajari perilaku dan proses mental manusia             |
+| 2   | Psikologi Klinis                | Diagnosis dan terapi gangguan mental                       |
+| 3   | Psikologi Perkembangan          | Mempelajari perubahan psikologis sepanjang hidup manusia   |
+| 4   | Psikologi Sosial                | Mempelajari pengaruh orang lain terhadap perilaku individu |
+| 5   | Psikologi Pendidikan            | Mempelajari proses belajar dan mengajar                    |
+| 6   | Psikologi Industri & Organisasi | Mempelajari perilaku manusia di tempat kerja               |
+| 7   | Psikologi Kognitif              | Mempelajari proses mental (memori, persepsi, berpikir)     |
+| 8   | Psikologi Abnormal              | Mempelajari perilaku dan kondisi mental yang tidak normal  |
+| 9   | Psikologi Forensik              | Penerapan psikologi dalam sistem hukum                     |
+| 10  | Psikologi Olahraga              | Mempelajari faktor psikologis dalam performa olahraga      |
+| 11  | Psikologi Positif               | Mempelajari faktor yang membuat hidup bermakna dan bahagia |
+| 12  | Psikologi Kesehatan             | Mempelajari faktor psikologis dalam kesehatan dan penyakit |
+| 13  | Neuropsikologi                  | Mempelajari hubungan antara fungsi otak dan perilaku       |
+| 14  | Psikologi Lintas Budaya         | Membandingkan perilaku manusia antar budaya                |
+| 15  | Psikologi Eksperimental         | Menggunakan metode eksperimen untuk meneliti perilaku      |
+| 16  | Psikologi Evolusioner           | Menjelaskan perilaku manusia dari perspektif evolusi       |
+| 17  | Psikologi Komunitas             | Mempelajari kesejahteraan individu dalam konteks komunitas |
+| 18  | Psikoterapi                     | Teknik pengobatan gangguan mental melalui percakapan       |
+| 19  | Psikologi Anak                  | Khusus mempelajari perkembangan dan perilaku anak          |
+| 20  | Parapsikologi                   | Meneliti fenomena paranormal secara ilmiah (kontroversial) |
 
 ---
 
