@@ -1,4 +1,4 @@
-Max
+
 
 # 📚 Kurikulum Komprehensif NestJS
 
@@ -95,7 +95,7 @@ _Memahami arsitektur dan building blocks NestJS_
 - [[7.6 @Query() — Query Parameters]]
 - [[7.7 @Body() — Request Body]]
 - [[7.8 @Headers() — Request Headers]]
-- [[7.9 @Res() dan @Req() — Akses langsung ke Response/Request]]
+- [[7.9 @Res() dan @Req() — Akses langsung ke Response or Request]]
 - [[7.10 @HttpCode() — Custom status code]]
 - [[7.11 @Redirect() — Redirect response]]
 - [[7.12 Route Wildcards & Sub-routing]]
@@ -156,7 +156,7 @@ _Fitur inti yang digunakan di hampir semua project nyata_
 - [[12.3 Functional Middleware]]
 - [[12.4 Mendaftarkan Middleware (configure() di Module)]]
 - [[12.5 Route-specific vs Global Middleware]]
-- [[12.6 Menggunakan middleware Express/Fastify (cors, helmet, morgan)]]
+- [[12.6 Menggunakan middleware Express or Fastify (cors, helmet, morgan)]]
 
 ### 13. Guards
 
@@ -172,7 +172,7 @@ _Fitur inti yang digunakan di hampir semua project nyata_
 - [[14.1 Apa itu Interceptor & use cases]]
 - [[14.2 Membuat Interceptor (NestInterceptor + intercept())]]
 - [[14.3 RxJS Observable dalam Interceptor]]
-- [[14.4 Response Mapping/Transformation]]
+- [[14.4 Response Mapping or Transformation]]
 - [[14.5 Logging Interceptor]]
 - [[14.6 Timeout Interceptor]]
 - [[14.7 Cache Interceptor (pengenalan)]]
