@@ -60,7 +60,8 @@ _"Mengontrol logika program dan bekerja dengan kumpulan data"_
 [[31. if-else dan else-if]]  
 [[32. Nested if — kondisi bersarang]]  
 [[33. switch-case statement]]  
-[[34. Truthy dan Falsy values]]  
+[[34. Truthy dan Falsy values]]
+[[35. Short-circuit evaluation dengan && dan]]
 [[35. Short-circuit evaluation dengan && dan ||]]
 
 ### E. Looping / Perulangan
@@ -82,7 +83,7 @@ _"Mengontrol logika program dan bekerja dengan kumpulan data"_
 [[47. String methods — toUpperCase, toLowerCase, trim, replace]]  
 [[48. String methods — split, concat, repeat, padStart, padEnd]]  
 [[49. String immutability — konsep penting]]  
-[[50. Escape characters — \n, \t, , "]]
+[[50. Escape character]]
 
 ### G. Numbers & Math
 
@@ -153,7 +154,7 @@ _"Menguasai fungsi sebagai first-class citizen dalam JavaScript"_
 
 ### L. Advanced Functions
 
-[[97. Higher-Order Functions — fungsi yang menerima/mengembalikan fungsi]]  
+[[97. Higher-Order Functions — fungsi yang menerima or mengembalikan fungsi]]  
 [[98. Callback Functions — konsep dan penggunaan]]  
 [[99. Pure Functions vs Impure Functions]]  
 [[100. Recursion — fungsi rekursif]]  
