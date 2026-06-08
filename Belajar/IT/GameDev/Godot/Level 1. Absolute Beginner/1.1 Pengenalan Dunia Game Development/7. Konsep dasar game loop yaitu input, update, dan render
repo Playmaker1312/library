@@ -1,0 +1,53 @@
+# 7. Konsep dasar game loop yaitu input, update, dan render
+
+## Definisi Singkat
+Game loop adalah siklus berulang yang berjalan terus-menerus selama game aktif. Setiap frame terdiri dari tiga tahap utama: menerima input dari pemain, memperbarui state game berdasarkan logika, dan menampilkan hasil ke layar.
+
+## Analogi
+Bayangkan seperti mesin cuci yang berputar terus-menerus: tahap **input** adalah memasukkan cucian, tahap **update** adalah proses mencuci dan membersihkan, tahap **render** adalah mengeluarkan cucian bersih. Setiap putaran mesin cuci menyelesaikan satu siklus penuh.
+
+## Struktur Node (Scene Tree)
+```
+Main Scene
+├── Player (Input handling)
+├── GameWorld (Update logic)
+├── Camera (Render to screen)
+└── UI (Render overlay)
+```
+
+## Kode GDScript (Godot 4)
+```gdscript
+extends Node2D
+
+var player_position := Vector2.ZERO
+var player_speed := 300.0
+var frame_count := 0
+
+func _process(delta):
+	# INPUT: Menerima input dari pemain
+	var input_vector := Vector2.ZERO
+	if Input.is_action_pressed("ui_right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("ui_left"):
+		input_vector.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_vector.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_vector.y -= 1
+	
+	# UPDATE: Memperbarui state game
+	if input_vector.length() > 0:
+		player_position += input_vector.normalized() * player_speed * delta
+	
+	frame_count += 1
+	
+	# RENDER: Menampilkan hasil ke layar
+	queue_redraw()
+
+func _draw():
+	draw_circle(player_position, 20, Color.BLUE)
+	draw_string(ThemeDB.fallback_font, Vector2(10, 30), "Frame: " + str(frame_count), HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color.WHITE)
+```
+
+## Kasus Penggunaan Nyata
+Game loop adalah jantung dari setiap game. Di Godot, `_process(delta)` berjalan setiap frame dan `_physics_process(delta)` berjalan dengan fixed timestep untuk fisika. Memahami urutan input-update-render membantu mengoptimalkan performa dan menghindari bug seperti input yang terlambat atau render yang patah-patah.
