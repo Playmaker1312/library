@@ -22,7 +22,7 @@
 [[12. Cara menginstal ekstensi PHP Intelephense di VS Code untuk autocomplete PHP]]  
 [[13. Cara menginstal ekstensi Blade Formatter di VS Code untuk formatting template Blade]]  
 [[14. Cara menginstal ekstensi Laravel Blade Snippets di VS Code]]  
-[[15. Cara menginstal TablePlus atau DBeaver sebagai GUI database client]]
+[[Belajar/IT/Pemrograman/Project NestJS/1.1 Persiapan Lingkungan Kerja/15. Cara menginstal TablePlus atau DBeaver sebagai GUI database client]]
 
 ---
 
