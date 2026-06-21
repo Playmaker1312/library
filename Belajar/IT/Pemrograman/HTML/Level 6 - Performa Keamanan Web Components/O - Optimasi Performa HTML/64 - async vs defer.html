@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async vs defer</title>
+</head>
+<body>
+
+  <h1>async vs defer pada Script HTML</h1>
+
+  <section>
+    <h2>Penjelasan</h2>
+    <p><code>async</code> dan <code>defer</code> adalah atribut pada tag <code>&lt;script&gt;</code> yang mengubah cara browser mendownload dan mengeksekusi JavaScript. Tanpa atribut, script akan mendownload <strong>dan</strong> mengeksekusi secara sinkron — memblokir parsing HTML. Dengan <code>async</code> atau <code>defer</code>, download dilakukan paralel tanpa memblokir parsing.</p>
+  </section>
+
+  <section>
+    <h2>Fungsi</h2>
+    <ul>
+      <li><strong>Tanpa atribut:</strong> download + execute, blokir parsing HTML sepenuhnya</li>
+      <li><strong><code>async</code>:</strong> download paralel (tidak blokir), execute segera setelah download selesai — blokir parsing sesaat</li>
+      <li><strong><code>defer</code>:</strong> download paralel (tidak blokir), execute setelah HTML selesai di-<em>parse</em> — tidak ada blokir</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- Tanpa atribut — BLOKIR PARSING (hindari di &lt;head&gt;) --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;!-- async — download paralel, execute segera --&gt;
+&lt;script async src="analytics.js"&gt;&lt;/script&gt;
+
+&lt;!-- defer — download paralel, execute setelah HTML selesai --&gt;
+&lt;script defer src="app.js"&gt;&lt;/script&gt;
+
+&lt;!-- Urutan: async tidak menjamin urutan, defer menjamin urutan --&gt;
+&lt;script defer src="lib.js"&gt;&lt;/script&gt;
+&lt;script defer src="app.js"&gt;&lt;/script&gt;
+&lt;!-- lib.js akan jalan duluan, lalu app.js --&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>Analogi</h2>
+    <p>Bayangkan sedang membangun rumah. <strong>Tanpa atribut</strong> seperti: kontraktor berhenti total, pergi ke toko beli semen, pulang, baru lanjut bangun — semua tukang nganggur. <strong><code>async</code></strong> seperti: kontraktor mengirim pembantu ke toko, semen datang, langsung dipakai meskipun tukang sedang memasang bata — agak kaget tapi efisien. <strong><code>defer</code></strong> seperti: kontraktor mengirim pembantu ke toko, semen ditumpuk rapi, dan baru dipakai setelah semua tukang selesai memasang bata — teratur dan tidak mengganggu.</p>
+  </section>
+
+  <section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+      <li><strong><code>defer</code></strong> — script yang butuh DOM (manipulasi elemen, event handler, aplikasi utama)</li>
+      <li><strong><code>async</code></strong> — script independen (analytics, iklan, tracking pixel)</li>
+      <li><strong>Tanpa atribut</strong> — sangat jarang; hanya jika script harus dijalankan sebelum browser memproses apapun (misal: polyfill lama)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+      <li>Menggunakan <code>async</code> untuk script yang bergantung pada DOM — script bisa jalan sebelum DOM siap</li>
+      <li>Menggunakan <code>async</code> untuk beberapa script yang saling bergantung — urutan eksekusi tidak dijamin</li>
+      <li>Meletakkan <code>defer</code> di <code>&lt;body&gt;</code> — sebenarnya tidak salah, tapi lebih baik di <code>&lt;head&gt;</code> agar download lebih awal</li>
+      <li>Tidak menggunakan atribut sama sekali untuk script non-kritis di <code>&lt;head&gt;</code> — memperlambat halaman</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p><code>async</code> dan <code>defer</code> adalah <strong>solusi langsung</strong> untuk masalah <em>render-blocking JavaScript</em> yang dijelaskan di <strong>63 - Critical Rendering Path</strong>. Dengan menggunakan atribut ini, kita mengurangi blokade pada CRP. Materi ini juga terkait dengan <strong>65 - Resource Hints</strong> karena preload/prefetch bisa digunakan bersamaan untuk optimasi maksimal.</p>
+  </section>
+
+  <section>
+    <h2>Soal Latihan</h2>
+
+    <p><strong>1.</strong> Apa perbedaan utama antara <code>async</code> dan <code>defer</code> dalam hal waktu eksekusi?</p>
+    <details>
+      <summary>Lihat Jawaban</summary>
+      <p><code>async</code> mengeksekusi script <strong>segera setelah download selesai</strong>, kapanpun itu — bisa sebelum HTML selesai di-<em>parse</em>. <code>defer</code> mengeksekusi script <strong>setelah HTML selesai di-<em>parse</em></strong>, tepat sebelum event <code>DOMContentLoaded</code>.</p>
+    </details>
+
+    <p><strong>2.</strong> Mengapa <code>async</code> tidak cocok untuk script yang memanipulasi DOM?</p>
+    <details>
+      <summary>Lihat Jawaban</summary>
+      <p>Karena <code>async</code> bisa mengeksekusi script sebelum DOM selesai dibangun. Jika script mencoba mengakses elemen yang belum ada di DOM, akan terjadi error.</p>
+    </details>
+
+    <p><strong>3.</strong> Mana yang menjamin urutan eksekusi jika ada dua script — <code>async</code> atau <code>defer</code>?</p>
+    <details>
+      <summary>Lihat Jawaban</summary>
+      <p><code>defer</code>. Script dengan <code>defer</code> dieksekusi sesuai urutan kemunculannya di HTML. <code>async</code> tidak menjamin urutan — script yang lebih cepat selesai di-download akan dijalankan lebih dulu.</p>
+    </details>
+  </section>
+
+</body>
+</html>

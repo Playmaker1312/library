@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag form</title>
+</head>
+<body>
+  <h1>&lt;form&gt; — Wadah Input Data</h1>
+
+  <section>
+    <h2>Penjelasan</h2>
+    <p><code>&lt;form&gt;</code> adalah elemen wadah (container) yang membungkus semua elemen input dalam sebuah halaman web. Fungsinya mirip seperti gerbang utama gedung — semua data yang ingin dikirim ke server harus melewati <code>&lt;form&gt;</code>. Dua atribut paling penting pada <code>&lt;form&gt;</code> adalah <code>action</code> (menentukan alamat tujuan pengiriman data) dan <code>method</code> (menentukan cara pengiriman data).</p>
+  </section>
+
+  <section>
+    <h2>Fungsi</h2>
+    <ul>
+      <li>Mengelompokkan semua input data dalam satu kesatuan logis</li>
+      <li>Menentukan ke mana data akan dikirim (action)</li>
+      <li>Menentukan cara data dikirim: GET (terlihat di URL) atau POST (tersembunyi di body)</li>
+      <li>Memicu proses <em>submit</em> saat tombol kirim ditekan</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- GET — data menempel di URL, cocok untuk pencarian --&gt;
+&lt;form action="/cari" method="GET"&gt;
+  &lt;input type="text" name="q" placeholder="Cari..."&gt;
+  &lt;button type="submit"&gt;Cari&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- POST — data dikirim di body, cocok untuk login/pesan --&gt;
+&lt;form action="/login" method="POST"&gt;
+  &lt;input type="text" name="username"&gt;
+  &lt;input type="password" name="password"&gt;
+  &lt;button type="submit"&gt;Masuk&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>Analogi — Gerbang Gedung</h2>
+    <p>Bayangkan <code>&lt;form&gt;</code> adalah gerbang utama sebuah gedung. Atribut <code>action</code> bagaikan alamat gedung tujuan — ke mana semua orang harus pergi. Atribut <code>method</code> bagaikan cara mereka masuk: <strong>GET</strong> seperti berjalan melalui pintu kaca (semua orang bisa melihat apa yang Anda bawa — data terlihat di URL), sedangkan <strong>POST</strong> seperti menggunakan lift barang tertutup (apa yang Anda bawa tidak terlihat dari luar — data tersembunyi di body).</p>
+    <p>GET digunakan untuk mencari sesuatu di dalam gedung (misal mencari ruangan), sementara POST digunakan untuk menyerahkan sesuatu yang bersifat rahasia atau besar (misal menyerahkan berkas lamaran atau formulir pendaftaran).</p>
+  </section>
+
+  <section>
+    <h2>Dipaki Untuk</h2>
+    <ul>
+      <li><strong>GET</strong>: Formulir pencarian, filter produk, navigasi halaman — data tidak sensitif dan boleh terlihat di URL</li>
+      <li><strong>POST</strong>: Login, registrasi, form pemesanan, upload file, komentar — data sensitif atau berukuran besar</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+      <li>Lupa menambahkan atribut <code>action</code> sehingga data dikirim ke halaman yang sama (mungkin tidak diinginkan)</li>
+      <li>Menggunakan GET untuk data sensitif (password akan terlihat di URL)</li>
+      <li>Tidak memberikan <code>name</code> pada elemen input di dalam form — data tidak akan terkirim karena server tidak tahu nama variabelnya</li>
+      <li>Bersarangnya <code>&lt;form&gt;</code> di dalam <code>&lt;form&gt;</code> lain — HTML melarang hal ini dan perilakunya tidak terdefinisi</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Sebelum mempelajari <code>&lt;form&gt;</code>, Anda sudah mengenal elemen-elemen input seperti <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;textarea&gt;</code>, dan <code>&lt;select&gt;</code>. Semua elemen itu adalah <em>bagian dari</em> sebuah form — ibarat perabot di dalam sebuah ruangan. <code>&lt;form&gt;</code> adalah ruangan itu sendiri. Materi selanjutnya akan membahas atribut-atribut lanjutan seperti <code>enctype</code>, <code>target</code>, dan <code>autocomplete</code> yang semakin memperkuat fungsi form.</p>
+  </section>
+
+  <section>
+    <h2>Soal Latihan</h2>
+
+    <ol>
+      <li>
+        <p>Apa perbedaan utama method GET dan POST pada tag <code>&lt;form&gt;</code>? Kapan masing-masing sebaiknya digunakan?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p><strong>GET</strong> mengirim data melalui URL (querystring), sehingga data terlihat dan memiliki batas panjang. Cocok untuk pencarian atau filter. <strong>POST</strong> mengirim data melalui body HTTP, sehingga tidak terlihat di URL dan tidak terbatas ukurannya. Cocok untuk login, pendaftaran, atau upload data sensitif.</p>
+        </details>
+      </li>
+
+      <li>
+        <p>Mengapa elemen input di dalam form harus memiliki atribut <code>name</code> agar datanya terkirim?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p>Karena saat form dikirim, browser membuat pasangan <code>name=nilai</code> untuk setiap input. Tanpa atribut <code>name</code>, browser tidak tahu nama variabel data tersebut, sehingga input tersebut tidak akan dikirim ke server. Atribut <code>name</code> ibarat label pada kotak surat — server tahu isi kotak itu milik siapa.</p>
+        </details>
+      </li>
+
+      <li>
+        <p>Apa yang terjadi jika atribut <code>action</code> tidak ditulis pada tag <code>&lt;form&gt;</code>?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p>Jika <code>action</code> tidak ditentukan, data akan dikirim ke URL halaman yang sama (halaman tempat form berada). Ini bisa menyebabkan halaman me-refresh dirinya sendiri dengan data di URL (jika method GET) atau body (jika method POST).</p>
+        </details>
+      </li>
+    </ol>
+  </section>
+</body>
+</html>

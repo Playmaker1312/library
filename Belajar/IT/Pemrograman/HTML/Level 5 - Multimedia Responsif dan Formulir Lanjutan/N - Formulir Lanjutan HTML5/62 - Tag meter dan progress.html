@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag meter dan progress HTML5</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+        section { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }
+        h2 { color: #c0392b; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        code { font-family: 'Consolas', monospace; }
+        .demo { background: #ecf0f1; padding: 15px; border-radius: 8px; margin-top: 10px; }
+        .demo meter, .demo progress { width: 100%; height: 30px; margin: 10px 0; }
+        .analogi { background: #fff8e1; border-left: 4px solid #ffc107; padding: 15px; border-radius: 0 8px 8px 0; }
+        details { background: #f0f7ff; padding: 10px; border-radius: 8px; margin: 5px 0; }
+        summary { cursor: pointer; font-weight: bold; color: #c0392b; }
+    </style>
+</head>
+<body>
+
+<h1>&#x1F3F0; Tag meter dan progress HTML5</h1>
+
+<section>
+    <h2>Apa Itu <code>&lt;meter&gt;</code> dan <code>&lt;progress&gt;</code>?</h2>
+    <p><code>&lt;meter&gt;</code> dan <code>&lt;progress&gt;</code> adalah elemen semantik HTML5 untuk menampilkan data numerik secara visual dalam bentuk batang.</p>
+    <ul>
+        <li><strong>&lt;meter&gt;</strong> &mdash; Menampilkan nilai dalam rentang yang diketahui (misalnya level keahlian 80 dari 100).</li>
+        <li><strong>&lt;progress&gt;</strong> &mdash; Menampilkan kemajuan tugas yang belum selesai (misalnya upload file 45%).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Fungsi dan Atribut</h2>
+
+    <h3>&lt;meter&gt;</h3>
+    <ul>
+        <li><code>value</code> &mdash; Nilai saat ini (wajib).</li>
+        <li><code>min</code> &mdash; Nilai minimum (default 0).</li>
+        <li><code>max</code> &mdash; Nilai maksimum (default 1).</li>
+        <li><code>low</code> &mdash; Ambang batas bawah.</li>
+        <li><code>high</code> &mdash; Ambang batas atas.</li>
+        <li><code>optimum</code> &mdash; Nilai optimal.</li>
+    </ul>
+    <p>Warna batang berubah berdasarkan posisi nilai: <span style="color:#e74c3c;">merah</span> (di bawah low), <span style="color:#f1c40f;">kuning</span> (antara low dan high), <span style="color:#27ae60;">hijau</span> (di sekitar optimum).</p>
+
+    <h3>&lt;progress&gt;</h3>
+    <ul>
+        <li><code>value</code> &mdash; Kemajuan saat ini.</li>
+        <li><code>max</code> &mdash; Nilai maksimum (total pekerjaan).</li>
+    </ul>
+    <p>Jika atribut <code>value</code> tidak disertakan, progress menampilkan animasi <em>indeterminate</em> (sedang berlangsung tanpa status pasti).</p>
+</section>
+
+<section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- Meter untuk level keahlian --&gt;
+&lt;label&gt;Skill HTML:&lt;/label&gt;
+&lt;meter value=&quot;80&quot; min=&quot;0&quot; max=&quot;100&quot; low=&quot;30&quot; high=&quot;70&quot; optimum=&quot;90&quot;&gt;80/100&lt;/meter&gt;
+
+&lt;!-- Progress untuk loading --&gt;
+&lt;label&gt;Mengunduh file...&lt;/label&gt;
+&lt;progress value=&quot;45&quot; max=&quot;100&quot;&gt;45%&lt;/progress&gt;
+
+&lt;!-- Progress indeterminate (tanpa value) --&gt;
+&lt;label&gt;Memproses...&lt;/label&gt;
+&lt;progress&gt;&lt;/progress&gt;</code></pre>
+
+    <h3>Contoh Demo:</h3>
+    <div class="demo">
+        <p><strong>Skill HTML:</strong></p>
+        <meter value="80" min="0" max="100" low="30" high="70" optimum="90">80/100</meter>
+        <p>Nilai: 80/100 (Low: 30, High: 70, Optimum: 90) &mdash; Hijau karena mendekati optimum.</p>
+
+        <p><strong>Skill CSS:</strong></p>
+        <meter value="20" min="0" max="100" low="30" high="70" optimum="90">20/100</meter>
+        <p>Nilai: 20/100 &mdash; Merah karena di bawah low.</p>
+
+        <p><strong>Loading File:</strong></p>
+        <progress value="45" max="100">45%</progress>
+        <p>45% selesai.</p>
+
+        <p><strong>Memproses (indeterminate):</strong></p>
+        <progress></progress>
+        <p>Animasi berputar tanpa nilai pasti.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Analogi Rumah / Bangunan</h2>
+    <div class="analogi">
+        <p><strong>&lt;meter&gt;</strong> seperti <em>meteran listrik di rumah</em>&mdash;menunjukkan pemakaian saat ini dalam rentang yang diketahui (0 - 1300 Watt). Ada zona aman (hijau), waspada (kuning), dan bahaya (merah).</p>
+        <p><strong>&lt;progress&gt;</strong> seperti <em>proses pembangunan rumah</em>&mdash;pondasi 20%, tembok 50%, atap 80%. Kita tahu sudah sejauh mana, tapi belum selesai.</p>
+        <p><strong>Progress indeterminate</strong> seperti <em>tukang yang sedang bekerja</em>&mdash;Anda tahu ada aktivitas, tapi belum bisa diukur persentasenya.</p>
+    </div>
+</section>
+
+<section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+        <li><strong>&lt;meter&gt;</strong> &mdash; Menampilkan level keahlian, kapasitas penyimpanan, suhu, nilai ujian, atau sensor.</li>
+        <li><strong>&lt;progress&gt;</strong> &mdash; Indikator upload/download, pengisian formulir multi-step, instalasi aplikasi, loading screen.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+        <li>&#x2716; Menggunakan <code>&lt;progress&gt;</code> untuk nilai statis yang sudah final (harusnya <code>&lt;meter&gt;</code>).</li>
+        <li>&#x2716; Lupa memberikan teks di antara tag (misal <code>&lt;meter&gt;80/100&lt;/meter&gt;</code>) untuk fallback jika browser tidak mendukung.</li>
+        <li>&#x2716& #x2716; Menukar <code>min</code>/<code>max</code> antara meter dan progress. Progress tidak punya <code>min</code> (selalu 0).</li>
+        <li>&#x2716; Tidak menggunakan atribut <code>low</code>/<code>high</code>/<code>optimum</code> pada meter, sehingga warna tidak berfungsi optimal.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p><code>&lt;meter&gt;</code> dan <code>&lt;progress&gt;</code> melengkapi <strong>elemen semantik HTML5</strong> lainnya seperti <code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code>, dan <code>&lt;figure&gt;</code>. Mereka juga sering dikombinasikan dengan <strong>JavaScript</strong> untuk memperbarui nilai secara real-time, misalnya progress bar upload file.</p>
+</section>
+
+<section>
+    <h2>Soal Latihan</h2>
+
+    <details>
+        <summary>Soal 1: Indikator Baterai</summary>
+        <p>Buatlah elemen <code>&lt;meter&gt;</code> yang menampilkan level baterai 65% dengan ambang low di 20%, high di 80%, dan optimum di 100%.</p>
+        <details>
+            <summary>&#x1F4DD; Jawaban</summary>
+            <pre><code>&lt;meter value="65" min="0" max="100" low="20" high="80" optimum="100"&gt;65%&lt;/meter&gt;</code></pre>
+        </details>
+    </details>
+
+    <details>
+        <summary>Soal 2: Download File</summary>
+        <p>Buatlah elemen <code>&lt;progress&gt;</code> yang menunjukkan file 120MB telah terunduh 72MB (dengan asumsi maks 120MB).</p>
+        <details>
+            <summary>&#x1F4DD; Jawaban</summary>
+            <pre><code>&lt;progress value="72" max="120"&gt;72 dari 120 MB&lt;/progress&gt;</code></pre>
+        </details>
+    </details>
+</section>
+
+</body>
+</html>

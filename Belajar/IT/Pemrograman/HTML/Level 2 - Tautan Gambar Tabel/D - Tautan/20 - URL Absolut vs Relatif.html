@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Absolut vs Relatif</title>
+</head>
+<body>
+
+    <h1>URL Absolut vs URL Relatif</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p><strong>URL absolut</strong> adalah alamat lengkap yang mencakup protokol (<code>https://</code>), domain, dan path. Digunakan untuk menuju sumber daya di domain lain. Contoh: <code>https://id.wikipedia.org/wiki/HTML</code>.</p>
+        <p><strong>URL relatif</strong> adalah alamat tanpa domain yang merujuk ke file dalam struktur folder yang sama. Contoh: <code>portofolio.html</code> atau <code>gambar/logo.png</code>.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>URL absolut digunakan untuk menautkan ke halaman luar situs, sedangkan URL relatif digunakan untuk navigasi internal agar lebih ringkas dan mudah dipindahkan.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- URL Absolut (domain lain) --&gt;
+&lt;a href="https://id.wikipedia.org/wiki/HTML"&gt;Wikipedia HTML&lt;/a&gt;
+
+&lt;!-- URL Relatif (file sendiri) --&gt;
+&lt;a href="portofolio.html"&gt;Portofolio Saya&lt;/a&gt;
+
+&lt;!-- URL Relatif dengan subfolder --&gt;
+&lt;a href="proyek/index.html"&gt;Lihat Proyek&lt;/a&gt;
+
+&lt;!-- Struktur folder yang umum --&gt;
+&lt;!--
+project/
+├── index.html
+├── portofolio.html
+├── proyek/
+│   └── index.html
+└── gambar/
+    └── logo.png
+--&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah</h2>
+        <p>URL absolut seperti <strong>alamat lengkap</strong>: "Jl. Merdeka No. 10, Jakarta". URL relatif seperti <strong>petunjuk dari dalam rumah</strong>: "naik ke lantai 2, kamar paling kiri". Alamat absolut selalu sama dari mana pun Anda berasal, sedangkan relatif bergantung pada posisi Anda saat ini.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>URL absolut: menautkan ke situs eksternal (Google, Wikipedia, YouTube)</li>
+            <li>URL relatif: navigasi antanhalaman dalam satu situs</li>
+            <li>URL relatif: memudahkan proyek dipindahkan ke domain lain tanpa edit semua tautan</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Menggunakan URL absolut untuk tautan internal — menyulitkan saat pindah domain</li>
+            <li>Salah path relatif: misal <code>../</code> untuk naik folder tapi lupa struktur folder</li>
+            <li>Lupa protokol <code>https://</code> pada URL absolut</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah mengenal tag <code>&lt;a&gt;</code> (materi 19), sekarang kita bedakan dua jenis URL yang bisa digunakan di atribut <code>href</code>.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Jelaskan perbedaan URL absolut dan URL relatif beserta contoh masing-masing!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <p>URL absolut berisi protokol dan domain lengkap, contoh: <code>https://google.com</code>. URL relatif hanya berisi path dari posisi file saat ini, contoh: <code>tentang.html</code>. URL absolut untuk tautan eksternal, relatif untuk internal.</p>
+                </details>
+            </li>
+            <li>
+                <p>Jika file Anda berada di folder <code>artikel/index.html</code> dan ingin menautkan ke <code>portofolio.html</code> di folder utama, bagaimana penulisan URL relatifnya?</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;a href="../portofolio.html"&gt;Portofolio&lt;/a&gt;</code></pre>
+                <p><code>../</code> berarti naik satu level folder dari <code>artikel/</code> ke folder utama, lalu akses <code>portofolio.html</code>.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

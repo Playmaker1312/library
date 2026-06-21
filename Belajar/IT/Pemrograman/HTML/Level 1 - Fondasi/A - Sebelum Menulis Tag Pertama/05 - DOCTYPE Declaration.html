@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCTYPE Declaration</title>
+</head>
+<body>
+    <h1>DOCTYPE Declaration</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p><code>&lt;!DOCTYPE html&gt;</code> adalah deklarasi yang wajib ditulis di <strong>baris pertama</strong> file HTML. Fungsinya adalah memberi tahu browser: "Dokumen ini menggunakan HTML versi terbaru (HTML5)". <em>DOCTYPE</em> bukanlah tag HTML — ia adalah instruksi khusus yang dikenal sebagai <em>document type declaration</em>.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Fungsi utama DOCTYPE adalah mencegah browser masuk ke <strong>Quirks Mode</strong>. Quirks Mode adalah mode lama di mana browser mencoba meniru perilaku browser jadul (era Netscape dan IE4/5) sehingga halaman bisa tampil kacau. Dengan <code>&lt;!DOCTYPE html&gt;</code>, browser masuk ke <strong>Standards Mode</strong> — mode di mana browser mengikuti spesifikasi web modern dengan benar.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>Cukup tulis <code>&lt;!DOCTYPE html&gt;</code> di baris paling atas, sebelum tag <code>&lt;html&gt;</code>:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Contoh DOCTYPE&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Halaman ini dalam Standards Mode.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Perhatikan: DOCTYPE tidak memiliki tag penutup dan tidak case-sensitive — <code>&lt;!doctype html&gt;</code> juga sah, tapi konvensi menulisnya dengan huruf kapital.</p>
+    </section>
+
+    <section>
+        <h2>Analogi</h2>
+        <p>Bayangkan Anda membeli <strong>rumah</strong> dan menyerahkan denahnya ke kontraktor. DOCTYPE seperti <strong>label di sampul cetak biru</strong> yang bertuliskan "Gunakan kode bangunan terbaru tahun 2024". Tanpa label ini, kontraktor mungkin menggunakan aturan bangunan dari tahun 1990-an, yang menghasilkan rumah dengan fondasi tidak sesuai standar modern. Dengan label itu, kontraktor menggunakan peraturan terbaru sehingga rumah Anda kokoh dan aman.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <p>Deklarasi DOCTYPE digunakan di <strong>setiap file HTML tanpa kecuali</strong>. Mulai dari halaman statis sederhana, website perusahaan, hingga aplikasi web kompleks. Tidak boleh ada satu pun file HTML yang lupa menyertakan DOCTYPE di baris pertamanya.</p>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Tidak menulis DOCTYPE sama sekali — menyebabkan browser masuk Quirks Mode dan tampilan bisa kacau.</li>
+            <li>Menulis DOCTYPE setelah tag <code>&lt;html&gt;</code> — harus di baris pertama.</li>
+            <li>Menggunakan DOCTYPE versi lama seperti <code>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;</code> — tidak perlu di era HTML5.</li>
+            <li>Mengira DOCTYPE adalah tag HTML — sebenarnya ia adalah deklarasi khusus, bukan tag.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah berhasil <strong>membuat file HTML pertama</strong>, sekarang kita belajar satu elemen penting yang harus ada di setiap file HTML: DOCTYPE. Ini adalah materi pertama dari rangkaian <strong>struktur wajib dokumen HTML</strong>, yang akan dilanjutkan dengan tag <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, dan <code>&lt;body&gt;</code>.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <details>
+            <summary>Soal 1: Apa perbedaan antara Standards Mode dan Quirks Mode?</summary>
+            <p><strong>Jawaban:</strong> Standards Mode adalah mode di mana browser mengikuti spesifikasi web modern secara ketat, memastikan halaman dirender sesuai standar W3C. Quirks Mode adalah mode kompatibilitas ke belakang di mana browser meniru perilaku browser lama (seperti IE5) untuk mendukung halaman jadul, yang sering menghasilkan tampilan tidak konsisten dan sulit diatur.</p>
+        </details>
+
+        <details>
+            <summary>Soal 2: Di manakah posisi penulisan <code>&lt;!DOCTYPE html&gt;</code> dan mengapa ia harus di posisi tersebut?</summary>
+            <p><strong>Jawaban:</strong> <code>&lt;!DOCTYPE html&gt;</code> harus ditulis di baris pertama file HTML, bahkan sebelum tag <code>&lt;html&gt;</code>. Ini karena browser perlu menentukan mode rendering (Standards vs Quirks) sebelum mulai membaca dokumen. Jika DOCTYPE tidak di baris pertama, atau ada karakter/spasi sebelumnya, browser bisa masuk ke Quirks Mode.</p>
+        </details>
+    </section>
+</body>
+</html>

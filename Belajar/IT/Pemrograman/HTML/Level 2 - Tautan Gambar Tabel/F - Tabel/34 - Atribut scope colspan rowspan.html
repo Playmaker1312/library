@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribut scope colspan rowspan</title>
+</head>
+<body>
+
+<h1>Atribut scope, colspan, dan rowspan</h1>
+
+<section>
+    <h2>Penjelasan</h2>
+    <p><strong>scope</strong> menentukan apakah suatu header berlaku untuk kolom (<code>scope="col"</code>) atau baris (<code>scope="row"</code>). <strong>colspan</strong> menggabungkan beberapa kolom menjadi satu sel (melebar ke kanan). <strong>rowspan</strong> menggabungkan beberapa baris menjadi satu sel (memanjang ke bawah). Ketiganya penting untuk tabel kompleks dan aksesibilitas.</p>
+</section>
+
+<section>
+    <h2>Fungsi</h2>
+    <ul>
+        <li><code>scope="col"</code> — menandai &lt;th&gt; sebagai header vertikal (satu kolom).</li>
+        <li><code>scope="row"</code> — menandai &lt;th&gt; sebagai header horizontal (satu baris).</li>
+        <li><code>colspan="n"</code> — membuat sel melebar n kolom.</li>
+        <li><code>rowspan="n"</code> — membuat sel memanjang n baris.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;table&gt;
+    &lt;caption&gt;Perbandingan Paket Langganan&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Fitur&lt;/th&gt;
+            &lt;th scope="col"&gt;Gratis&lt;/th&gt;
+            &lt;th scope="col"&gt;Pro&lt;/th&gt;
+            &lt;th scope="col"&gt;Enterprise&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Penyimpanan&lt;/th&gt;
+            &lt;td&gt;1 GB&lt;/td&gt;
+            &lt;td&gt;50 GB&lt;/td&gt;
+            &lt;td&gt;1 TB&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Pengguna&lt;/th&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;5&lt;/td&gt;
+            &lt;td colspan="2"&gt;Tak terbatas&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row" rowspan="2"&gt;Dukungan&lt;/th&gt;
+            &lt;td&gt;Email&lt;/td&gt;
+            &lt;td&gt;Email + Chat&lt;/td&gt;
+            &lt;td&gt;24/7 Prioritas&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;—&lt;/td&gt;
+            &lt;td&gt;8 jam respon&lt;/td&gt;
+            &lt;td&gt;1 jam respon&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</section>
+
+<section>
+    <h2>Analogi — Rumah</h2>
+    <p><code>scope="col"</code> seperti <strong>papan nama di atas pintu setiap kamar</strong> yang menjelaskan isi seluruh kamar di lantai itu. <code>scope="row"</code> seperti <strong>papan nomor di samping setiap pintu</strong> yang unik untuk satu kamar. <code>colspan</code> seperti <strong>ruang tamu yang digabung dengan ruang keluarga</strong> — satu ruang besar dari dua ruang kecil. <code>rowspan</code> seperti <strong>tangga yang menghubungkan lantai 1 ke lantai 3</strong> — memanjang melewati lantai 2.</p>
+</section>
+
+<section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+        <li>Tabel perbandingan fitur atau produk</li>
+        <li>Tabel dengan sel yang mencakup beberapa baris/kolom (misal: judul grup)</li>
+        <li>Meningkatkan aksesibilitas dengan memberi tahu hubungan header-data</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+        <li>Tidak menggunakan <code>scope</code> pada tabel kompleks, sehingga screen reader tidak bisa menghubungkan data dengan header.</li>
+        <li>Menghitung jumlah kolom salah saat memakai <code>colspan</code>, menyebabkan tabel berantakan.</li>
+        <li>Menggunakan <code>rowspan</code> dan <code>colspan</code> tanpa menguji tampilan — sering tumpang tindih jika salah perhitungan.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Setelah memahami elemen semantik tabel (&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;), atribut <code>scope</code>, <code>colspan</code>, dan <code>rowspan</code> memberikan kontrol lebih untuk tabel yang kompleks. Materi tabel adalah fondasi sebelum melangkah ke CSS untuk styling tabel.</p>
+</section>
+
+<section>
+    <h2>Soal Latihan</h2>
+
+    <ol>
+        <li>
+            <p>Apa perbedaan <code>scope="col"</code> dan <code>scope="row"</code>?</p>
+            <details><summary>Lihat Jawaban</summary>
+                <p><code>scope="col"</code> berarti header tersebut berlaku sebagai judul untuk seluruh sel di kolom yang sama. <code>scope="row"</code> berarti header berlaku untuk seluruh sel di baris yang sama.</p>
+            </details>
+        </li>
+        <li>
+            <p>Buat tabel perbandingan 2 produk (Produk A dan B) dengan 3 fitur. Gunakan <code>colspan</code> untuk membuat sel header "Fitur" yang melebar 3 kolom.</p>
+            <details><summary>Lihat Jawaban</summary>
+                <pre>&lt;table&gt;
+    &lt;caption&gt;Perbandingan Produk&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th colspan="3" scope="colgroup"&gt;Perbandingan Produk&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Fitur&lt;/th&gt;
+            &lt;th scope="col"&gt;Produk A&lt;/th&gt;
+            &lt;th scope="col"&gt;Produk B&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Harga&lt;/th&gt;
+            &lt;td&gt;Rp50.000&lt;/td&gt;
+            &lt;td&gt;Rp75.000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Berat&lt;/th&gt;
+            &lt;td&gt;200g&lt;/td&gt;
+            &lt;td&gt;150g&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </details>
+        </li>
+    </ol>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag br dan hr</title>
+</head>
+<body>
+
+  <h1>Tag &lt;br&gt; dan &lt;hr&gt;</h1>
+
+  <section>
+    <h2>Penjelasan</h2>
+    <p><code>&lt;br&gt;</code> (line break) adalah elemen void yang membuat baris baru tanpa memulai paragraf baru. <code>&lt;hr&gt;</code> (horizontal rule) adalah elemen void yang menampilkan garis pemisah horizontal untuk menandai pergantian topik. Keduanya tidak memiliki tag penutup.</p>
+  </section>
+
+  <section>
+    <h2>Fungsi</h2>
+    <ul>
+      <li><code>&lt;br&gt;</code>: membuat jeda baris dalam teks kontinu (alamat, puisi, lirik lagu).</li>
+      <li><code>&lt;hr&gt;</code>: memisahkan konten secara tematik, menandai perpindahan adegan atau topik.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;p&gt;
+  Jalan Merdeka No. 10&amp;lt;br&amp;gt;
+  Jakarta Pusat&amp;lt;br&amp;gt;
+  Indonesia
+&lt;/p&gt;
+
+&lt;h2&gt;Bagian Sebelum&lt;/h2&gt;
+&lt;p&gt;Konten bagian pertama...&lt;/p&gt;
+
+&amp;lt;hr&amp;gt;
+
+&lt;h2&gt;Bagian Sesudah&lt;/h2&gt;
+&lt;p&gt;Konten bagian kedua...&lt;/p&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>Analogi</h2>
+    <p>Dalam bangunan rumah, <code>&lt;br&gt;</code> seperti memindahkan barang sedikit ke samping dalam ruangan yang sama—Anda masih di ruangan yang sama, hanya posisinya bergeser. Sedangkan <code>&lt;hr&gt;</code> seperti sekat atau partisi yang memisahkan dua ruangan berbeda—Anda benar-benar berpindah ke area baru.</p>
+  </section>
+
+  <section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+      <li><code>&lt;br&gt;</code>: alamat, puisi, lirik lagu, alamat surel multi-baris.</li>
+      <li><code>&lt;hr&gt;</code>: pemisah antar bab, sesi, atau topik dalam satu halaman.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+      <li><strong>Menggunakan <code>&lt;br&gt;&lt;br&gt;</code> untuk membuat jarak antar paragraf.</strong> Ini menyalahi fungsi. Gunakan <code>&lt;p&gt;</code> dengan margin CSS.</li>
+      <li><strong>Menggunakan <code>&lt;hr&gt;</code> sebagai garis dekoratif semata.</strong> <code>&lt;hr&gt;</code> memiliki makna semantik perpindahan topik. Untuk garis hias, gunakan <code>border-bottom</code> CSS.</li>
+      <li><strong>Menempatkan <code>&lt;br&gt;</code> di luar paragraf untuk struktur.</strong> <code>&lt;br&gt;</code> hanya boleh digunakan di dalam elemen blok seperti <code>&lt;p&gt;</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Setelah mempelajari paragraf (<code>&lt;p&gt;</code>) sebagai unit konten, kini Anda mengenal dua alat tambahan: <code>&lt;br&gt;</code> untuk mengatur baris dalam paragraf dan <code>&lt;hr&gt;</code> untuk memisahkan antar-bagian. Ini melengkapi kemampuan Anda dalam menyusun teks secara vertikal.</p>
+  </section>
+
+  <section>
+    <h2>Soal Latihan</h2>
+
+    <ol>
+      <li>
+        Kapan waktu yang tepat menggunakan <code>&lt;br&gt;</code>? Beri satu contoh kasus!
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p>Saat menulis alamat atau puisi di mana setiap baris harus turun ke baris baru, tetapi masih dalam satu paragraf yang sama. Contoh: alamat surat yang terdiri dari nama jalan, kota, dan kode pos.</p>
+        </details>
+      </li>
+      <li>
+        Apa perbedaan semantik antara <code>&lt;hr&gt;</code> dan <code>&lt;br&gt;</code>?
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p><code>&lt;hr&gt;</code> menandai perpindahan topik secara tematis (sekat antar ruang), sedangkan <code>&lt;br&gt;</code> hanya memindahkan teks ke baris berikutnya dalam topik yang sama (geser posisi dalam ruang yang sama).</p>
+        </details>
+      </li>
+    </ol>
+
+  </section>
+
+</body>
+</html>

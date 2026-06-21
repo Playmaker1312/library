@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Wajib Dokumen HTML</title>
+</head>
+<body>
+    <h1>Struktur Wajib Dokumen HTML</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Setiap dokumen HTML yang valid memiliki struktur wajib yang terdiri dari tiga tag utama: <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, dan <code>&lt;body&gt;</code>. Selain itu, ada elemen penting di dalam <code>&lt;head&gt;</code> seperti <code>&lt;meta&gt;</code> untuk charset dan viewport, serta <code>&lt;title&gt;</code>. Atribut <code>lang</code> pada tag <code>&lt;html&gt;</code> juga wajib untuk aksesibilitas dan SEO.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Struktur ini berfungsi sebagai kerangka dasar yang memberikan arti pada setiap bagian halaman:</p>
+        <ul>
+            <li><code>&lt;html&gt;</code> — wadah utama, membungkus seluruh konten dokumen.</li>
+            <li><code>&lt;head&gt;</code> — berisi informasi tentang dokumen (metadata), tidak tampil di halaman.</li>
+            <li><code>&lt;body&gt;</code> — berisi semua konten yang tampak oleh pengguna.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code> — menentukan encoding karakter agar huruf, simbol, dan emoji tampil benar.</li>
+            <li><code>&lt;meta name="viewport"&gt;</code> — mengatur tampilan di perangkat mobile.</li>
+            <li><code>&lt;title&gt;</code> — judul halaman yang muncul di tab browser.</li>
+            <li><code>lang="id"</code> — memberitahu browser bahwa bahasa halaman adalah Indonesia.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>Berikut adalah kerangka HTML yang wajib ada di setiap dokumen:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Semua konten yang terlihat diletakkan di sini --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Di VS Code, Anda bisa mengetik <code>!</code> lalu tekan Tab untuk menghasilkan struktur ini secara otomatis (Emmet).</p>
+    </section>
+
+    <section>
+        <h2>Analogi</h2>
+        <p>Struktur HTML wajib seperti <strong>denah rumah</strong> yang sudah ditentukan oleh pemerintah:</p>
+        <ul>
+            <li><code>&lt;html&gt;</code> adalah <strong>batas tanah</strong> — seluruh bangunan harus berada di dalamnya.</li>
+            <li><code>&lt;head&gt;</code> adalah <strong>ruang arsip</strong> — menyimpan dokumen penting seperti sertifikat tanah dan IMB (izin mendirikan bangunan) yang tidak terlihat dari luar, tapi sangat penting.</li>
+            <li><code>&lt;body&gt;</code> adalah <strong>bangunan fisik</strong> — semua yang terlihat: ruang tamu, kamar, dapur.</li>
+            <li><code>&lt;meta charset&gt;</code> seperti <strong>standar ukuran meter</strong> — memastikan semua ukuran konsisten.</li>
+            <li><code>&lt;title&gt;</code> seperti <strong>papan nama rumah</strong> — yang terlihat di luar (tab browser).</li>
+            <li><code>lang="id"</code> seperti <strong>stiker "Rumah ini berbahasa Indonesia"</strong> di pintu — membantu tamu (browser, screen reader) tahu bahasa yang digunakan.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <p>Struktur ini wajib di <strong>setiap halaman web</strong> tanpa terkecuali. Baik itu halaman pribadi, blog, toko online, portal berita, sistem admin, atau aplikasi web — semuanya harus memiliki struktur <code>html</code>, <code>head</code>, dan <code>body</code> yang rapi. Tanpa struktur ini, halaman bisa tidak konsisten di berbagai browser dan perangkat.</p>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Menulis konten di luar <code>&lt;body&gt;</code> — konten harus di dalam <code>&lt;body&gt;</code>.</li>
+            <li>Lupa menambahkan <code>&lt;meta charset="UTF-8"&gt;</code> — bisa menyebabkan karakter seperti "~" atau emoji tampil kacau.</li>
+            <li>Tidak menambahkan <code>lang</code> pada <code>&lt;html&gt;</code> — dapat mengurangi aksesibilitas dan SEO.</li>
+            <li>Lupa tag penutup <code>&lt;/html&gt;</code> — meski browser toleran, ini praktik buruk.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Materi ini adalah kelanjutan langsung dari <strong>DOCTYPE Declaration</strong>. Setelah menulis DOCTYPE di baris pertama, kita menulis struktur wajib: <code>&lt;html&gt;</code> sebagai induk, <code>&lt;head&gt;</code> untuk metadata, dan <code>&lt;body&gt;</code> untuk konten. Ini adalah cetak biru minimal yang harus ada di setiap file HTML, dan menjadi fondasi untuk mempelajari <strong>tag, elemen, dan atribut</strong> selanjutnya.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <details>
+            <summary>Soal 1: Sebutkan tiga tag utama yang wajib ada dalam struktur dokumen HTML dan jelaskan fungsi masing-masing!</summary>
+            <p><strong>Jawaban:</strong> (1) <code>&lt;html&gt;</code> — elemen akar yang membungkus seluruh dokumen HTML. (2) <code>&lt;head&gt;</code> — berisi metadata tentang dokumen seperti charset, viewport, title, dan link ke file CSS. (3) <code>&lt;body&gt;</code> — berisi semua konten yang akan ditampilkan di halaman browser.</p>
+        </details>
+
+        <details>
+            <summary>Soal 2: Mengapa <code>&lt;meta charset="UTF-8"&gt;</code> penting dan apa yang terjadi jika tidak disertakan?</summary>
+            <p><strong>Jawaban:</strong> Meta charset UTF-8 penting karena mendefinisikan encoding karakter yang digunakan dokumen. UTF-8 mendukung hampir semua karakter di dunia termasuk huruf Latin, Arab, Kanji, dan emoji. Jika tidak disertakan, browser mungkin salah menebak encoding dan menampilkan karakter aneh (misal: "Selamat datang" menjadi "Selamat datangÃ©").</p>
+        </details>
+    </section>
+</body>
+</html>

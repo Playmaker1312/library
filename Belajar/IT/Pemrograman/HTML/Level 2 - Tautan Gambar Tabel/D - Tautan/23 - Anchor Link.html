@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Anchor Link</title>
+</head>
+<body>
+
+    <h1>Anchor Link (Tautan Dalam Satu Halaman)</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Anchor link adalah tautan yang mengarah ke bagian tertentu dalam halaman yang sama. Caranya dengan memberikan <code>id</code> unik pada elemen tujuan, lalu di <code>href</code> tuliskan <code>#</code> diikuti <code>id</code> tersebut. Browser akan menggulir (scroll) otomatis ke elemen yang dituju.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Memudahkan navigasi dalam halaman panjang tanpa harus menggulir manual. Sangat berguna untuk daftar isi, one-page website, dokumentasi, atau FAQ.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- Daftar isi (tautan) --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#sejarah"&gt;Sejarah&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#fitur"&gt;Fitur&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#kontak"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Bagian tujuan dengan id --&gt;
+&lt;section id="sejarah"&gt;
+    &lt;h2&gt;Sejarah&lt;/h2&gt;
+    &lt;p&gt;Isi sejarah...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="fitur"&gt;
+    &lt;h2&gt;Fitur&lt;/h2&gt;
+    &lt;p&gt;Isi fitur...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="kontak"&gt;
+    &lt;h2&gt;Kontak&lt;/h2&gt;
+    &lt;p&gt;Isi kontak...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah</h2>
+        <p>Anchor link bagaikan <strong>nomor kamar</strong> dalam sebuah rumah besar. Di pintu masuk ada peta kecil: "Kamar 101 — Ruang Tamu", "Kamar 102 — Dapur". Pengunjung cukup lihat peta, lalu langsung menuju kamar dengan nomor yang sesuai. <code>id</code> adalah nomor kamar, <code>href="#id"</code> adalah petunjuk arah ke kamar itu.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>One-page website (portofolio, landing page)</li>
+            <li>Daftar isi artikel panjang</li>
+            <li>Navigasi FAQ — langsung ke pertanyaan tertentu</li>
+            <li>Tombol "Kembali ke atas"</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Dua elemen memiliki <code>id</code> yang sama — browser hanya menuju ke elemen pertama</li>
+            <li>Lupa tanda <code>#</code> di href, misal <code>href="sejarah"</code> bukan <code>href="#sejarah"</code></li>
+            <li>Menggunakan <code>name</code> pada <code>&lt;a&gt;</code> (cara lama, sudah tidak disarankan)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah belajar navigasi antarhalaman dengan <code>&lt;a&gt;</code> (materi 19 dan 21), sekarang kita belajar navigasi <em>dalam</em> satu halaman menggunakan <code>id</code> dan <code>href="#id"</code>.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Buatlah anchor link menuju bagian dengan id "tentang"!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;a href="#tentang"&gt;Tentang Kami&lt;/a&gt;
+
+&lt;!-- ... di bagian lain halaman ... --&gt;
+&lt;section id="tentang"&gt;
+    &lt;h2&gt;Tentang Kami&lt;/h2&gt;
+    &lt;p&gt;Perusahaan kami berdiri sejak...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+                </details>
+            </li>
+            <li>
+                <p>Apa yang terjadi jika ada dua elemen dengan id yang sama dalam satu halaman, dan kita mengklik anchor link menuju id tersebut?</p>
+                <details><summary>Lihat Jawaban</summary>
+                <p>Browser akan menggulir ke elemen pertama yang memiliki id tersebut. Elemen kedua dengan id sama akan diabaikan. Karena itu setiap id harus unik dalam satu halaman.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

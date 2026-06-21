@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag textarea dan select</title>
+</head>
+<body>
+  <h1>&lt;textarea&gt; dan &lt;select&gt; — Ruang Luas &amp; Lorong Bercabang</h1>
+
+  <section>
+    <h2>Penjelasan</h2>
+    <p><code>&lt;textarea&gt;</code> adalah elemen input teks multi-baris yang memungkinkan pengguna menulis teks panjang seperti komentar, alamat, atau deskripsi. <code>&lt;select&gt;</code> adalah elemen dropdown yang menyajikan daftar opsi dalam menu tarik-turun, menghemat ruang di halaman. <code>&lt;optgroup&gt;</code> digunakan di dalam <code>&lt;select&gt;</code> untuk mengelompokkan opsi-opsi yang terkait.</p>
+  </section>
+
+  <section>
+    <h2>Fungsi</h2>
+    <ul>
+      <li><code>&lt;textarea&gt;</code>: input teks panjang dengan area yang bisa diperbesar — atribut <code>rows</code> (tinggi) dan <code>cols</code> (lebar)</li>
+      <li><code>&lt;select&gt;</code>: memilih dari opsi yang sudah ditentukan tanpa memakan banyak tempat di halaman</li>
+      <li><code>&lt;optgroup&gt;</code>: mengelompokkan opsi dalam dropdown — label grup muncul sebagai header tak-terpilih</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- Textarea: teks multi-baris --&gt;
+&lt;label for="komentar"&gt;Komentar:&lt;/label&gt;
+&lt;textarea id="komentar" name="komentar"
+          rows="5" cols="40"&gt;
+Tulis komentar Anda di sini...
+&lt;/textarea&gt;
+
+&lt;!-- Select: dropdown --&gt;
+&lt;label for="kota"&gt;Kota:&lt;/label&gt;
+&lt;select id="kota" name="kota"&gt;
+  &lt;option value=""&gt;-- Pilih Kota --&lt;/option&gt;
+  &lt;option value="jkt"&gt;Jakarta&lt;/option&gt;
+  &lt;option value="bdo"&gt;Bandung&lt;/option&gt;
+  &lt;option value="sby"&gt;Surabaya&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Select dengan optgroup --&gt;
+&lt;label for="makanan"&gt;Pilih Makanan:&lt;/label&gt;
+&lt;select id="makanan" name="makanan"&gt;
+  &lt;optgroup label="Makanan Berat"&gt;
+    &lt;option value="nasi"&gt;Nasi Goreng&lt;/option&gt;
+    &lt;option value="mie"&gt;Mie Ayam&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Makanan Ringan"&gt;
+    &lt;option value="pisang"&gt;Pisang Goreng&lt;/option&gt;
+    &lt;option value="cireng"&gt;Cireng&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>Analogi — Ruang Kerja &amp; Lorong Bercabang</h2>
+    <p><strong>Textarea</strong> ibarat sebuah ruang kerja yang luas — Anda bisa menaruh banyak barang di sana, menulis catatan panjang, dan ruangannya bisa diperbesar (resize) jika diperlukan. Semakin besar nilai <code>rows</code> dan <code>cols</code>, semakin besar ruangan yang tersedia.</p>
+    <p><strong>Select</strong> ibarat lorong bercabang di dalam gedung — ketika Anda berdiri di pintu masuk, Anda hanya melihat satu lorong. Setelah Anda mengkliknya, lorong itu terbuka dan menunjukkan banyak cabang (opsi) yang bisa Anda pilih. Setelah memilih, lorong menutup kembali dan hanya menampilkan pilihan Anda.</p>
+    <p><strong>Optgroup</strong> ibarat rambu-rambu yang mengelompokkan cabang-cabang lorong berdasarkan lantai — "Lantai 1: Kantor A, Kantor B" dan "Lantai 2: Kantor C, Kantor D". Ini membantu navigasi saat ada banyak opsi.</p>
+  </section>
+
+  <section>
+    <h2>Dipaki Untuk</h2>
+    <ul>
+      <li><strong>Textarea</strong>: komentar/ulasan, deskripsi produk, alamat lengkap, pesan pribadi, kolom saran</li>
+      <li><strong>Select</strong>: pilih provinsi/kota, pilih tanggal (bulan/tahun), pilih kategori, pilih ukuran produk</li>
+      <li><strong>Optgroup</strong>: daftar negara per benua, daftar produk per kategori, daftar mata pelajaran per jurusan</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+      <li>Menggunakan <code>&lt;input type="text"&gt;</code> untuk teks panjang yang seharusnya <code>&lt;textarea&gt;</code> — input text hanya satu baris</li>
+      <li>Tidak memberikan opsi default pada <code>&lt;select&gt;</code> dengan nilai kosong sebagai placeholder "Pilih..." — pengguna mungkin bingung</li>
+      <li>Lupa menambahkan atribut <code>name</code> pada <code>&lt;textarea&gt;</code> atau <code>&lt;select&gt;</code> — data tidak terkirim</li>
+      <li>Menggunakan <code>&lt;optgroup&gt;</code> di luar <code>&lt;select&gt;</code> — tidak valid dan tidak akan tampil</li>
+      <li>Tidak menyediakan atribut <code>rows</code> dan <code>cols</code> pada <code>&lt;textarea&gt;</code> — ukuran default mungkin terlalu kecil atau terlalu besar</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Materi ini melengkapi jenis-jenis elemen input yang sudah dipelajari: teks satu baris (input text, email, dll.) dan pilihan (checkbox, radio). <code>&lt;textarea&gt;</code> adalah versi multi-baris dari input teks, sementara <code>&lt;select&gt;</code> adalah alternatif dari radio (pilih satu dari banyak) yang lebih hemat tempat. Selanjutnya, materi <code>&lt;fieldset&gt;</code> dan <code>&lt;legend&gt;</code> akan membahas cara mengelompokkan elemen-elemen ini secara visual dan semantik.</p>
+  </section>
+
+  <section>
+    <h2>Soal Latihan</h2>
+
+    <ol>
+      <li>
+        <p>Kapan sebaiknya menggunakan <code>&lt;textarea&gt;</code> dibanding <code>&lt;input type="text"&gt;</code>?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p>Gunakan <code>&lt;textarea&gt;</code> ketika pengguna perlu mengetik teks yang panjang atau multi-baris, seperti komentar, alamat, deskripsi, atau pesan. Gunakan <code>&lt;input type="text"&gt;</code> untuk teks pendek satu baris seperti nama, judul, atau kata kunci pencarian.</p>
+        </details>
+      </li>
+
+      <li>
+        <p>Apa fungsi atribut <code>rows</code> dan <code>cols</code> pada <code>&lt;textarea&gt;</code>?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p><code>rows</code> menentukan tinggi area teks dalam jumlah baris teks. <code>cols</code> menentukan lebar area teks dalam jumlah karakter per baris. Keduanya bisa diubah oleh pengguna (kecuali dinonaktifkan dengan CSS <code>resize: none</code>).</p>
+        </details>
+      </li>
+
+      <li>
+        <p>Apa perbedaan antara <code>&lt;select&gt;</code> biasa dan <code>&lt;select&gt;</code> dengan <code>&lt;optgroup&gt;</code>?</p>
+        <details>
+          <summary>Lihat Jawaban</summary>
+          <p><code>&lt;select&gt;</code> biasa menampilkan semua opsi dalam satu daftar datar. <code>&lt;select&gt;</code> dengan <code>&lt;optgroup&gt;</code> mengelompokkan opsi ke dalam kategori yang diberi label — grup-grup ini tidak bisa dipilih, hanya sebagai pemisah visual yang membantu pengguna menavigasi opsi dengan lebih mudah.</p>
+        </details>
+      </li>
+    </ol>
+  </section>
+</body>
+</html>

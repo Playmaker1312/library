@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>72 - Service Worker</title>
+</head>
+<body>
+    <h1>Service Worker</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Service Worker adalah file JavaScript yang berjalan di <em>background</em>, terpisah dari halaman web. Ia bertindak sebagai <strong>proxy</strong> antara browser dan jaringan. Service Worker bisa mencegat (<em>intercept</em>) request jaringan, menyimpan respons ke cache, dan menyajikannya kembali — bahkan saat perangkat sedang offline. Service Worker tidak punya akses ke DOM, tapi bisa mengontrol halaman melalui event <code>fetch</code>, <code>install</code>, dan <code>activate</code>.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Menyimpan file website ke cache saat pertama dikunjungi</li>
+            <li>Melayani halaman dari cache saat offline (Cache First strategy)</li>
+            <li>Mempercepat loading dengan mengambil dari cache lokal</li>
+            <li>Memungkinkan notifikasi push (push notification)</li>
+            <li>Sinkronisasi data di latar belakang (background sync)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>Daftarkan Service Worker dari file HTML utama:</p>
+        <pre><code>&lt;script&gt;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(function(registration) {
+        console.log('Service Worker terdaftar:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Pendaftaran gagal:', error);
+      });
+  }
+&lt;/script&gt;</code></pre>
+        <p>File <code>sw.js</code> — strategi Cache First:</p>
+        <pre><code>const CACHE_NAME = 'portfolio-v1';
+const ASSETS = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/icon-192x192.png'
+];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.addAll(ASSETS);
+    })
+  );
+});
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi (Rumah / Bangunan)</h2>
+        <p>Service Worker itu seperti <strong>satpam dan gudang rumah</strong>. Saat rumah pertama kali dibangun (install), satpam menyimpan salinan semua barang penting (file HTML, CSS, JS) ke gudang (cache). Setiap kali ada tamu yang minta sesuatu (fetch), satpam cek gudang dulu — kalau ada, langsung kasih tanpa harus beli ke toko (jaringan). Kalau listrik padam (offline), tamu tetap bisa dapat barang dari gudang. Ini membuat rumah selalu bisa melayani tamu kapan saja.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Website portofolio agar bisa diakses offline</li>
+            <li>Aplikasi berita yang tetap bisa dibaca tanpa koneksi</li>
+            <li>E-commerce dengan loading cepat dari cache</li>
+            <li>Semua PWA yang membutuhkan mode offline</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Service Worker hanya bekerja di <strong>localhost</strong> atau <strong>HTTPS</strong> — tidak akan jalan di HTTP biasa</li>
+            <li>Lupa menambahkan <code>event.waitUntil()</code> di install, sehingga cache belum selesai saat fetch terjadi</li>
+            <li>Tidak menangani versi cache — saat update file, pengguna masih mendapat versi lama karena cache tidak diganti</li>
+            <li>Path file di <code>ASSETS</code> salah, menyebabkan cache kosong dan halaman error</li>
+            <li>Menempatkan Service Worker di subfolder yang tidak bisa mengontrol root domain</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Service Worker bekerja bersama <strong>Web App Manifest</strong> (materi 71) — manifest untuk tampilan, Service Worker untuk offline. Keduanya diperlukan agar website bisa di-install sebagai PWA. Service Worker juga menjadi salah satu item yang diperiksa oleh <strong>Lighthouse</strong> (materi 73) pada kategori PWA.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Apa perbedaan antara event <code>install</code> dan event <code>fetch</code> di Service Worker?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Event <code>install</code> terjadi saat Service Worker pertama kali didaftarkan/diupdate — digunakan untuk menyiapkan cache (menyimpan aset). Event <code>fetch</code> terjadi setiap kali browser melakukan request ke server — digunakan untuk mencegat request dan menentukan apakah akan mengambil dari cache atau dari jaringan.</p>
+                </details>
+            </li>
+            <li>
+                <p>Mengapa Service Worker hanya bisa berjalan di lingkungan HTTPS atau localhost?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Karena Service Worker memiliki kemampuan mencegat dan memodifikasi request jaringan, ini adalah kekuatan besar yang bisa disalahgunakan. HTTPS memastikan komunikasi aman dan mencegah <em>man-in-the-middle attack</em> di mana pihak ketiga menyuntikkan Service Worker berbahaya.</p>
+                </details>
+            </li>
+            <li>
+                <p>Jelaskan strategi Cache First yang digunakan dalam contoh di atas!</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Cache First berarti setiap kali ada request, Service Worker pertama-tama mencari file yang diminta di dalam cache. Jika ditemukan, file dari cache langsung dikembalikan (sangat cepat). Jika tidak ditemukan di cache, barulah request diteruskan ke jaringan (<code>fetch(event.request)</code>). Strategi ini membuat halaman bisa diakses offline setelah pertama kali dimuat.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow DOM</title>
+</head>
+<body>
+    <h1>Shadow DOM — DOM Terisolasi</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Shadow DOM adalah fitur Web Components yang memungkinkan kita membuat pohon DOM <em>terisolasi</em> di dalam sebuah elemen. Style dan script di dalam Shadow DOM tidak bocor ke luar (dan sebaliknya). Ini dicapai dengan memanggil <code>this.attachShadow({ mode: 'open' })</code> pada custom element, yang mengembalikan <em>shadow root</em> — akar dari shadow tree.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Mengisolasi style CSS agar tidak bertabrakan dengan style global</li>
+            <li>Mengisolasi struktur DOM internal komponen dari manipulasi luar</li>
+            <li>Memungkinkan komponen memiliki <code>&lt;style&gt;</code> sendiri tanpa risiko bocor</li>
+            <li>Mode <code>open</code> memungk Akses shadow root dari luar via <code>element.shadowRoot</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>class KartuProyek extends HTMLElement {
+    connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const judul = this.getAttribute('judul') || 'Proyek';
+        const gambar = this.getAttribute('gambar') || 'default.jpg';
+
+        shadow.innerHTML = `
+            &lt;style&gt;
+                .kartu {
+                    border: 2px solid #2ecc71;
+                    border-radius: 12px;
+                    padding: 20px;
+                    font-family: sans-serif;
+                    background: #f9f9f9;
+                }
+                .kartu h3 {
+                    color: #2ecc71;
+                    margin-top: 8px;
+                }
+                .kartu img {
+                    width: 100%;
+                    max-width: 300px;
+                    border-radius: 8px;
+                }
+            &lt;/style&gt;
+            &lt;div class="kartu"&gt;
+                &lt;img src="${gambar}" alt="${judul}"&gt;
+                &lt;h3&gt;${judul}&lt;/h3&gt;
+            &lt;/div&gt;
+        `;
+    }
+}
+customElements.define('kartu-proyek', KartuProyek);</code></pre>
+        <pre><code>&lt;!-- Style global TIDAK memengaruhi elemen di dalam shadow DOM --&gt;
+&lt;style&gt;
+    .kartu { border: 5px solid red; } /* TIDAK akan menimpa style shadow */
+&lt;/style&gt;
+
+&lt;kartu-proyek judul="Dashboard Admin" gambar="dashboard.jpg"&gt;&lt;/kartu-proyek&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — RUMAH</h2>
+        <p>Shadow DOM seperti <strong>dinding kedap suara di setiap kamar</strong> dalam sebuah rumah besar. Musik keras di kamar anak tidak terdengar di kamar tamu — style dari luar tidak bocor ke dalam, begitu juga sebaliknya. Setiap kamar (komponen) punya aturan dekorasi sendiri tanpa mengganggu kamar lain. Ini berbeda dengan rumah tanpa sekat (DOM biasa) di mana suara dari satu ruangan bisa mengganggu seluruh rumah.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Komponen UI yang membutuhkan style terisolasi (card, modal, tooltip)</li>
+            <li>Widget pihak ketiga yang tidak boleh terpengaruh style website induk</li>
+            <li>Design system dengan jaminan konsistensi visual</li>
+            <li>Komponen yang dipasarkan sebagai library agar style-nya tidak rusak</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Memanggil <code>attachShadow()</code> dua kali pada elemen yang sama — akan error</li>
+            <li>Menggunakan <code>this.innerHTML</code> setelah <code>attachShadow()</code> — shadow root menggantikan <code>innerHTML</code>, jadi konten tidak muncul</li>
+            <li>Menyangka style global bisa menembus shadow DOM — tidak akan terjadi tanpa CSS <code>::part()</code> atau <code>inherit</code></li>
+            <li>Lupa menambahkan <code>mode: 'open'</code> sehingga <code>element.shadowRoot</code> bernilai <code>null</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah belajar Custom Elements di materi sebelumnya (membuat tag sendiri), Shadow DOM menambahkan lapisan isolasi. Tanpa Shadow DOM, style komponen bisa tercampur dengan style global. Dengan Shadow DOM, kita mendapat <em>enkapsulasi penuh</em> — komponen jadi benar-benar mandiri seperti modul. Shadow DOM dan Custom Elements bersama-sama membentuk inti Web Components, dan biasanya digabungkan dengan HTML Templates untuk hasil maksimal.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <p><strong>1.</strong> Buat custom element <code>&lt;kotak-pesan&gt;</code> dengan Shadow DOM yang menampilkan teks pesan dan memiliki style sendiri (border biru, background putih, font italic). Gunakan atribut <code>teks</code> untuk konten pesan.</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <pre><code>class KotakPesan extends HTMLElement {
+    connectedCallback() {
+        const shadow = this.attachShadow({ mode: 'open' });
+        const teks = this.getAttribute('teks') || 'Pesan kosong';
+        shadow.innerHTML = `
+            &lt;style&gt;
+                .pesan {
+                    border: 2px solid #3498db;
+                    background: white;
+                    padding: 16px;
+                    border-radius: 8px;
+                    font-style: italic;
+                    font-family: sans-serif;
+                }
+            &lt;/style&gt;
+            &lt;div class="pesan"&gt;${teks}&lt;/div&gt;
+        `;
+    }
+}
+customElements.define('kotak-pesan', KotakPesan);</code></pre>
+            <pre><code>&lt;kotak-pesan teks="Selamat datang di website kami!"&gt;&lt;/kotak-pesan&gt;</code></pre>
+        </details>
+
+        <p><strong>2.</strong> Jika kita punya style global <code>div { color: red !important; }</code>, apakah teks di dalam Shadow DOM ikut berwarna merah? Jelaskan.</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p>Tidak. Style global <strong>tidak menembus</strong> Shadow DOM. Teks di dalam shadow root tetap menggunakan style yang didefinisikan di dalam shadow tree. Inilah inti isolasi Shadow DOM: style luar tidak memengaruhi dalam, dan style dalam tidak memengaruhi luar. Jika ingin komponen terpengaruh style global sebagian, kita bisa menggunakan properti CSS <code>inherit</code> atau CSS <code>::part()</code>.</p>
+        </details>
+    </section>
+</body>
+</html>

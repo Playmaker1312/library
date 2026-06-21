@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Atribut target blank</title>
+</head>
+<body>
+
+    <h1>Atribut <code>target="_blank"</code></h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Atribut <code>target="_blank"</code> pada tag <code>&lt;a&gt;</code> memerintahkan browser untuk membuka tautan di tab atau jendela baru. Saat menggunakan <code>_blank</code>, wajib menyertakan <code>rel="noopener noreferrer"</code> untuk alasan keamanan — mencegah halaman tujuan mengakses halaman asal melalui <code>window.opener</code>.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Membuka tautan eksternal di tab baru sehingga pengguna tidak meninggalkan halaman asal. Cocok untuk tautan ke situs lain agar pengunjung tetap berada di situs kita.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- WAJIB sertakan rel="noopener noreferrer" --&gt;
+&lt;a href="https://id.wikipedia.org/wiki/HTML"
+   target="_blank"
+   rel="noopener noreferrer"&gt;
+    Wikipedia HTML (buka di tab baru)
+&lt;/a&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah</h2>
+        <p>Membuka tautan dengan <code>target="_blank"</code> seperti <strong>membuka pintu kedua</strong> yang menghubungkan ke rumah lain, tetapi pintu rumah asal tetap terbuka. <code>rel="noopener noreferrer"</code> seperti <strong>kunci pengaman</strong> yang memastikan rumah lain tidak bisa mengintip atau merusak rumah Anda melalui sambungan pintu tersebut.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Tautan ke situs eksternal (agar pengguna tidak meninggalkan situs kita)</li>
+            <li>Tautan ke dokumen PDF atau file besar</li>
+            <li>Tautan ke media sosial</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Menggunakan <code>target="_blank"</code> tanpa <code>rel="noopener noreferrer"</code> — celah keamanan (tabnabbing)</li>
+            <li>Menggunakan <code>_blank</code> untuk tautan internal — tidak perlu dan mengganggu pengalaman pengguna</li>
+            <li>Lupa menambahkan indikasi visual bahwa tautan akan dibuka di tab baru</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah belajar tag <code>&lt;a&gt;</code> (materi 19) dan jenis URL (materi 20), kini kita pelajari cara mengontrol <em>bagaimana</em> tautan dibuka — tetap di tab yang sama atau tab baru.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Buat tautan ke https://example.com yang terbuka di tab baru dengan keamanan yang benar!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;a href="https://example.com"
+   target="_blank"
+   rel="noopener noreferrer"&gt;
+    Kunjungi Example.com
+&lt;/a&gt;</code></pre>
+                </details>
+            </li>
+            <li>
+                <p>Apa risiko keamanan jika menggunakan <code>target="_blank"</code> tanpa <code>rel="noopener noreferrer"</code>?</p>
+                <details><summary>Lihat Jawaban</summary>
+                <p>Halaman tujuan bisa mengakses objek <code>window.opener</code> dari halaman asal, lalu mengarahkan halaman asal ke situs phishing tanpa sepengetahuan pengguna. Serangan ini disebut <em>tabnabbing</em>.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

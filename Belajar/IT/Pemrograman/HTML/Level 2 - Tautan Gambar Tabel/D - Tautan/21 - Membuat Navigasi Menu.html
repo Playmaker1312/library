@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Membuat Navigasi Menu</title>
+</head>
+<body>
+
+    <h1>Membuat Navigasi Menu dengan &lt;nav&gt;, &lt;ul&gt;, dan &lt;a&gt;</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Navigasi menu adalah kumpulan tautan yang membantu pengguna berpindah antarbagian dalam situs. Pola standar HTML menggunakan <code>&lt;nav&gt;</code> (pembungkus semantik), <code>&lt;ul&gt;</code> (daftar tidak berurutan), dan <code>&lt;a&gt;</code> (tautan). Setiap item menu adalah <code>&lt;li&gt;</code> yang berisi <code>&lt;a&gt;</code>.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Memberi struktur navigasi yang konsisten di setiap halaman sehingga pengguna mudah berpindah-pindah halaman. Penggunaan <code>&lt;nav&gt;</code> juga membantu mesin pencari dan pembaca layar mengidentifikasi area navigasi utama.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="tentang.html"&gt;Tentang&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="portofolio.html"&gt;Portofolio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        <p>Navigasi ini ditempatkan di bagian atas setiap halaman agar konsisten.</p>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah</h2>
+        <p>Navigasi menu bagaikan <strong>papan petunjuk arah</strong> di pintu masuk rumah. Ada daftar ruangan: "Ruang Tamu", "Dapur", "Kamar Tidur", "Kamar Mandi". Pengunjung tinggal melihat papan itu dan langsung tahu ke mana harus melangkah. <code>&lt;nav&gt;</code> adalah bingkai papannya, <code>&lt;ul&gt;</code> adalah daftar ruangan, dan <code>&lt;a&gt;</code> adalah arah ke setiap ruangan.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Menu utama situs (header navigation)</li>
+            <li>Menu sekunder atau footer navigation</li>
+            <li>Breadcrumb navigasi</li>
+            <li>Daftar isi halaman</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Membungkus navigasi dengan <code>&lt;div&gt;</code> saja tanpa <code>&lt;nav&gt;</code> — kurang semantik</li>
+            <li>Menggunakan <code>&lt;br&gt;</code> berulang untuk membuat menu vertikal — seharusnya <code>&lt;ul&gt;</code></li>
+            <li>Tidak konsisten — menu di halaman satu berbeda dengan halaman lain</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah memahami tag <code>&lt;a&gt;</code> (materi 19) dan URL relatif (materi 20), kita sekarang menggabungkannya ke dalam struktur navigasi yang rapi menggunakan <code>&lt;nav&gt;</code> dan <code>&lt;ul&gt;</code>.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Buatlah kode HTML navigasi menu dengan tiga tautan: Beranda, Artikel, Kontak!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="artikel.html"&gt;Artikel&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="kontak.html"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                </details>
+            </li>
+            <li>
+                <p>Mengapa tag <code>&lt;nav&gt;</code> lebih baik daripada <code>&lt;div&gt;</code> untuk menu navigasi?</p>
+                <details><summary>Lihat Jawaban</summary>
+                <p>Karena <code>&lt;nav&gt;</code> adalah elemen semantik yang memberi tahu browser dan screen reader bahwa area tersebut berisi navigasi utama. Ini meningkatkan aksesibilitas dan SEO. <code>&lt;div&gt;</code> tidak memiliki makna khusus.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>52 - Menguji Aksesibilitas</title>
+</head>
+<body>
+    <h1>Menguji Aksesibilitas</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Menguji aksesibilitas adalah proses memeriksa apakah halaman web dapat digunakan oleh <strong>semua orang</strong> termasuk penyandang disabilitas. Pengujian dilakukan dengan kombinasi alat otomatis, pengujian manual keyboard, dan pengujian dengan screen reader.</p>
+        <p>Tidak ada satu alat pun yang sempurna &mdash; alat otomatis hanya menemukan sekitar 30% masalah aksesibilitas. Sisanya harus diuji secara manual.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Mendeteksi masalah aksesibilitas sebelum halaman dinaikkan ke produksi</li>
+            <li>Memastikan kepatuhan terhadap standar WCAG (Web Content Accessibility Guidelines)</li>
+            <li>Memberikan skor atau metrik untuk mengukur perbaikan dari waktu ke waktu</li>
+            <li>Melatih developer untuk menulis kode yang lebih inklusif</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- Pengujian dilakukan secara eksternal, bukan di dalam HTML --&gt;
+
+&lt;!-- 1. LIGHTHOUSE (bawaan Chrome) --&gt;
+&lt;!-- Buka DevTools (F12) &gt; Lighthouse &gt; Accessibility &gt; Generate report --&gt;
+
+&lt;!-- 2. axe DevTools (extension) --&gt;
+&lt;!-- Buka DevTools &gt; axe DevTools &gt; Analyze &gt; lihat violations --&gt;
+
+&lt;!-- 3. TAB KEY TEST (manual) --&gt;
+&lt;!-- Tekan Tab berulang &mdash; pastikan urutan logis, indikator fokus terlihat --&gt;
+
+&lt;!-- 4. SCREEN READER TEST --&gt;
+&lt;!-- Windows: NVDA (gratis) atau JAWS --&gt;
+&lt;!-- macOS: VoiceOver (bawaan, Cmd+F5) --&gt;
+
+&lt;!-- Target: skor aksesibilitas &ge; 90 --&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi &mdash; Rumah dan Bangunan</h2>
+        <p>Menguji aksesibilitas seperti <strong>inspeksi rumah</strong> sebelum dihuni:</p>
+        <ul>
+            <li><strong>Lighthouse</strong> &mdash; inspektur otomatis yang mengecek semua ruangan dengan daftar periksa standar</li>
+            <li><strong>axe DevTools</strong> &mdash; detektor retakan dinding yang lebih teliti dari inspektur biasa</li>
+            <li><strong>Tab key test</strong> &mdash; berjalan dari pintu depan ke belakang, memastikan setiap pintu terbuka dengan benar</li>
+            <li><strong>Screen reader</strong> &mdash; seperti penghuni tunanetra yang mencoba tinggal di rumah itu &mdash; dialah yang benar-benar tahu apakah rumah itu layak huni</li>
+        </ul>
+        <p>Target skor &ge; 90 artinya rumah Anda lulus inspeksi dengan nilai minimal A-.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Setiap halaman web sebelum dirilis ke publik</li>
+            <li>Komponen baru yang ditambahkan ke sistem desain</li>
+            <li>Evaluasi berkala situs yang sudah berjalan</li>
+            <li>Memenuhi persyaratan hukum aksesibilitas (jika ada)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Hanya mengandalkan alat otomatis:</strong> Lighthouse tidak bisa mendeteksi label yang salah konteks atau navigasi yang membingungkan</li>
+            <li><strong>Mengabaikan skor Lighthouse:</strong> skor 100 bukan berarti situs benar-benar aksesibel &mdash; alat otomatis hanya mengecek ~30% dari total kriteria</li>
+            <li><strong>Tidak menguji dengan screen reader asli:</strong> emulasi tidak menggantikan pengalaman pengguna sebenarnya</li>
+            <li><strong>Lupa menguji halaman error:</strong> halaman 404, error form, dan pesan kosong juga harus aksesibel</li>
+            <li><strong>Tidak menguji di berbagai browser:</strong> perilaku aksesibilitas bisa berbeda di Chrome, Firefox, dan Safari</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Materi ini adalah <strong>puncak</strong> dari seluruh topik aksesibilitas. Setelah memahami <strong>semantic HTML</strong>, <strong>ARIA</strong>, <strong>aria-label/labelledby/describedby</strong>, dan <strong>navigasi keyboard</strong>, Anda perlu menguji apakah semua yang sudah dibangun benar-benar berfungsi. Pengujian adalah <strong>sertifikat kelayakan huni</strong> rumah yang telah Anda bangun.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Sebutkan empat metode pengujian aksesibilitas dan jelaskan masing-masing secara singkat dengan analogi rumah.</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>1) <strong>Lighthouse:</strong> inspektur otomatis dengan daftar periksa. 2) <strong>axe DevTools:</strong> detektor retakan dinding yang lebih detail. 3) <strong>Tab key test:</strong> berjalan dari pintu depan ke belakang memastikan semua pintu terbuka. 4) <strong>Screen reader:</strong> penghuni tunanetra yang benar-benar tinggal di rumah dan memberi masukan langsung.</p>
+                </details>
+            </li>
+            <li>
+                <p>Mengapa skor Lighthouse 100 tidak menjamin bahwa sebuah halaman benar-benar aksesibel?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Karena Lighthouse hanya alat otomatis yang mengecek sekitar 30% dari total kriteria WCAG. Masalah seperti urutan heading yang tidak logis, label yang ambigu, atau konten yang sulit dipahami tidak bisa dideteksi oleh alat otomatis &mdash; seperti inspektur yang hanya mengecek kode bangunan tetapi tidak memeriksa apakah denah rumah itu nyaman ditempati.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>

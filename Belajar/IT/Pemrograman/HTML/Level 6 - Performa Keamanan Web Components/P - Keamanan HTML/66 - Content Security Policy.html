@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Security Policy (CSP) - Keamanan HTML</title>
+</head>
+<body>
+
+    <h1>Content Security Policy (CSP)</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p><strong>Content Security Policy (CSP)</strong> adalah lapisan keamanan yang membantu mendeteksi dan mengurangi serangan <em>Cross Site Scripting (XSS)</em> serta serangan injeksi lainnya. CSP bekerja dengan menentukan sumber daya mana yang boleh dimuat dan dijalankan oleh browser. Kebijakan ini dapat diterapkan melalui header HTTP atau melalui tag <code>&lt;meta&gt;</code> di dalam HTML.</p>
+        <p>Dengan CSP, kita memberi tahu browser: "Hanya percayai konten dari sumber yang saya izinkan, tolak sisanya."</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Mencegah serangan XSS dengan memblokir skrip inline dan <code>eval()</code> yang mencurigakan.</li>
+            <li>Membatasi sumber konten seperti skrip, gaya, gambar, dan font hanya dari domain tepercaya.</li>
+            <li>Melindungi dari <em>clickjacking</em> melalui direktif <code>frame-ancestors</code>.</li>
+            <li>Mengurangi risiko injeksi data dan serangan <em>data exfiltration</em>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>CSP dapat diimplementasikan menggunakan tag <code>&lt;meta&gt;</code> di dalam <code>&lt;head&gt;</code>. Berikut adalah contoh CSP lengkap:</p>
+        <pre><code>&lt;meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' https://trusted.cdn.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    img-src 'self' https://images.trusted.com data:;
+    font-src 'self' https://fonts.gstatic.com;
+    frame-ancestors 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self'
+"&gt;</code></pre>
+        <p>Penjelasan direktif:</p>
+        <ul>
+            <li><code>default-src 'self'</code> — sumber default hanya dari domain sendiri.</li>
+            <li><code>script-src</code> — sumber skrip yang diizinkan.</li>
+            <li><code>style-src</code> — sumber CSS yang diizinkan.</li>
+            <li><code>img-src</code> — sumber gambar yang diizinkan.</li>
+            <li><code>font-src</code> — sumber font yang diizinkan.</li>
+            <li><code>frame-ancestors 'none'</code> — mencegah halaman dimuat dalam iframe (anti-clickjacking).</li>
+            <li><code>object-src 'none'</code> — blokir plugin seperti Flash.</li>
+            <li><code>base-uri 'self'</code> — cegah manipulasi tag <code>&lt;base&gt;</code>.</li>
+            <li><code>form-action 'self'</code> — form hanya bisa dikirim ke domain sendiri.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Analogi</h2>
+        <p>Bayangkan rumah Anda memiliki <strong>pintu dan jendela</strong>. Tanpa CSP, siapa pun bisa masuk lewat jendela mana pun. CSP seperti memasang <strong>pagar keamanan dan kartu akses</strong> di setiap pintu masuk.</p>
+        <ul>
+            <li><code>default-src 'self'</code> = Hanya penghuni rumah yang boleh masuk, tamu harus terdaftar.</li>
+            <li><code>script-src</code> = Hanya kurir tertentu yang boleh mengantar paket ke dalam rumah.</li>
+            <li><code>style-src</code> = Hanya dekorator resmi yang boleh mengubah tampilan rumah.</li>
+            <li><code>img-src</code> = Hanya bingkai foto dari toko tertentu yang boleh dipajang.</li>
+            <li><code>frame-ancestors 'none'</code> = Rumah Anda tidak boleh dibingkai atau dilihat dari properti tetangga (anti-ngintip).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Website yang menangani data sensitif pengguna (login, payment).</li>
+            <li>Aplikasi web yang menggunakan CDN pihak ketiga untuk skrip dan gaya.</li>
+            <li>Halaman yang ingin melindungi pengguna dari serangan XSS dan clickjacking.</li>
+            <li>Website yang perlu mematuhi standar keamanan seperti OWASP Top 10.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Terlalu longgar:</strong> Menggunakan <code>script-src 'unsafe-inline'</code> tanpa alasan jelas, yang justru membuka celah XSS.</li>
+            <li><strong>Lupa frame-ancestors:</strong> Tidak menyertakan <code>frame-ancestors 'none'</code> sehingga rentan terhadap clickjacking.</li>
+            <li><strong>Report mode tidak digunakan:</strong> Langsung menerapkan CSP tanpa mode laporan (<code>report-uri</code>) bisa memblokir fitur yang sah.</li>
+            <li><strong>Terlalu ketat:</strong> Memblokir semua sumber eksternal tanpa mengecek kebutuhan aplikasi, menyebabkan halaman rusak.</li>
+            <li><strong>Typo direktif:</strong> Menulis <code>scr</code> bukan <code>src</code> sehingga kebijakan tidak bekerja.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>CSP berkaitan erat dengan <strong>Subresource Integrity (SRI)</strong> — jika SRI memastikan file CDN tidak dirusak, CSP memastikan hanya file dari sumber tepercaya yang bisa dimuat. CSP juga melengkapi <strong>atribut sandbox pada iframe</strong> dengan memberikan lapisan keamanan tambahan di tingkat halaman induk. Ketiganya adalah pilar keamanan web modern yang saling melengkapi.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <p><strong>1.</strong> Sebutkan 3 direktif CSP beserta fungsinya!</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p><code>script-src</code> = mengontrol sumber skrip yang diizinkan. <code>img-src</code> = mengontrol sumber gambar. <code>frame-ancestors</code> = mengontrol domain mana yang boleh membungkus halaman dalam iframe.</p>
+        </details>
+
+        <p><strong>2.</strong> Apa yang terjadi jika kita menetapkan <code>default-src 'self'</code> tetapi tidak mendefinisikan <code>script-src</code>?</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p>Maka aturan <code>default-src 'self'</code> akan menjadi fallback untuk <code>script-src</code>. Artinya, skrip hanya boleh dimuat dari domain yang sama. Skrip dari CDN eksternal akan diblokir.</p>
+        </details>
+
+    </section>
+
+</body>
+</html>

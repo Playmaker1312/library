@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribut disabled, readonly & autofocus</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        h1 { color: #6f42c1; border-bottom: 3px solid #6f42c1; padding-bottom: 8px; }
+        h2 { color: #5a32a3; margin-top: 30px; }
+        section { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        pre { background: #f1f3f5; padding: 15px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #6f42c1; }
+        code { font-family: 'Courier New', monospace; font-size: 14px; }
+        .contoh { background: #e9d8fd; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        details { background: #f8f9fa; padding: 12px; border-radius: 8px; margin: 8px 0; cursor: pointer; }
+        details summary { font-weight: bold; color: #6f42c1; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 10px; text-align: left; }
+        th { background: #6f42c1; color: #fff; }
+        .form-demo { background: #e9ecef; padding: 20px; border-radius: 8px; margin-top: 10px; }
+        .form-demo label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-demo input, .form-demo select { width: 100%; padding: 10px; margin-bottom: 15px; border: 2px solid #ced4da; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        .form-demo input:focus, .form-demo select:focus { border-color: #6f42c1; outline: none; }
+        .form-demo input:disabled { background: #e9ecef; color: #6c757d; cursor: not-allowed; }
+        .form-demo input[readonly] { background: #fff3cd; color: #856404; }
+        .form-demo button { background: #6f42c1; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        .form-demo button:hover { background: #5a32a3; }
+    </style>
+</head>
+<body>
+
+    <h1>&#128209; Atribut <code>disabled</code>, <code>readonly</code> & <code>autofocus</code></h1>
+
+    <section>
+        <h2>&#128196; Penjelasan</h2>
+        <p><strong><code>disabled</code></strong> — atribut yang membuat elemen input menjadi <strong>tidak bisa diakses</strong> sama sekali oleh pengguna. Elemen terlihat redup, tidak bisa diklik, tidak bisa difokuskan, dan yang paling penting: <strong>datanya TIDAK dikirim</strong> saat form disubmit.</p>
+        <p><strong><code>readonly</code></strong> — atribut yang membuat elemen input hanya bisa <strong>dibaca</strong> (tidak bisa diedit). Pengguna tetap bisa melihat teks, memilih (copy) teks, dan elemen tetap bisa difokuskan. <strong>Datanya TETAP dikirim</strong> saat form disubmit.</p>
+        <p><strong><code>autofocus</code></strong> — atribut yang membuat elemen input langsung mendapatkan <strong>fokus kursor</strong> begitu halaman selesai dimuat. Hanya <strong>satu elemen per halaman</strong> yang boleh memiliki atribut ini.</p>
+    </section>
+
+    <section>
+        <h2>&#128640; Fungsi</h2>
+        <ul>
+            <li><strong>disabled</strong> — menonaktifkan input yang tidak relevan (misal: opsi pengiriman "luar negeri" saat alamat dalam negeri). Data tidak ikut terkirim.</li>
+            <li><strong>readonly</strong> — menampilkan data yang sudah diisi sistem (misal: kode pelanggan otomatis) tanpa bisa diubah, tapi tetap dikirim ke server.</li>
+            <li><strong>autofocus</strong> — menyambut pengguna dengan kursor langsung di kolom pertama (misal: kolom pencarian atau login).</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Perilaku</th>
+                <th><code>disabled</code></th>
+                <th><code>readonly</code></th>
+            </tr>
+            <tr>
+                <td>Bisa diedit</td>
+                <td>&#10060; Tidak</td>
+                <td>&#10060; Tidak</td>
+            </tr>
+            <tr>
+                <td>Bisa difokuskan (tab)</td>
+                <td>&#10060; Tidak</td>
+                <td>&#10004; Ya</td>
+            </tr>
+            <tr>
+                <td>Bisa di-copy teksnya</td>
+                <td>&#10060; Tidak</td>
+                <td>&#10004; Ya</td>
+            </tr>
+            <tr>
+                <td>Data dikirim saat submit</td>
+                <td>&#10060; <strong>TIDAK</strong></td>
+                <td>&#10004; <strong>YA</strong></td>
+            </tr>
+            <tr>
+                <td>Tampilan default</td>
+                <td>Redup / abu-abu</td>
+                <td>Normal (atau sedikit berbeda)</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>&#128295; Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- disabled --&gt;
+&lt;input type="text" name="kode_area" value="+62" disabled&gt;
+&lt;select name="negara" disabled&gt;
+    &lt;option&gt;Indonesia&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- readonly --&gt;
+&lt;input type="text" name="kode_pelanggan" value="ID-12345" readonly&gt;
+
+&lt;!-- autofocus (HANYA SATU per halaman) --&gt;
+&lt;input type="text" name="pencarian" placeholder="Cari..." autofocus&gt;
+
+&lt;!-- Kombinasi --&gt;
+&lt;form&gt;
+    &lt;label&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" name="nama" autofocus&gt;
+
+    &lt;label&gt;Kode Member:&lt;/label&gt;
+    &lt;input type="text" name="kode_member" value="MBR-001" readonly&gt;
+
+    &lt;label&gt;Status Akun:&lt;/label&gt;
+    &lt;input type="text" name="status" value="Aktif" disabled&gt;
+
+    &lt;button type="submit"&gt;Simpan&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+        <form class="form-demo">
+            <label for="nama-d4">Nama Lengkap (langsung fokus)</label>
+            <input type="text" id="nama-d4" name="nama" placeholder="Masukkan nama..." autofocus>
+
+            <label for="kode-d4">Kode Pelanggan (otomatis, hanya baca)</label>
+            <input type="text" id="kode-d4" name="kode_pelanggan" value="PLG-2406-001" readonly>
+
+            <label for="area-d4">Kode Area (tidak bisa diubah)</label>
+            <input type="text" id="area-d4" name="kode_area" value="+62" disabled>
+
+            <button type="submit">Kirim Data</button>
+            <p style="font-size:14px;color:#6c757d;margin-top:10px;">
+                &#128161; Coba submit — data <code>kode_pelanggan</code> terkirim, <code>kode_area</code> TIDAK terkirim karena disabled.
+            </p>
+        </form>
+    </section>
+
+    <section>
+        <h2>&#127968; Analogi — Rumah</h2>
+        <p>Bayangkan rumah Anda memiliki <strong>pintu, jendela, dan papan informasi</strong>.</p>
+        <ul>
+            <li><strong>disabled</strong> — seperti pintu yang <strong>terkunci rapat dan dicat</strong>. Tidak ada yang bisa masuk, barang di dalamnya (data) ikut terkunci dan tidak bisa dikeluarkan.</li>
+            <li><strong>readonly</strong> — seperti <strong>jendela kaca</strong>. Anda bisa melihat isi di dalamnya, tapi tidak bisa meraih atau mengubahnya. Isinya tetap ada dan bisa "dilaporkan" (dikirim).</li>
+            <li><strong>autofocus</strong> — seperti satpam yang langsung menyambut tamu pertama dan mengarahkannya ke <strong>meja pendaftaran</strong> tanpa perlu bertanya "di mana daftarnya?".</li>
+        </ul>
+        <p>Perbedaan kunci: pintu terkunci (<code>disabled</code>) vs jendela kaca (<code>readonly</code>). Keduanya tidak bisa diubah, tapi data yang terlihat di jendela bisa dicatat, sedangkan barang di balik pintu terkunci tidak bisa diambil.</p>
+    </section>
+
+    <section>
+        <h2>&#128161; Dipakai Untuk</h2>
+        <ul>
+            <li><strong>disabled</strong> — tombol "Kirim" yang aktif hanya setelah centang syarat & ketentuan; input yang terkait opsi yang tidak dipilih; field yang tidak relevan.</li>
+            <li><strong>readonly</strong> — kode transaksi otomatis; data profil dari database yang tidak boleh diubah (NIK, nomor induk); nilai perhitungan otomatis.</li>
+            <li><strong>autofocus</strong> — kolom pencarian Google; formulir login (fokus ke username); kolom pertama pada form multi-langkah.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#9888;&#65039; Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Mengira disabled tetap mengirim data:</strong> BANYAK developer bingung. <code>disabled</code> TIDAK mengirim data. Jika data tetap perlu dikirim, gunakan <code>readonly</code>.</li>
+            <li><strong>Menggunakan readonly pada checkbox/radio:</strong> <code>readonly</code> tidak berfungsi di <code>checkbox</code> dan <code>radio</code>. Gunakan <code>disabled</code> tetapi siapkan <code>&lt;input type="hidden"&gt;</code> jika data perlu dikirim.</li>
+            <li><strong>Lebih dari satu autofocus:</strong> Jika ada dua elemen dengan <code>autofocus</code>, browser akan memprioritaskan elemen pertama (atau terakhir, tergantung browser). Tidak konsisten!</li>
+            <li><strong>autofocus mengganggu pengguna screen reader:</strong> Fokus yang tiba-tiba bisa membingungkan pengguna pembaca layar. Gunakan secara bijak.</li>
+            <li><strong>Mengganti style disabled hanya dengan warna:</strong> Jangan hanya andalkan warna untuk menunjukkan disabled — tambahkan juga <code>cursor: not-allowed</code> dan <code>aria-disabled="true"</code> untuk aksesibilitas.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#128279; Koneksi dengan Materi Sebelumnya</h2>
+        <p>Atribut ini sering dikombinasikan dengan atribut validasi (<code>required</code>, <code>pattern</code>, dll). Elemen <code>disabled</code> tidak perlu divalidasi karena datanya tidak dikirim. <code>readonly</code> tetap divalidasi — jika readonly tapi required, nilai tetap harus terisi. <code>autofocus</code> bekerja secara independen, tapi sangat membantu pengalaman pengguna di formulir login atau pencarian yang sudah dipelajari di materi level 2.</p>
+    </section>
+
+    <section>
+        <h2>&#128221; Soal Latihan</h2>
+
+        <p><strong>Soal 1:</strong> Buatlah input untuk <strong>kode transaksi</strong> yang nilainya diisi otomatis oleh sistem (misal "TRX-001") dan tidak bisa diedit, tapi data tetap harus dikirim. Atribut apa yang tepat?</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <pre><code>&lt;input type="text" name="kode_transaksi" value="TRX-001" readonly&gt;</code></pre>
+            <p>Gunakan <code>readonly</code> karena nilai tidak bisa diubah tapi tetap dikirim saat submit. Jika menggunakan <code>disabled</code>, data kode transaksi tidak akan sampai ke server.</p>
+        </details>
+
+        <p><strong>Soal 2:</strong> Jelaskan dengan analogi sederhana perbedaan <code>disabled</code> dan <code>readonly</code>!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><code>disabled</code> ibarat pintu terkunci rapat — tidak bisa masuk, barang di dalam tidak bisa diambil. <code>readonly</code> ibarat jendela kaca — Anda bisa melihat barang di dalam tanpa bisa menyentuhnya, tapi barang itu tetap ada dan bisa dicatat keberadaannya.</p>
+        </details>
+
+        <p><strong>Soal 3:</strong> Sebuah halaman memiliki dua kolom: "Username" dan "Password". Kolom mana yang paling tepat diberi <code>autofocus</code>? Mengapa?</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><strong>Username</strong> — karena urutan pengisian logis adalah username dulu, baru password. Pengguna biasanya langsung mengetik username tanpa perlu klik kolom terlebih dahulu. Hanya satu elemen yang boleh memiliki <code>autofocus</code> dalam satu halaman.</p>
+        </details>
+    </section>
+
+</body>
+</html>

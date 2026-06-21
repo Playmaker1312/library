@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribut minlength, maxlength, min & max</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        h1 { color: #198754; border-bottom: 3px solid #198754; padding-bottom: 8px; }
+        h2 { color: #157347; margin-top: 30px; }
+        section { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        pre { background: #f1f3f5; padding: 15px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #198754; }
+        code { font-family: 'Courier New', monospace; font-size: 14px; }
+        .contoh { background: #d3f9d8; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        details { background: #f8f9fa; padding: 12px; border-radius: 8px; margin: 8px 0; cursor: pointer; }
+        details summary { font-weight: bold; color: #198754; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 10px; text-align: left; }
+        th { background: #198754; color: #fff; }
+        .form-demo { background: #e9ecef; padding: 20px; border-radius: 8px; margin-top: 10px; }
+        .form-demo label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-demo input, .form-demo textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 2px solid #ced4da; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        .form-demo input:focus, .form-demo textarea:focus { border-color: #198754; outline: none; }
+        .form-demo button { background: #198754; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        .form-demo button:hover { background: #157347; }
+    </style>
+</head>
+<body>
+
+    <h1>&#128209; Atribut <code>minlength</code>, <code>maxlength</code>, <code>min</code> & <code>max</code></h1>
+
+    <section>
+        <h2>&#128196; Penjelasan</h2>
+        <p><strong><code>minlength</code></strong> — menentukan jumlah karakter <strong>minimum</strong> yang harus diketik pengguna pada input teks (<code>text</code>, <code>email</code>, <code>password</code>, <code>textarea</code>).</p>
+        <p><strong><code>maxlength</code></strong> — membatasi jumlah karakter <strong>maksimum</strong> yang bisa diketik. Begitu mencapai batas, input tidak mau menerima karakter tambahan.</p>
+        <p><strong><code>min</code></strong> — menentukan nilai <strong>minimal</strong> yang valid untuk input angka (<code>number</code>, <code>range</code>, <code>date</code>, dll).</p>
+        <p><strong><code>max</code></strong> — menentukan nilai <strong>maksimal</strong> yang valid untuk input angka.</p>
+    </section>
+
+    <section>
+        <h2>&#128640; Fungsi</h2>
+        <ul>
+            <li><strong>minlength / maxlength</strong> — memvalidasi panjang teks (contoh: nama 2–100 karakter, kata sandi minimal 8 karakter).</li>
+            <li><strong>min / max</strong> — memvalidasi rentang numerik (contoh: umur 17–100, jumlah pesanan 1–99, tanggal lahir tidak di masa depan).</li>
+            <li>Semuanya mencegah data tidak valid masuk ke server tanpa perlu JavaScript.</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Atribut</th>
+                <th>Berlaku untuk tipe</th>
+                <th>Cara kerja</th>
+            </tr>
+            <tr>
+                <td><code>minlength</code></td>
+                <td><code>text</code>, <code>email</code>, <code>password</code>, <code>search</code>, <code>tel</code>, <code>url</code>, <code>textarea</code></td>
+                <td>Batas bawah jumlah karakter (validasi saat submit)</td>
+            </tr>
+            <tr>
+                <td><code>maxlength</code></td>
+                <td>sama seperti di atas</td>
+                <td>Batas atas jumlah karakter (langsung dicegah saat mengetik)</td>
+            </tr>
+            <tr>
+                <td><code>min</code></td>
+                <td><code>number</code>, <code>range</code>, <code>date</code>, <code>datetime-local</code>, <code>month</code>, <code>time</code>, <code>week</code></td>
+                <td>Nilai minimum yang diterima</td>
+            </tr>
+            <tr>
+                <td><code>max</code></td>
+                <td>sama seperti di atas</td>
+                <td>Nilai maksimum yang diterima</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>&#128295; Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- Batas panjang teks --&gt;
+&lt;input type="text" name="nama" minlength="2" maxlength="100"&gt;
+&lt;textarea name="alamat" maxlength="255"&gt;&lt;/textarea&gt;
+
+&lt;!-- Rentang angka --&gt;
+&lt;input type="number" name="umur" min="17" max="100"&gt;
+&lt;input type="number" name="jumlah" min="1" max="99" value="1"&gt;
+
+&lt;!-- Rentang tanggal --&gt;
+&lt;input type="date" name="tgl_lahir" min="1920-01-01" max="2010-12-31"&gt;
+
+&lt;!-- Kombinasi lengkap --&gt;
+&lt;label&gt;Nama Depan (2-50 karakter):&lt;/label&gt;
+&lt;input type="text" name="nama_depan" minlength="2" maxlength="50" required&gt;
+
+&lt;label&gt;Usia (17-100 tahun):&lt;/label&gt;
+&lt;input type="number" name="usia" min="17" max="100" required&gt;</code></pre>
+
+        <div class="contoh">
+            <p><strong>Catatan:</strong> <code>minlength</code> tidak mencegah pengetikan seperti <code>maxlength</code>. Ia hanya menolak saat submit. <code>maxlength</code> langsung memblokir karakter tambahan saat diketik.</p>
+        </div>
+
+        <form class="form-demo">
+            <label for="nama2">Nama Lengkap (2-100 karakter)</label>
+            <input type="text" id="nama2" name="nama" minlength="2" maxlength="100" required placeholder="cth: Andi Pratama">
+
+            <label for="umur2">Umur (17-100 tahun)</label>
+            <input type="number" id="umur2" name="umur" min="17" max="100" required placeholder="cth: 25">
+
+            <label for="pesan2">Pesan (maks 200 karakter)</label>
+            <textarea id="pesan2" name="pesan" maxlength="200" rows="3" placeholder="Tulis pesan Anda..."></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>&#127968; Analogi — Rumah</h2>
+        <p>Bayangkan Anda sedang membangun <strong>pagar rumah</strong>.</p>
+        <ul>
+            <li><strong>minlength</strong> — seperti pagar dengan tinggi <strong>minimal</strong> 1 meter. Pagar yang terlalu pendek tidak diizinkan.</li>
+            <li><strong>maxlength</strong> — seperti tinggi pagar <strong>maksimal</strong> 2 meter karena peraturan lingkungan. Tidak boleh lebih tinggi dari itu.</li>
+            <li><strong>min</strong> — seperti jumlah lantai rumah <strong>minimal</strong> 1 lantai. Tidak boleh 0 lantai.</li>
+            <li><strong>max</strong> — seperti jumlah lantai rumah <strong>maksimal</strong> 3 lantai karena batas zona bangunan.</li>
+        </ul>
+        <p>Jika seseorang mencoba membangun pagar setinggi 3 meter (melanggar <code>max</code>), proyek akan ditolak. Jika halaman pesan hanya berisi 1 karakter (<code>minlength</code> dilanggar), formulir tidak bisa dikirim.</p>
+    </section>
+
+    <section>
+        <h2>&#128161; Dipakai Untuk</h2>
+        <ul>
+            <li>Formulir registrasi — nama (2–100), password (min 8).</li>
+            <li>Formulir usia — input <code>number</code> dengan min 17 untuk batasan umur.</li>
+            <li>Formulir pemesanan — jumlah barang (min 1, maks 99).</li>
+            <li>Komentar atau ulasan — <code>textarea</code> dengan <code>maxlength</code> agar tidak terlalu panjang.</li>
+            <li>Input tanggal lahir — dengan rentang tahun tertentu.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#9888;&#65039; Kesalahan Umum</h2>
+        <ul>
+            <li><strong>minlength di input number tidak berpengaruh:</strong> Gunakan <code>min</code> untuk input angka, bukan <code>minlength</code>.</li>
+            <li><strong>Lupa batas atas textarea:</strong> Textarea tanpa <code>maxlength</code> bisa diisi teks sangat panjang dan membebani server.</li>
+            <li><strong>Nilai min lebih besar dari max:</strong> Logika terbalik — browser tidak akan memprosesnya dengan benar.</li>
+            <li><strong>Mengira maxlength membatasi panjang nilai angka:</strong> <code>maxlength</code> membatasi <em>jumlah digit</em> yang diketik, bukan nilai numerik. Untuk batas nilai numerik, gunakan <code>min</code>/<code>max</code>.</li>
+            <li><strong>Tidak memberi pesan error kustom:</strong> Pesan default browser seperti "Harap persingkat teks ini hingga 100 karakter atau kurang" terkadang kurang ramah pengguna.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#128279; Koneksi dengan Materi Sebelumnya</h2>
+        <p>Atribut ini melengkapi validasi dasar <code>required</code> yang sudah dipelajari. Jika <code>required</code> hanya memastikan kolom tidak kosong, <code>minlength</code>/<code>maxlength</code> dan <code>min</code>/<code>max</code> memastikan <em>ukuran</em> atau <em>rentang</em> data juga benar. Materi ini menjadi fondasi sebelum belajar <code>pattern</code> (validasi format dengan regex) yang akan datang.</p>
+    </section>
+
+    <section>
+        <h2>&#128221; Soal Latihan</h2>
+
+        <p><strong>Soal 1:</strong> Buat input untuk <strong>nama pengguna</strong> dengan panjang 3–20 karakter dan input <strong>usia</strong> dengan rentang 13–120 tahun. Tulis kode HTML-nya!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <pre><code>&lt;label&gt;Nama Pengguna:&lt;/label&gt;
+&lt;input type="text" name="username" minlength="3" maxlength="20" required&gt;
+
+&lt;label&gt;Usia:&lt;/label&gt;
+&lt;input type="number" name="usia" min="13" max="120" required&gt;</code></pre>
+        </details>
+
+        <p><strong>Soal 2:</strong> Jelaskan perbedaan perilaku <code>minlength</code> dan <code>maxlength</code> saat pengguna mengetik di kolom!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><code>maxlength</code> langsung mencegah karakter tambahan saat diketik begitu batas tercapai. <code>minlength</code> tidak mencegah pengetikan — ia baru menolak saat formulir dikirim jika jumlah karakter kurang dari batas minimum.</p>
+        </details>
+
+        <p><strong>Soal 3:</strong> Sebuah input nomor telepon tidak boleh kurang dari 10 digit. Atribut mana yang tepat: <code>minlength="10"</code> atau <code>min="10"</code>? Jelaskan!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><code>minlength="10"</code> karena nomor telepon adalah input <code>tel</code> (bukan angka murni), dan <code>minlength</code> menghitung jumlah karakter. <code>min</code> hanya berlaku untuk input numerik seperti <code>number</code> atau <code>range</code>.</p>
+        </details>
+    </section>
+
+</body>
+</html>

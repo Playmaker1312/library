@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26 - Atribut alt</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.8; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #e67e22; padding-bottom: 10px; }
+        h2 { color: #d35400; margin-top: 30px; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        code { font-family: 'Courier New', Courier, monospace; }
+        details { background: #eaf2f8; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        summary { font-weight: bold; cursor: pointer; color: #d35400; }
+        .baik { background: #d4edda; padding: 10px; border-left: 4px solid #28a745; margin: 10px 0; }
+        .buruk { background: #f8d7da; padding: 10px; border-left: 4px solid #dc3545; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<h1>Atribut <code>alt</code> pada Tag <code>&lt;img&gt;</code></h1>
+
+<section>
+    <h2>Penjelasan</h2>
+    <p>Atribut <code>alt</code> (alternative text) adalah teks alternatif yang menggambarkan isi dari sebuah gambar. Atribut ini wajib disertakan pada tag <code>&lt;img&gt;</code> karena berkaitan dengan aksesibilitas dan SEO. Jika gambar gagal dimuat, teks <code>alt</code> akan ditampilkan sebagai pengganti.</p>
+</section>
+
+<section>
+    <h2>Fungsi</h2>
+    <ul>
+        <li><strong>Aksesibilitas:</strong> Membantu pengguna tunanetra yang menggunakan screen reader untuk memahami konten gambar.</li>
+        <li><strong>SEO:</strong> Mesin pencari seperti Google menggunakan teks <code>alt</code> untuk memahami dan mengindeks gambar.</li>
+        <li><strong>Cadangan:</strong> Jika gambar rusak atau tidak bisa dimuat, teks <code>alt</code> muncul sebagai pengganti.</li>
+        <li><strong>Konteks:</strong> Memberikan informasi tentang gambar saat gambar sengaja dimatikan (misal mode hemat data).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- Gambar informatif --&gt;
+&lt;img src="gunung.jpg" alt="Pemandangan Gunung Bromo saat matahari terbit"&gt;
+
+&lt;!-- Gambar dekoratif --&gt;
+&lt;img src="garis-hias.png" alt=""&gt;
+
+&lt;!-- Gambar sebagai tautan --&gt;
+&lt;a href="profil.html"&gt;
+    &lt;img src="avatar.jpg" alt="Profil pengguna John Doe"&gt;
+&lt;/a&gt;
+
+&lt;!-- Gambar dengan teks yang sudah ada di sekitar --&gt;
+&lt;img src="ikon-buku.png" alt=""&gt; &lt;span&gt;Koleksi Buku&lt;/span&gt;</code></pre>
+    <div class="baik"><strong>Praktik baik:</strong> <code>alt=""</code> (string kosong) untuk gambar dekoratif agar screen reader melewatinya.</div>
+    <div class="buruk"><strong>Praktik buruk:</strong> Menulis "Gambar" atau "Foto" di dalam <code>alt</code> karena itu sudah jelas.</div>
+</section>
+
+<section>
+    <h2>Analogi: Rumah dan Bangunan</h2>
+    <p>Atribut <code>alt</code> ibarat <strong>papan nama pada sebuah rumah</strong>. Saat kita melihat rumah, kita langsung tahu itu rumah siapa. Tapi saat malam gelap atau rumah tertutup kabut (gambar gagal dimuat), papan nama lah yang memberi tahu kita. Papan nama yang bagus (alt yang deskriptif) membantu tukang pos (screen reader) dan orang yang mencari alamat (mesin pencari) menemukan tujuan dengan tepat.</p>
+    <p>Untuk gambar dekoratif, <code>alt=""</code> seperti rumah tanpa papan nama di gang buntu — tidak perlu dijelaskan karena tidak penting.</p>
+</section>
+
+<section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+        <li>Gambar produk di e-commerce (alt harus deskriptif, misal "Sepatu lari warna merah ukuran 42")</li>
+        <li>Foto artikel berita</li>
+        <li>Ikon tombol (misal <code>alt="Cari"</code> pada ikon kaca pembesar)</li>
+        <li>Gambar dekoratif seperti garis pemisah atau pola latar (pakai <code>alt=""</code>)</li>
+        <li>Logo perusahaan di navbar</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+        <li><strong>Tidak menulis <code>alt</code> sama sekali:</strong> Melanggar standar aksesibilitas WCAG.</li>
+        <li><strong>Mengisi <code>alt</code> dengan kata "gambar":</strong> Screen reader sudah memberitahu bahwa ini gambar. <code>alt="Gambar kucing"</code> akan dibaca "Gambar: gambar kucing" — redundan.</li>
+        <li><strong>alt terlalu panjang:</strong> Sebaiknya maksimal 125 karakter. Detail panjang bisa ditaruh di deskripsi sekitar.</li>
+        <li><strong>Mengulang teks yang sudah ada:</strong> Jika teks sudah tertulis di samping gambar, gunakan <code>alt=""</code>.</li>
+        <li><strong>alt diisi keyword stuffing:</strong> "sepatu murah sepatu diskon sepatu grosir" — ini praktik buruk untuk SEO dan aksesibilitas.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Atribut <code>alt</code> melengkapi tag <code>&lt;img&gt;</code> yang sudah dipelajari sebelumnya. Konsep aksesibilitas ini juga terkait dengan atribut <code>aria-label</code> dan <code>title</code> yang digunakan pada elemen lain. Untuk gambar kompleks seperti diagram atau grafik, <code>alt</code> bisa dikombinasikan dengan <code>&lt;figure&gt;</code> dan <code>&lt;figcaption&gt;</code> untuk penjelasan lebih detail.</p>
+</section>
+
+<section>
+    <h2>Soal Latihan</h2>
+
+    <p><strong>1.</strong> Sebuah website memiliki gambar dekoratif berupa garis pemisah (<code>garis-pemisah.png</code>). Bagaimana cara menulis atribut <code>alt</code> yang benar?</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <pre><code>&lt;img src="garis-pemisah.png" alt=""&gt;</code></pre>
+        <p>Gunakan <code>alt=""</code> (string kosong) karena gambar bersifat dekoratif dan tidak menambah informasi penting.</p>
+    </details>
+
+    <p><strong>2.</strong> Mana penulisan <code>alt</code> yang lebih baik untuk gambar sebuah buku berjudul "Laskar Pelangi"?</p>
+    <ul>
+        <li>A. <code>alt="Gambar buku"</code></li>
+        <li>B. <code>alt="Sampul buku Laskar Pelangi karya Andrea Hirata"</code></li>
+    </ul>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p>Jawaban yang benar adalah <strong>B</strong>. <code>alt="Sampul buku Laskar Pelangi karya Andrea Hirata"</code> lebih deskriptif dan memberikan konteks yang jelas. Opsi A terlalu umum dan redundan (screen reader sudah tahu itu gambar).</p>
+    </details>
+
+    <p><strong>3.</strong> Sebutkan dua alasan mengapa atribut <code>alt</code> penting untuk SEO!</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <ol>
+            <li>Google menggunakan teks <code>alt</code> untuk memahami isi gambar, sehingga gambar bisa muncul di hasil pencarian gambar (Google Images).</li>
+            <li><code>alt</code> membantu Google memahami konteks halaman secara keseluruhan, yang bisa meningkatkan relevansi halaman di hasil pencarian.</li>
+        </ol>
+    </details>
+</section>
+
+</body>
+</html>

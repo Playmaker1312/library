@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Halaman Semantik</title>
+</head>
+<body>
+
+    <h1>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt; — Struktur Halaman Semantik</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Elemen semantik HTML5 digunakan untuk memberi makna pada struktur halaman web. <code>&lt;header&gt;</code> adalah bagian kepala halaman atau bagian tertentu, biasanya berisi logo, judul, atau navigasi. <code>&lt;nav&gt;</code> digunakan untuk kumpulan tautan navigasi utama. <code>&lt;main&gt;</code> mewakili konten inti yang unik dari halaman tersebut, dan hanya boleh muncul SATU KALI dalam satu halaman. <code>&lt;footer&gt;</code> adalah bagian kaki halaman yang berisi informasi seperti hak cipta, tautan tambahan, atau kontak.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li><code>&lt;header&gt;</code> — Sebagai "atap" atau bagian pengenal di awal sebuah konten. Bisa digunakan di dalam <code>&lt;body&gt;</code>, <code>&lt;article&gt;</code>, maupun <code>&lt;section&gt;</code>.</li>
+            <li><code>&lt;nav&gt;</code> — Sebagai "papan petunjuk arah" yang mengarahkan pengguna ke bagian-bagian penting situs.</li>
+            <li><code>&lt;main&gt;</code> — Sebagai "ruang utama" tempat konten inti berada. Tidak boleh lebih dari satu per halaman, dan tidak boleh menjadi anak dari <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, atau <code>&lt;nav&gt;</code>.</li>
+            <li><code>&lt;footer&gt;</code> — Sebagai "fondasi / halaman bawah" yang berisi informasi penutup. Bisa digunakan di <code>&lt;body&gt;</code>, <code>&lt;article&gt;</code>, maupun <code>&lt;section&gt;</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Contoh Struktur Semantik&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Nama Situs&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#kontak"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;header&gt;
+                &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+                &lt;p&gt;Ditulis oleh Admin&lt;/p&gt;
+            &lt;/header&gt;
+            &lt;p&gt;Isi artikel...&lt;/p&gt;
+            &lt;footer&gt;
+                &lt;p&gt;Dipublikasikan pada 1 Januari 2026&lt;/p&gt;
+            &lt;/footer&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2026 Nama Situs. Hak cipta dilindungi.&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah / Bangunan</h2>
+        <p>Bayangkan sebuah rumah:</p>
+        <ul>
+            <li><strong>&lt;header&gt;</strong> — Teras depan dan atap rumah: tempat nama rumah dan sambutan pertama terlihat.</li>
+            <li><strong>&lt;nav&gt;</strong> — Papan petunjuk arah di dalam rumah atau peta ruangan: memberitahu pengunjung letak dapur, kamar tidur, dan ruang tamu.</li>
+            <li><strong>&lt;main&gt;</strong> — Ruang tengah atau ruang keluarga: pusat aktivitas utama, hanya ada satu ruang inti seperti ini.</li>
+            <li><strong>&lt;footer&gt;</strong> — Pondasi atau halaman belakang: bagian penutup yang menopang informasi tambahan seperti siapa pemilik rumah.</li>
+            <li><strong>&lt;header&gt; dan &lt;footer&gt; di dalam &lt;article&gt;</strong> — Seperti setiap kamar tidur punya plang nama sendiri (header) dan catatan aturan kamar (footer).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Halaman blog, portal berita, dokumentasi, dan aplikasi web apa pun yang membutuhkan tata letak yang jelas dan mudah diakses.</li>
+            <li>Membantu pembaca layar (screen reader) melompat langsung ke konten utama dengan pintasan navigasi.</li>
+            <li>Meningkatkan SEO karena mesin pencari dapat mengenali struktur halaman dengan lebih baik.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Menggunakan lebih dari satu &lt;main&gt;</strong> — Hanya satu elemen <code>&lt;main&gt;</code> yang diperbolehkan per halaman. Melanggar aturan ini akan membuat HTML tidak valid.</li>
+            <li><strong>Meletakkan &lt;main&gt; di dalam &lt;article&gt; atau &lt;aside&gt;</strong> — Elemen <code>&lt;main&gt;</code> tidak boleh menjadi anak dari <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, atau <code>&lt;nav&gt;</code>.</li>
+            <li><strong>Menggunakan &lt;header&gt; dan &lt;footer&gt; hanya sekali</strong> — Padahal elemen ini bisa digunakan berkali-kali di dalam <code>&lt;article&gt;</code> dan <code>&lt;section&gt;</code>.</li>
+            <li><strong>Membungkus semua navigasi dengan &lt;nav&gt;</strong> — Tidak semua kumpulan tautan perlu <code>&lt;nav&gt;</code>. Hanya navigasi utama yang relevan. Tautan di footer seperti "Tentang Kami" tidak harus di <code>&lt;nav&gt;</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Struktur halaman semantik adalah penerapan langsung dari konsep <strong>HTML5 Semantik</strong>. Sebelum mempelajari ini, kita sudah mengenal elemen-elemen dasar seperti <code>&lt;div&gt;</code> yang tidak memiliki makna. Kini kita menggantinya dengan elemen semantik agar kode lebih bermakna. Materi ini juga menjadi fondasi untuk memahami <strong>Accessible Rich Internet Applications (ARIA)</strong> dan pengujian aksesibilitas menggunakan alat seperti Lighthouse.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Berapa kali elemen <code>&lt;main&gt;</code> boleh muncul dalam satu halaman HTML yang valid? Jelaskan alasannya.</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p><strong>Satu kali.</strong> Aturan ini memastikan bahwa pengguna dan pembaca layar dapat mengidentifikasi konten utama dengan jelas. Jika ada lebih dari satu <code>&lt;main&gt;</code>, alat bantu aksesibilitas tidak tahu mana konten yang paling penting.</p>
+                </details>
+            </li>
+            <li>
+                <p>Apakah boleh memiliki lebih dari satu elemen <code>&lt;header&gt;</code> atau <code>&lt;footer&gt;</code> dalam satu halaman? Berikan contoh skenario.</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p><strong>Boleh.</strong> <code>&lt;header&gt;</code> dan <code>&lt;footer&gt;</code> dapat digunakan di dalam <code>&lt;article&gt;</code> atau <code>&lt;section&gt;</code>. Contoh: Dalam halaman blog yang menampilkan tiga artikel, setiap <code>&lt;article&gt;</code> bisa memiliki <code>&lt;header&gt;</code> (judul artikel, penulis) dan <code>&lt;footer&gt;</code> (tanggal publikasi, tautan komentar) masing-masing.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

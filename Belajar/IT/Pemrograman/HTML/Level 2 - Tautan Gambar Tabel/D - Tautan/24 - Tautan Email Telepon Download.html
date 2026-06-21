@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tautan Email Telepon Download</title>
+</head>
+<body>
+
+    <h1>Tautan Email, Telepon, dan Download</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Tag <code>&lt;a&gt;</code> tidak hanya untuk menautkan ke halaman web. Dengan skema URI khusus, kita bisa membuat tautan untuk mengirim email (<code>mailto:</code>), menelepon (<code>tel:</code>), dan mendownload file (atribut <code>download</code>).</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Memberi akses langsung ke aplikasi default pengguna — klien email, aplikasi telepon, atau unduhan file — tanpa perlu salin-tempel alamat atau klik kanan save-as.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- Email --&gt;
+&lt;a href="mailto:info@example.com"&gt;Kirim Email ke Info&lt;/a&gt;
+
+&lt;!-- Email dengan subjek --&gt;
+&lt;a href="mailto:info@example.com?subject=Halo%20Dunia"&gt;Kirim Email dengan Subjek&lt;/a&gt;
+
+&lt;!-- Telepon --&gt;
+&lt;a href="tel:+628123456789"&gt;Hubungi +62 812-3456-789&lt;/a&gt;
+
+&lt;!-- Download file --&gt;
+&lt;a href="dokumen.pdf" download&gt;Unduh Dokumen PDF&lt;/a&gt;
+
+&lt;!-- Download dengan nama file kustom --&gt;
+&lt;a href="laporan.pdf" download="Laporan-Tahunan-2025.pdf"&gt;Unduh Laporan Tahunan&lt;/a&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Rumah</h2>
+        <p>Tautan <code>mailto:</code> seperti <strong>kotak surat</strong> di depan rumah — tinggal memasukkan surat, langsung sampai ke pemilik rumah. <code>tel:</code> seperti <strong>interkom</strong> — tekan tombol, langsung tersambung ke dalam rumah. Atribut <code>download</code> seperti <strong>lemari arsip</strong> — ambil dokumen dan salinannya langsung jatuh ke tangan Anda.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li><code>mailto:</code> — tombol kontak, form bantuan, tautan dukungan</li>
+            <li><code>tel:</code> — halaman kontak bisnis, website mobile-friendly</li>
+            <li><code>download</code> — unduh brosur, katalog, aplikasi, dokumen</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><code>mailto:</code> tanpa alamat email — membuka klien email kosong</li>
+            <li><code>tel:</code> lupa kode negara (+62 untuk Indonesia)</li>
+            <li>Atribut <code>download</code> tidak bekerja untuk file dari domain berbeda (CORS)</li>
+            <li>Menggunakan spasi di URL — harus di-encode sebagai <code>%20</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah mempelajari berbagai jenis tautan (materi 19–23), kini kita perluas lagi: tautan bisa mengakses email, telepon, dan file download — semuanya tetap menggunakan tag <code>&lt;a&gt;</code> yang sama.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Buat tautan untuk mengirim email ke halo@example.com dengan subjek "Pertanyaan"!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;a href="mailto:halo@example.com?subject=Pertanyaan"&gt;
+    Kirim Pertanyaan via Email
+&lt;/a&gt;</code></pre>
+                </details>
+            </li>
+            <li>
+                <p>Buat tautan untuk mendownload file bernama "brosur.pdf" dengan nama kustom "Brosur-Promosi-2025.pdf"!</p>
+                <details><summary>Lihat Jawaban</summary>
+                <pre><code>&lt;a href="brosur.pdf" download="Brosur-Promosi-2025.pdf"&gt;
+    Unduh Brosur Promosi 2025
+&lt;/a&gt;</code></pre>
+                </details>
+            </li>
+        </ol>
+    </section>
+
+</body>
+</html>

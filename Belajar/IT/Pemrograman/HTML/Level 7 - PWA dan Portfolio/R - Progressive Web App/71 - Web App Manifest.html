@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71 - Web App Manifest</title>
+</head>
+<body>
+    <h1>Web App Manifest</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Web App Manifest adalah file JSON bernama <code>manifest.json</code> yang memberikan informasi tentang aplikasi web kepada browser. File ini memungkinkan website kamu "dipasang" (install) di layar depan HP atau desktop seperti aplikasi native. Manifest berisi metadata seperti nama, ikon, warna tema, dan cara aplikasi ditampilkan saat dibuka.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Membuat website bisa di-install sebagai aplikasi di perangkat pengguna</li>
+            <li>Menentukan tampilan aplikasi: layar penuh (<code>standalone</code>) atau dengan URL bar</li>
+            <li>Memberi identitas visual lewat ikon, nama, dan warna tema</li>
+            <li>Mengatur halaman awal (<code>start_url</code>) dan orientasi layar</li>
+            <li>Membedakan app versi pendek dan panjang lewat <code>short_name</code> dan <code>name</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>{
+  "name": "Portfolio Saya",
+  "short_name": "Portfolio",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a73e8",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}</code></pre>
+        <p>Hubungkan ke HTML dengan:</p>
+        <pre><code>&lt;link rel="manifest" href="manifest.json"&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi (Rumah / Bangunan)</h2>
+        <p>Manifest itu seperti <strong>papan nama dan brosur rumah</strong>. <code>name</code> adalah nama rumah di papan, <code>short_name</code> adalah panggilan akrabnya. <code>icons</code> adalah foto rumah dari berbagai ukuran. <code>display: standalone</code> berarti tamu melihat rumah tanpa halaman depan — langsung masuk ke ruang tamu. <code>theme_color</code> adalah cat tembok luar, <code>background_color</code> adalah warna lantai saat pertama buka pintu. <code>start_url</code> adalah pintu masuk utama yang selalu digunakan.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Website portofolio agar bisa di-install pengguna</li>
+            <li>Aplikasi berita, e-commerce, atau tool produktivitas</li>
+            <li>Semua PWA (Progressive Web App) wajib punya manifest</li>
+            <li>Website yang ingin tampil seperti aplikasi native tanpa lewat Google Play / App Store</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Tidak menyertakan tag <code>&lt;link rel="manifest"&gt;</code> di HTML</li>
+            <li>Ukuran ikon tidak lengkap — minimal harus ada 192x192 dan 512x512</li>
+            <li>Typo JSON (kelebihan koma di akhir, kurang kutip) sehingga file tidak terbaca</li>
+            <li><code>start_url</code> salah path sehingga halaman putih saat dibuka</li>
+            <li>Lupa mengatur <code>display: standalone</code> sehingga masih muncul address bar</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Manifest berhubungan dengan <strong>Service Worker</strong> (materi 72) karena keduanya diperlukan agar website bisa di-install. Service Worker menangani cache dan offline, sedangkan manifest mengatur tampilan saat aplikasi dibuka. Juga terkait dengan <strong>Lighthouse</strong> (materi 73) yang akan mengaudit apakah manifest sudah benar. Tanpa manifest, PWA tidak akan lulus audit PWA di Lighthouse.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Apa fungsi properti <code>display: standalone</code> dalam manifest.json?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Properti <code>display: standalone</code> membuat aplikasi web dibuka tanpa elemen browser seperti address bar dan toolbar, sehingga tampil seperti aplikasi native layar penuh.</p>
+                </details>
+            </li>
+            <li>
+                <p>Sebutkan minimal 3 properti yang wajib ada dalam manifest.json untuk PWA!</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Tiga properti wajib: <code>name</code> (nama aplikasi), <code>icons</code> (kumpulan ikon berbagai ukuran), dan <code>start_url</code> (halaman pertama saat aplikasi dibuka). Properti lain seperti <code>short_name</code>, <code>display</code>, <code>theme_color</code>, dan <code>background_color</code> sangat disarankan.</p>
+                </details>
+            </li>
+            <li>
+                <p>Bagaimana cara menghubungkan file manifest.json ke dokumen HTML?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Tambahkan tag <code>&lt;link rel="manifest" href="manifest.json"&gt;</code> di dalam elemen <code>&lt;head&gt;</code> pada file HTML.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>

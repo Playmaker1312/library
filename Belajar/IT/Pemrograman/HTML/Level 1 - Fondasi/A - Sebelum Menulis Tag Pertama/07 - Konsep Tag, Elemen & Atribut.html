@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsep Tag, Elemen & Atribut</title>
+</head>
+<body>
+    <h1>Konsep Tag, Elemen &amp; Atribut</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Dalam HTML, ada tiga konsep fundamental yang harus dipahami: <strong>tag</strong>, <strong>elemen</strong>, dan <strong>atribut</strong>. Ketiganya sering tertukar oleh pemula, padahal maknanya berbeda.</p>
+        <ul>
+            <li><strong>Tag</strong> adalah "kata kunci" yang diapit kurung siku, misal <code>&lt;p&gt;</code> (pembuka) dan <code>&lt;/p&gt;</code> (penutup).</li>
+            <li><strong>Elemen</strong> adalah keseluruhan: tag pembuka + konten + tag penutup. Contoh: <code>&lt;p&gt;Halo&lt;/p&gt;</code> adalah sebuah elemen.</li>
+            <li><strong>Atribut</strong> adalah informasi tambahan yang ditulis di dalam tag pembuka, misal <code>class="judul"</code> pada <code>&lt;h1 class="judul"&gt;</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <p>Tag berfungsi untuk menandai awal dan akhir sebuah elemen. Elemen berfungsi sebagai unit konten yang memiliki makna tertentu (paragraf, judul, tautan, dll). Atribut berfungsi untuk memberikan informasi tambahan atau konfigurasi pada elemen — seperti ID, class, src pada gambar, href pada tautan, dan sebagainya.</p>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>Contoh elemen lengkap dengan tag dan atribut:</p>
+        <pre><code>&lt;p class="paragraf-pertama" id="p1"&gt;Ini adalah sebuah paragraf.&lt;/p&gt;</code></pre>
+        <p>Pada contoh di atas:</p>
+        <ul>
+            <li><code>&lt;p&gt;</code> adalah <strong>tag pembuka</strong> dan <code>&lt;/p&gt;</code> adalah <strong>tag penutup</strong>.</li>
+            <li>Seluruh baris adalah <strong>elemen</strong> paragraf.</li>
+            <li><code>class="paragraf-pertama"</code> dan <code>id="p1"</code> adalah <strong>atribut</strong>.</li>
+        </ul>
+        <p>Ada juga <strong>self-closing tag</strong> (void element) — tag yang tidak perlu penutup:</p>
+        <pre><code>&lt;img src="foto.jpg" alt="Foto"&gt;
+&lt;br&gt;
+&lt;input type="text"&gt;
+&lt;meta charset="UTF-8"&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi</h2>
+        <p>Bayangkan Anda membangun <strong>rumah</strong>:</p>
+        <ul>
+            <li><strong>Tag</strong> adalah <strong>tanda pengenal</strong> pada material bangunan — misalnya stiker "Pintu" dan "Jendela" yang ditempel di komponen rumah.</li>
+            <li><strong>Elemen</strong> adalah <strong>komponen utuh</strong> — misalnya satu unit pintu lengkap dengan kusen, engsel, dan gagangnya. Seluruh kesatuan itulah elemen.</li>
+            <li><strong>Atribut</strong> adalah <strong>spesifikasi teknis</strong> dari komponen tersebut — misalnya "Pintu ini berwarna cokelat, lebar 90cm, dan punya gagang model A". Spesifikasi ini ditulis di label (tag pembuka).</li>
+            <li><strong>Self-closing tag</strong> seperti <strong>jendela kaca mati</strong> — satu unit utuh yang tidak perlu dibuka/tutup. Begitu dipasang, selesai. Tidak ada "pasangan"-nya.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <p>Konsep tag, elemen, dan atribut digunakan di <strong>setiap baris kode HTML</strong> yang Anda tulis. Setiap konten di halaman web — teks, gambar, tautan, tombol, formulir — semuanya diekspresikan sebagai elemen HTML dengan tag dan atributnya masing-masing. Ini adalah kosakata dasar dari bahasa HTML.</p>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Mengira tag dan elemen itu sama — ingat: tag hanya pembuka/penutup, elemen adalah keseluruhan.</li>
+            <li>Menulis atribut di luar tag pembuka — atribut hanya boleh ditulis di dalam tag pembuka.</li>
+            <li>Lupa menambahkan tanda kutip pada nilai atribut — <code>class=paragraf</code> seharusnya <code>class="paragraf"</code>.</li>
+            <li>Menutup self-closing tag (misal <code>&lt;/img&gt;</code>) — self-closing tag tidak perlu ditutup.</li>
+            <li>Tidak memberi spasi antar atribut — <code>class="a"id="b"</code> salah, harus <code>class="a" id="b"</code>.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Setelah memahami <strong>struktur wajib dokumen HTML</strong> (html, head, body), sekarang kita belajar "bahan bangunan" yang akan mengisi struktur tersebut. Tag, elemen, dan atribut adalah komponen dasar dari setiap potongan kode HTML. Materi ini menjadi fondasi untuk semua materi selanjutnya — karena mulai dari sini, semua yang Anda pelajari adalah tentang kombinasi tag, elemen, dan atribut.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <details>
+            <summary>Soal 1: Jelaskan perbedaan antara tag, elemen, dan atribut dalam HTML! Berikan contoh masing-masing!</summary>
+            <p><strong>Jawaban:</strong> Tag adalah penanda pembuka <code>&lt;tag&gt;</code> atau penutup <code>&lt;/tag&gt;</code>. Elemen adalah kesatuan dari tag pembuka + konten + tag penutup, misal <code>&lt;p&gt;Teks&lt;/p&gt;</code>. Atribut adalah informasi tambahan yang ditulis di dalam tag pembuka, misal <code>href="https://google.com"</code> pada elemen <code>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</code>.</p>
+        </details>
+
+        <details>
+            <summary>Soal 2: Apa yang dimaksud dengan self-closing tag? Berikan 3 contoh!</summary>
+            <p><strong>Jawaban:</strong> Self-closing tag (void element) adalah tag yang tidak memiliki pasangan penutup karena elemen tersebut tidak mengandung konten teks di dalamnya. Contoh: <code>&lt;br&gt;</code> (baris baru), <code>&lt;img src="gambar.jpg"&gt;</code> (gambar), dan <code>&lt;input type="text"&gt;</code> (input form).</p>
+        </details>
+    </section>
+</body>
+</html>

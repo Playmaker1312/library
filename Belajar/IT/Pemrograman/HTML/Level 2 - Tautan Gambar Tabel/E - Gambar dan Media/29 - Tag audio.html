@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29 - Tag audio</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.8; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #e74c3c; padding-bottom: 10px; }
+        h2 { color: #c0392b; margin-top: 30px; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        code { font-family: 'Courier New', Courier, monospace; }
+        details { background: #eaf2f8; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        summary { font-weight: bold; cursor: pointer; color: #c0392b; }
+        .info { background: #d1ecf1; padding: 10px; border-left: 4px solid #17a2b8; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<h1>&lt;audio&gt;: Menyisipkan Audio ke Halaman Web</h1>
+
+<section>
+    <h2>Penjelasan</h2>
+    <p>Tag <code>&lt;audio&gt;</code> digunakan untuk menyisipkan file audio (musik, podcast, rekaman suara) ke dalam halaman web. Dengan atribut <code>controls</code>, browser akan menampilkan pemutar audio bawaan (play, pause, volume, dll). Tag ini mendukung beberapa format file melalui elemen <code>&lt;source&gt;</code>.</p>
+</section>
+
+<section>
+    <h2>Fungsi</h2>
+    <ul>
+        <li>Memutar file audio langsung di halaman web tanpa plugin tambahan.</li>
+        <li>Menyediakan kontrol pemutaran (play, pause, volume, progress bar).</li>
+        <li>Mendukung <em>autoplay</em>, <em>loop</em>, dan <em>preload</em> untuk berbagai skenario.</li>
+        <li>Fallback ke beberapa format audio melalui <code>&lt;source&gt;</code>.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- Audio dengan kontrol standar --&gt;
+&lt;audio controls&gt;
+    &lt;source src="lagu.mp3" type="audio/mpeg"&gt;
+    &lt;source src="lagu.ogg" type="audio/ogg"&gt;
+    Browser Anda tidak mendukung tag audio.
+&lt;/audio&gt;
+
+&lt;!-- Autoplay (diam) dan loop --&gt;
+&lt;audio controls autoplay muted loop&gt;
+    &lt;source src="backsound.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;!-- Preload --&gt;
+&lt;audio controls preload="auto"&gt;
+    &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+    <div class="info"><strong>Catatan:</strong> <code>autoplay</code> biasanya hanya bekerja jika <code>muted</code> juga disertakan (kebijakan browser modern).</div>
+</section>
+
+<section>
+    <h2>Analogi: Rumah dan Bangunan</h2>
+    <p>Tag <code>&lt;audio&gt;</code> ibarat <strong>sistem interkom (pengeras suara) di dalam rumah</strong>. Anda bisa memasangnya di dinding (halaman web) dan mengatur suara yang keluar. Atribut <code>controls</code> seperti tombol volume dan sakelar pada interkom — memudahkan penghuni mengontrol suara. <code>&lt;source&gt;</code> ibarat kabel cadangan: jika kabel utama (MP3) putus, kabel kedua (OGG) masih bisa mengalirkan suara.</p>
+    <p><code>autoplay</code> seperti interkom yang otomatis menyala saat ada tamu datang, dan <code>loop</code> seperti lagu yang diputar ulang terus-menerus di ruang tunggu.</p>
+</section>
+
+<section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+        <li>Pemutar musik di website portofolio musisi</li>
+        <li>Podcast atau rekaman ceramah</li>
+        <li>Suara latar (backsound) untuk presentasi interaktif</li>
+        <li>Preview lagu di toko musik online</li>
+        <li>Audio buku (audiobook)</li>
+        <li>Efek suara pada game atau aplikasi web</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+        <li><strong>Autoplay tanpa muted:</strong> Browser modern memblokir autoplay bersuara. Selalu sertakan <code>muted</code> jika ingin autoplay.</li>
+        <li><strong>Hanya menyediakan satu format audio:</strong> Tidak semua browser mendukung MP3. Sediakan alternatif OGG atau AAC.</li>
+        <li><strong>Lupa atribut <code>controls</code>:</strong> Tanpa <code>controls</code>, pengguna tidak bisa memutar atau menjeda audio.</li>
+        <li><strong>File audio terlalu besar:</strong> Audio berdurasi panjang bisa mencapai puluhan MB. Pertimbangkan untuk mengompresi atau streaming.</li>
+        <li><strong>Teks fallback tidak informatif:</strong> Teks di antara tag <code>&lt;audio&gt;</code> adalah fallback untuk browser yang tidak mendukung. Tulis pesan yang jelas.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p><code>&lt;audio&gt;</code> memiliki konsep yang mirip dengan <code>&lt;img&gt;</code> — sama-sama menyematkan media eksternal. Namun, <code>&lt;audio&gt;</code> menggunakan elemen <code>&lt;source&gt;</code> untuk menyediakan format alternatif, mirip seperti <code>&lt;picture&gt;</code> pada gambar. <code>&lt;audio&gt;</code> juga bisa dibungkus dalam <code>&lt;figure&gt;</code> untuk menambahkan <code>&lt;figcaption&gt;</code>.</p>
+</section>
+
+<section>
+    <h2>Soal Latihan</h2>
+
+    <p><strong>1.</strong> Buatlah kode HTML untuk menampilkan pemutar audio dengan file <code>podcast-ep1.mp3</code> yang memiliki kontrol pemutaran, format cadangan <code>podcast-ep1.ogg</code>, dan otomatis mulai diputar dalam keadaan diam (muted).</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <pre><code>&lt;audio controls autoplay muted&gt;
+    &lt;source src="podcast-ep1.mp3" type="audio/mpeg"&gt;
+    &lt;source src="podcast-ep1.ogg" type="audio/ogg"&gt;
+    Browser Anda tidak mendukung tag audio.
+&lt;/audio&gt;</code></pre>
+    </details>
+
+    <p><strong>2.</strong> Apa fungsi atribut <code>controls</code> pada tag <code>&lt;audio&gt;</code>? Apa yang terjadi jika atribut ini tidak disertakan?</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p>Atribut <code>controls</code> menampilkan kontrol pemutar audio seperti tombol play/pause, volume, dan progress bar ke pengguna. Jika tidak disertakan, audio tetap bisa dimuat tapi pengguna tidak bisa memutar, menjeda, atau mengatur volumenya — kecuali dikontrol lewat JavaScript.</p>
+    </details>
+
+    <p><strong>3.</strong> Mengapa kita perlu menyediakan lebih dari satu format <code>&lt;source&gt;</code> untuk tag <code>&lt;audio&gt;</code>?</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p>Tidak semua browser mendukung format audio yang sama. Misalnya, browser lama mungkin tidak mendukung MP3, sementara beberapa browser tidak mendukung OGG. Dengan menyediakan multiple <code>&lt;source&gt;</code>, browser akan memilih format pertama yang didukungnya, sehingga audio bisa diputar di berbagai browser.</p>
+    </details>
+</section>
+
+</body>
+</html>

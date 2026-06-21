@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 - Format Gambar</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.8; }
+        h1 { color: #2c3e50; border-bottom: 3px solid #8e44ad; padding-bottom: 10px; }
+        h2 { color: #7d3c98; margin-top: 30px; }
+        section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        code { font-family: 'Courier New', Courier, monospace; }
+        details { background: #eaf2f8; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        summary { font-weight: bold; cursor: pointer; color: #7d3c98; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #8e44ad; color: white; }
+        tr:nth-child(even) { background: #f5f0f7; }
+    </style>
+</head>
+<body>
+
+<h1>Format Gambar di Web: JPEG, PNG, SVG, WebP, GIF</h1>
+
+<section>
+    <h2>Penjelasan</h2>
+    <p>Setiap format gambar memiliki karakteristik, kelebihan, dan kekurangan masing-masing. Memilih format yang tepat sangat penting untuk mengoptimalkan kecepatan muat halaman, kualitas visual, dan pengalaman pengguna. Berikut adalah format-format utama yang digunakan di web.</p>
+</section>
+
+<section>
+    <h2>Fungsi Masing-Masing Format</h2>
+    <table>
+        <tr>
+            <th>Format</th>
+            <th>Fungsi / Cocok Untuk</th>
+            <th>Keunggulan</th>
+        </tr>
+        <tr>
+            <td><strong>JPEG (.jpg)</strong></td>
+            <td>Foto, gambar kompleks dengan banyak warna</td>
+            <td>Ukuran file kecil, kualitas baik untuk foto</td>
+        </tr>
+        <tr>
+            <td><strong>PNG (.png)</strong></td>
+            <td>Grafis, logo, screenshot, gambar butuh transparansi</td>
+            <td>Dukungan transparansi, lossless, teks tajam</td>
+        </tr>
+        <tr>
+            <td><strong>SVG (.svg)</strong></td>
+            <td>Ikon, logo, ilustrasi sederhana, grafik vektor</td>
+            <td>Resolusi tak terbatas, ukuran kecil, bisa diedit dengan kode</td>
+        </tr>
+        <tr>
+            <td><strong>WebP (.webp)</strong></td>
+            <td>Pengganti JPEG/PNG modern</td>
+            <td>25-35% lebih kecil dari JPEG dengan kualitas sama</td>
+        </tr>
+        <tr>
+            <td><strong>GIF (.gif)</strong></td>
+            <td>Animasi sederhana, meme, stiker</td>
+            <td>Mendukung animasi, kompatibilitas tinggi</td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>Cara Pengimplementasian</h2>
+    <pre><code>&lt;!-- JPEG untuk foto --&gt;
+&lt;img src="liburan.jpg" alt="Foto liburan di pantai"&gt;
+
+&lt;!-- PNG untuk logo dengan transparansi --&gt;
+&lt;img src="logo-perusahaan.png" alt="Logo Perusahaan"&gt;
+
+&lt;!-- SVG langsung di HTML (inline) --&gt;
+&lt;img src="icon-rumah.svg" alt="Ikon rumah"&gt;
+
+&lt;!-- WebP dengan fallback PNG --&gt;
+&lt;picture&gt;
+    &lt;source srcset="foto.webp" type="image/webp"&gt;
+    &lt;img src="foto.png" alt="Foto"&gt;
+&lt;/picture&gt;
+
+&lt;!-- GIF animasi --&gt;
+&lt;img src="lucu.gif" alt="Kucing lucu bergerak"&gt;</code></pre>
+</section>
+
+<section>
+    <h2>Analogi: Rumah dan Bangunan</h2>
+    <p>Format gambar ibarat <strong>jenis material bangunan</strong> yang dipilih untuk bagian rumah yang berbeda:</p>
+    <ul>
+        <li><strong>JPEG</strong> seperti <strong>batu bata</strong> — murah, kuat, dan cocok untuk dinding luas (foto besar). Tapi tidak cocok untuk detail halus.</li>
+        <li><strong>PNG</strong> seperti <strong>kaca bening</strong> — transparan dan tajam, cocok untuk jendela (logo, ikon). Tapi lebih mahal (ukuran file besar).</li>
+        <li><strong>SVG</strong> seperti <strong>cetak biru (blueprint)</strong> — bisa diperbesar tak terbatas tanpa pecah, dan bisa diubah kapan saja. Cocok untuk gambar teknis.</li>
+        <li><strong>WebP</strong> seperti <strong>bata ringan modern</strong> — lebih ringan dari batu bata biasa dengan kekuatan setara. Paling efisien.</li>
+        <li><strong>GIF</strong> seperti <strong>lampu kedip-kedip hiasan</strong> — menarik perhatian dengan gerakan, tapi kualitasnya rendah dan tidak cocok untuk penerangan utama.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Dipakai Untuk</h2>
+    <ul>
+        <li><strong>JPEG:</strong> Galeri foto, gambar produk, banner, background foto</li>
+        <li><strong>PNG:</strong> Logo, ikon, screenshot, UI elements, gambar dengan teks</li>
+        <li><strong>SVG:</strong> Ikon navbar, ilustrasi, grafik, diagram, logo responsif</li>
+        <li><strong>WebP:</strong> Hampir semua kasus — terutama untuk performa dan kecepatan web</li>
+        <li><strong>GIF:</strong> Animasi pendek, meme, preview video sederhana</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Kesalahan Umum</h2>
+    <ul>
+        <li><strong>Menyimpan foto sebagai PNG:</strong> Ukuran file bisa 3-5x lebih besar dari JPEG tanpa peningkatan kualitas berarti.</li>
+        <li><strong>Menyimpan logo sebagai JPEG:</strong> JPEG tidak punya transparansi dan teks jadi buram. Logo harus PNG atau SVG.</li>
+        <li><strong>Menggunakan GIF untuk video panjang:</strong> GIF hanya punya 256 warna dan ukuran file besar. Gunakan <code>&lt;video&gt;</code> untuk animasi panjang.</li>
+        <li><strong>Tidak pakai WebP:</strong> WebP di-support oleh 95%+ browser modern dan mengurangi ukuran file hingga 35%. Rugi kalau tidak digunakan.</li>
+        <li><strong>SVG untuk foto kompleks:</strong> SVG tidak cocok untuk gambar dengan jutaan warna (foto). Gunakan JPEG/WebP.</li>
+        <li><strong>Lupa fallback WebP:</strong> Saat pakai <code>&lt;picture&gt;</code> untuk WebP, selalu sediakan fallback JPEG/PNG untuk browser lama.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Koneksi dengan Materi Sebelumnya</h2>
+    <p>Pemilihan format gambar memengaruhi cara kita menulis tag <code>&lt;img&gt;</code> dan <code>&lt;picture&gt;</code>. Format juga menentukan apakah kita perlu <code>alt</code> yang deskriptif (misal foto produk) atau tidak (gambar dekoratif).</p>
+</section>
+
+<section>
+    <h2>Soal Latihan</h2>
+
+    <p><strong>1.</strong> Sebuah website toko online ingin menampilkan foto produk sepatu. Format apa yang paling efisien? Jelaskan alasannya.</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p><strong>WebP</strong> adalah pilihan terbaik karena ukurannya 25-35% lebih kecil dari JPEG dengan kualitas visual yang sama. Alternatifnya, JPEG juga bisa digunakan. Jangan pakai PNG untuk foto karena ukurannya akan terlalu besar.</p>
+    </details>
+
+    <p><strong>2.</strong> Format apa yang paling tepat untuk logo perusahaan yang perlu tampil tajam di layar Retina dan ukurannya bisa diubah-ubah (resize)?</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p><strong>SVG</strong> adalah format yang paling tepat karena berbasis vektor, sehingga bisa diperbesar atau diperkecil tanpa kehilangan kualitas. Ukuran file juga sangat kecil untuk logo sederhana.</p>
+    </details>
+
+    <p><strong>3.</strong> Sebutkan kelebihan utama format WebP dibandingkan JPEG dan PNG!</p>
+    <details>
+        <summary>Lihat Jawaban</summary>
+        <p>Kelebihan utama WebP:</p>
+        <ol>
+            <li>Ukuran file 25-35% lebih kecil dari JPEG dengan kualitas yang sama.</li>
+            <li>Mendukung transparansi (seperti PNG) dengan ukuran file yang lebih kecil.</li>
+            <li>Mendukung animasi (seperti GIF) dengan ukuran yang lebih kecil.</li>
+        </ol>
+    </details>
+</section>
+
+</body>
+</html>

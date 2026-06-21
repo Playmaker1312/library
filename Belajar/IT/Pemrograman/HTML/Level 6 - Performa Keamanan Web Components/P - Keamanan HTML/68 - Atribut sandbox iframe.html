@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribut sandbox iframe - Keamanan HTML</title>
+</head>
+<body>
+
+    <h1>Atribut <code>sandbox</code> pada iframe</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Atribut <code>sandbox</code> pada elemen <code>&lt;iframe&gt;</code> memberlakukan serangkaian pembatasan terhadap konten yang dimuat di dalam iframe. Atribut ini meningkatkan keamanan dengan mencegah iframe menjalankan operasi berbahaya seperti menjalankan skrip, mengirim form, atau membuka popup — kecuali diizinkan secara eksplisit.</p>
+        <p>Jika atribut <code>sandbox</code> ditulis tanpa nilai, <strong>semua</strong> pembatasan diterapkan. Untuk memberikan izin tertentu, gunakan nilai token seperti <code>allow-scripts</code> yang dipisahkan spasi.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Mencegah iframe menjalankan skrip JavaScript (kecuali diizinkan).</li>
+            <li>Mencegah form di dalam iframe dikirim.</li>
+            <li>Mencegah iframe membuka jendela popup.</li>
+            <li>Mencegah iframe mengakses konten halaman induk (<em>same-origin</em>).</li>
+            <li>Mencegah plugin seperti Flash berjalan.</li>
+            <li>Mencegah navigasi dari iframe ke halaman lain.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <p>Contoh iframe YouTube dengan sandbox terbatas:</p>
+        <pre><code>&lt;iframe
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    sandbox="allow-scripts allow-same-origin allow-popups"
+    width="560" height="315"
+    title="Video YouTube"
+&gt;&lt;/iframe&gt;</code></pre>
+
+        <p>Contoh iframe dokumen eksternal dengan sandbox ketat (semua diblokir):</p>
+        <pre><code>&lt;iframe
+    src="https://dokumen-eksternal.example.com"
+    sandbox=""
+    width="600" height="400"
+    title="Dokumen Eksternal"
+&gt;&lt;/iframe&gt;</code></pre>
+
+        <p>Contoh iframe dengan beberapa izin:</p>
+        <pre><code>&lt;iframe
+    src="https://aplikasi.example.com"
+    sandbox="allow-scripts allow-forms allow-same-origin"
+    width="800" height="600"
+    title="Aplikasi"
+&gt;&lt;/iframe&gt;</code></pre>
+
+        <p>Token izin yang umum:</p>
+        <ul>
+            <li><code>allow-scripts</code> — izinkan menjalankan skrip.</li>
+            <li><code>allow-forms</code> — izinkan mengirim form.</li>
+            <li><code>allow-same-origin</code> — izinkan akses ke asal yang sama.</li>
+            <li><code>allow-popups</code> — izinkan membuka popup/jendela baru.</li>
+            <li><code>allow-top-navigation</code> — izinkan navigasi ke halaman induk.</li>
+            <li><code>allow-modals</code> — izinkan membuka dialog modal.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Analogi</h2>
+        <p>Bayangkan Anda membangun <strong>rumah dengan kamar tamu (iframe)</strong>. Kamar tamu adalah ruang terpisah di dalam rumah Anda.</p>
+        <ul>
+            <li><code>sandbox=""</code> (kosong) = Kamar tamu <strong>tanpa jendela, tanpa stopkontak, tanpa koneksi internet</strong>. Tamu hanya bisa duduk diam.</li>
+            <li><code>allow-scripts</code> = Memberi <strong>stopkontak dan lampu</strong> — tamu bisa menyalakan peralatan listrik.</li>
+            <li><code>allow-forms</code> = Memberi <strong>bel dan interkom</strong> — tamu bisa memanggil atau mengirim pesan ke luar.</li>
+            <li><code>allow-same-origin</code> = Memberi <strong>akses ke dapur bersama</strong> — tamu bisa menggunakan fasilitas yang sama dengan penghuni rumah.</li>
+            <li><code>allow-popups</code> = Memberi <strong>telepon</strong> — tamu bisa menghubungi orang di luar rumah.</li>
+            <li><code>allow-top-navigation</code> = Memberi <strong>kunci pintu utama</strong> — tamu bisa keluar rumah dan masuk ke ruang utama.</li>
+        </ul>
+        <p>Semakin banyak izin yang diberikan, semakin besar risiko. Sebagai pemilik rumah, Anda harus bijak memilih izin apa yang diperlukan.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Embed video YouTube/Vimeo dengan pembatasan ketat.</li>
+            <li>Menampilkan halaman pihak ketiga (dokumen, widget) tanpa memberi akses penuh.</li>
+            <li>Konten buatan pengguna (user-generated content) yang ditampilkan di iframe.</li>
+            <li>Aplikasi web yang memuat kode dari sumber tidak tepercaya.</li>
+            <li>Mengisolasi iklan atau widget dari situs lain.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Lupa atribut sandbox:</strong> Membiarkan iframe tanpa <code>sandbox</code> memberikan kebebasan penuh pada konten di dalamnya.</li>
+            <li><strong>allow-scripts tanpa allow-same-origin terlalu longgar:</strong> Memberi akses skrip tetapi masih mengisolasi origin — aman, tapi kadang fitur tertentu tidak jalan.</li>
+            <li><strong>allow-scripts + allow-same-origin berbahaya:</strong> Kombinasi ini bisa membuat iframe menghapus proteksi sandbox dengan memanipulasi DOM induk.</li>
+            <li><strong>Terlalu banyak izin:</strong> Memberi <code>allow-popups</code>, <code>allow-top-navigation</code>, dan <code>allow-scripts</code> sekaligus hampir menghilangkan manfaat keamanan sandbox.</li>
+            <li><strong>Asumsi sandbox cukup:</strong> Sandbox bukan jaminan keamanan penuh — tetap butuh CSP dan SRI untuk pertahanan berlapis.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Atribut <code>sandbox</code> melengkapi <strong>Content Security Policy (CSP)</strong>. Jika CSP mengontrol sumber daya di tingkat halaman induk, sandbox mengontrol apa yang bisa dilakukan oleh konten di dalam iframe. Keduanya sering digunakan bersama: CSP dengan <code>frame-src</code> membatasi dari mana iframe boleh dimuat, sementara sandbox membatasi aksi di dalamnya. <strong>Subresource Integrity (SRI)</strong> melengkapi dengan memastikan file yang dimuat tidak dimodifikasi. Ketiganya membentuk fondasi keamanan web modern.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <p><strong>1.</strong> Apa perbedaan antara <code>sandbox=""</code> (kosong) dan iframe tanpa atribut sandbox sama sekali?</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p>iframe <strong>tanpa</strong> sandbox memiliki semua kemampuan normal: menjalankan skrip, mengirim form, membuka popup, dll. iframe dengan <code>sandbox=""</code> (kosong) memblokir <strong>semua</strong> kemampuan tersebut — skrip diblokir, form tidak bisa dikirim, popup tidak bisa dibuka.</p>
+        </details>
+
+        <p><strong>2.</strong> Mengapa kombinasi <code>allow-scripts</code> dan <code>allow-same-origin</code> berisiko tinggi?</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p>Karena dengan <code>allow-scripts</code>, iframe bisa menjalankan JavaScript. Dengan <code>allow-same-origin</code>, iframe dianggap berasal dari origin yang sama dengan halaman induk. Akibatnya, kode di dalam iframe bisa membaca dan memanipulasi DOM halaman induk, mencuri cookie, atau menghapus atribut sandbox dari tag iframe — membuat proteksi sandbox tidak berguna.</p>
+        </details>
+
+        <p><strong>3.</strong> Sebutkan 3 token izin sandbox beserta fungsinya!</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p><code>allow-scripts</code> = izinkan menjalankan skrip. <code>allow-forms</code> = izinkan mengirim form. <code>allow-popups</code> = izinkan membuka jendela popup.</p>
+        </details>
+
+    </section>
+
+</body>
+</html>

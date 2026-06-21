@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>73 - Audit Akhir Lighthouse</title>
+</head>
+<body>
+    <h1>Audit Akhir Lighthouse</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Lighthouse adalah alat otomatis dari Google Chrome yang mengaudit kualitas website. Lighthouse memberikan skor untuk lima kategori: <strong>Performance</strong>, <strong>Accessibility</strong>, <strong>Best Practices</strong>, <strong>SEO</strong>, dan <strong>PWA</strong> (Progressive Web App). Target akhir dari proyek ini adalah mencapai skor ≥ 90 untuk Performance, Accessibility, Best Practices, dan SEO, serta lulus semua cek PWA.</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Mengukur kecepatan loading website (Performance)</li>
+            <li>Memeriksa kemudahan akses bagi penyandang disabilitas (Accessibility)</li>
+            <li>Memastikan kode mengikuti standar web modern (Best Practices)</li>
+            <li>Memvalidasi optimasi mesin pencari (SEO)</li>
+            <li>Memeriksa kelengkapan fitur PWA (manifest, Service Worker, HTTPS)</li>
+            <li>Memberikan rekomendasi perbaikan yang spesifik dan terperinci</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <ol>
+            <li>Buka Chrome, buka halaman website yang akan diaudit.</li>
+            <li>Klik kanan → <strong>Inspect</strong> (atau F12).</li>
+            <li>Pilih tab <strong>Lighthouse</strong>.</li>
+            <li>Pilih mode: <strong>Navigation</strong> (untuk halaman biasa).</li>
+            <li>Centang semua kategori: Performance, Accessibility, Best Practices, SEO, PWA.</li>
+            <li>Pilih perangkat: <strong>Mobile</strong> atau <strong>Desktop</strong>.</li>
+            <li>Klik <strong>Generate report</strong>.</li>
+        </ol>
+        <p>Audit juga bisa dijalankan via terminal:</p>
+        <pre><code>npx lighthouse https://namasite.web.app --view --preset=desktop</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi (Rumah / Bangunan)</h2>
+        <p>Lighthouse itu seperti <strong>tim inspektur bangunan</strong>. Performance memeriksa seberapa cepat tukang kerja (kecepatan loading). Accessibility memeriksa apakah rumah punya ramp untuk kursi roda (tag alt, kontras warna). Best Practices mengecek apakah kabel listrik terpasang sesuai standar (kode modern, tidak pakai API deprecated). SEO memeriksa apakah alamat rumah mudah ditemukan di Google Maps (title tag, meta description). PWA memeriksa apakah rumah bisa berfungsi saat lampu padam (offline via Service Worker) dan punya papan nama jelas (manifest). Target skor ≥ 90 berarti rumah harus lulus inspeksi dengan nilai A di semua kategori.</p>
+    </section>
+
+    <section>
+        <h2>Dipakai Untuk</h2>
+        <ul>
+            <li>Quality assurance sebelum website diluncurkan</li>
+            <li>Memastikan website ramah di perangkat mobile</li>
+            <li>Meningkatkan peringkat SEO Google (Core Web Vitals)</li>
+            <li>Validasi kelengkapan PWA sebelum deploy</li>
+            <li>Dokumentasi skor untuk klien atau portofolio</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li>Hanya mengecek satu kali — skor bisa berbeda setiap audit karena kondisi jaringan</li>
+            <li>Mengabaikan rekomendasi Lighthouse — skor hanya naik jika issue diperbaiki, bukan hanya dibaca</li>
+            <li>Tidak mengaudit di mode Mobile — banyak masalah responsivitas yang terlewat</li>
+            <li>Skor PWA gagal karena tidak ada manifest atau Service Worker yang tidak aktif</li>
+            <li>Optimasi berlebihan yang merusak UX (misal menghapus gambar penting demi speed)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p>Audit Lighthouse adalah <strong>puncak evaluasi</strong> dari semua materi sebelumnya. Materi <strong>Web App Manifest</strong> (71) dan <strong>Service Worker</strong> (72) akan diuji di kategori PWA. Semua praktik terbaik HTML dari seluruh level akan diuji di kategori Best Practices dan SEO. Hasil audit ini akan dicantumkan di <strong>README.md</strong> (materi 76) sebagai bukti kualitas website.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <ol>
+            <li>
+                <p>Sebutkan lima kategori yang diaudit oleh Lighthouse!</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Lima kategori Lighthouse: <strong>Performance</strong> (kecepatan), <strong>Accessibility</strong> (aksesibilitas), <strong>Best Practices</strong> (praktik terbaik), <strong>SEO</strong> (optimasi mesin pencari), dan <strong>PWA</strong> (Progressive Web App).</p>
+                </details>
+            </li>
+            <li>
+                <p>Apa target skor minimum yang harus dicapai untuk setiap kategori dalam proyek ini?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Target skor minimum: Performance ≥ 90, Accessibility ≥ 90, Best Practices ≥ 90, SEO ≥ 90, dan PWA harus lulus (passed) semua cek.</p>
+                </details>
+            </li>
+            <li>
+                <p>Bagaimana cara menjalankan audit Lighthouse selain melalui tab Lighthouse di Chrome DevTools?</p>
+                <details>
+                    <summary>Lihat Jawaban</summary>
+                    <p>Bisa melalui terminal dengan perintah <code>npx lighthouse &lt;URL&gt; --view</code>. Juga bisa via <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a>, atau menggunakan Lighthouse CI untuk otomatisasi.</p>
+                </details>
+            </li>
+        </ol>
+    </section>
+</body>
+</html>

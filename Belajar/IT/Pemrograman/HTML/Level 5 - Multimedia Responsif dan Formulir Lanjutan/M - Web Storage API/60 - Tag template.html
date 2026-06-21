@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag template</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: auto; padding: 2rem; background: #f5f5f5; color: #222; }
+        section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        h1 { color: #1565c0; }
+        h2 { border-left: 5px solid #1565c0; padding-left: .75rem; }
+        pre { background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+        code { font-size: .95rem; }
+        details { background: #e3f2fd; padding: .75rem; border-radius: 8px; margin-top: .5rem; }
+        summary { cursor: pointer; font-weight: 600; color: #0d47a1; }
+    </style>
+</head>
+<body>
+
+    <h1>&lt;template&gt; — Tag Template HTML</h1>
+
+    <section>
+        <h2>Penjelasan</h2>
+        <p>Elemen <code>&lt;template&gt;</code> adalah elemen HTML yang menyimpan konten <strong>tidak dirender</strong> di halaman. Konten di dalamnya tidak tampak dan tidak di-download (gambar, video, dsb) sampai diaktifkan dengan JavaScript. Template berfungsi sebagai <em>stempel</em> atau <em>cetakan</em> yang bisa digandakan kapan saja.</p>
+        <p>Konten template diakses lewat properti <code>content</code> (berupa <code>DocumentFragment</code>).</p>
+    </section>
+
+    <section>
+        <h2>Fungsi</h2>
+        <ul>
+            <li>Menyimpan markup yang akan digunakan kembali (<em>reusable</em>)</li>
+            <li>Mengurangi duplikasi kode HTML</li>
+            <li>Mempermudah pembuatan komponen dinamis dengan JavaScript</li>
+            <li>Konten di dalamnya <strong>inert</strong> — tidak berpengaruh pada halaman sampai di-clone</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- Definisikan template --&gt;
+&lt;template id="kartu-proyek"&gt;
+  &lt;div class="card"&gt;
+    &lt;h3 class="judul"&gt;&lt;/h3&gt;
+    &lt;p class="deskripsi"&gt;&lt;/p&gt;
+    &lt;span class="status"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;div id="daftar-proyek"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  const template = document.getElementById('kartu-proyek');
+  const daftar = document.getElementById('daftar-proyek');
+
+  const proyek = [
+    { judul: 'Aplikasi Absen', deskripsi: 'Sistem absensi RFID', status: 'Selesai' },
+    { judul: 'Website Sekolah', deskripsi: 'Profil dan PPDB online', status: 'Progres' }
+  ];
+
+  proyek.forEach(item =&gt; {
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('.judul').textContent = item.judul;
+    clone.querySelector('.deskripsi').textContent = item.deskripsi;
+    clone.querySelector('.status').textContent = item.status;
+    daftar.appendChild(clone);
+  });
+&lt;/script&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>Analogi — Cetakan Bangunan</h2>
+        <p><strong>&lt;template&gt;</strong> seperti <strong>cetakan (moulding) beton</strong> di proyek konstruksi. Cetakan itu sendiri bukan bangunan — cetakan disimpan di gudang dan tidak dipajang. Tapi ketika kamu butuh membuat tiang atau balok, kamu tuang adonan ke cetakan itu dan <strong>klon</strong> strukturnya berkali-kali.</p>
+        <ul>
+            <li><code>&lt;template&gt;</code> = cetakan besi di gudang (tidak terlihat di bangunan final).</li>
+            <li><code>content</code> = bentuk/cetakan itu sendiri.</li>
+            <li><code>cloneNode(true)</code> = menuang beton ke cetakan — menghasilkan salinan persis.</li>
+            <li>Setiap salinan bisa diberi warna/isi berbeda (mengisi <code>textContent</code>), seperti mengecat tiang beton dengan warna berbeda.</li>
+            <li>Tanpa template, kamu harus menulis ulang struktur rumah berkali-kali — boros dan rawan error.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Dipake Untuk</h2>
+        <ul>
+            <li>Membuat kartu proyek yang diulang (portofolio, daftar produk)</li>
+            <li>Membuat daftar item dari data API (user list, tabel dinamis)</li>
+            <li>Membuat elemen list yang seragam (to-do item, komentar)</li>
+            <li>Mengganti innerHTML yang rentan XSS — template lebih aman</li>
+            <li>Component pattern sederhana tanpa framework</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Kesalahan Umum</h2>
+        <ul>
+            <li><strong>Lupa cloneNode(true)</strong> — mengambil <code>template.content</code> langsung dan dipakai berulang. <code>DocumentFragment</code> hanya bisa dipasang sekali. Gunakan <code>cloneNode(true)</code> setiap kali.</li>
+            <li><strong>Menyisipkan konten sebelum clone</strong> — mengisi data di dalam template asli akan memengaruhi semua clone. Isi data setelah clone dibuat.</li>
+            <li><strong>Menganggap template seperti &lt;div hidden&gt;</strong> — bedanya: konten template inert (gambar tidak di-download, script tidak jalan), sedangkan <code>&lt;div hidden&gt;</code> tetap di-download tapi disembunyikan.</li>
+            <li><strong>Lupa parameter true</strong> — <code>cloneNode()</code> tanpa <code>true</code> hanya menyalin elemen kosong tanpa anak-anaknya.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Koneksi dengan Materi Sebelumnya</h2>
+        <p><strong>DOM Manipulation</strong> — <code>cloneNode</code>, <code>querySelector</code>, dan <code>appendChild</code> adalah fondasi yang sudah dipelajari di bab DOM sebelumnya.</p>
+        <p><strong>Event Handling</strong> — setelah clone ditambahkan ke DOM, kamu bisa pasang event listener seperti biasa.</p>
+        <p><strong>Array &amp; Looping</strong> — template sangat berguna saat di-loop dengan <code>forEach</code> atau <code>map</code> untuk menghasilkan banyak elemen dari data array.</p>
+        <p><strong>Web Component</strong> — <code>&lt;template&gt;</code> adalah fondasi dari <em>Custom Elements</em> dan <em>Shadow DOM</em> pada materi Web Component nanti.</p>
+    </section>
+
+    <section>
+        <h2>Soal Latihan</h2>
+
+        <p><strong>1.</strong> Buat template untuk item to-do (<code>&lt;li&gt;</code> berisi checkbox dan teks), lalu gunakan JavaScript untuk menambahkan 3 item: "Belajar HTML", "Belajar CSS", "Belajar JS".</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <pre><code>&lt;template id="todo-item"&gt;
+  &lt;li&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;span class="teks"&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/template&gt;
+
+&lt;ul id="todo-list"&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+  const tmpl = document.getElementById('todo-item');
+  const list = document.getElementById('todo-list');
+  const tugas = ['Belajar HTML', 'Belajar CSS', 'Belajar JS'];
+
+  tugas.forEach(t =&gt; {
+    const clone = tmpl.content.cloneNode(true);
+    clone.querySelector('.teks').textContent = t;
+    list.appendChild(clone);
+  });
+&lt;/script&gt;</code></pre>
+        </details>
+
+        <p><strong>2.</strong> Kenapa kita harus pakai <code>cloneNode(true)</code> dan bukan langsung <code>template.content</code> berulang kali? Jelaskan.</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <p><code>template.content</code> mengembalikan satu <code>DocumentFragment</code> yang sama. Setelah fragment itu dipasang ke DOM sekali, fragment menjadi kosong. Jadi pemanggilan kedua akan menghasilkan fragment kosong. <code>cloneNode(true)</code> membuat salinan baru setiap kali sehingga template asli tidak habis dipakai.</p>
+        </details>
+
+        <p><strong>3.</strong> Buat template kartu produk (gambar, nama, harga) dan clone 2 produk dari array data. (cukup tulis struktur template + script-nya)</p>
+        <details>
+            <summary>Lihat Jawaban</summary>
+            <pre><code>&lt;template id="kartu-produk"&gt;
+  &lt;div class="produk"&gt;
+    &lt;img class="gambar" src="" alt=""&gt;
+    &lt;h4 class="nama"&gt;&lt;/h4&gt;
+    &lt;p class="harga"&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;div id="catalog"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  const tmpl = document.getElementById('kartu-produk');
+  const catalog = document.getElementById('catalog');
+  const produk = [
+    { nama: 'Mouse', harga: 150000, gambar: 'mouse.jpg' },
+    { nama: 'Keyboard', harga: 250000, gambar: 'keyboard.jpg' }
+  ];
+
+  produk.forEach(p =&gt; {
+    const clone = tmpl.content.cloneNode(true);
+    clone.querySelector('.gambar').src = p.gambar;
+    clone.querySelector('.nama').textContent = p.nama;
+    clone.querySelector('.harga').textContent = 'Rp ' + p.harga;
+    catalog.appendChild(clone);
+  });
+&lt;/script&gt;</code></pre>
+        </details>
+    </section>
+
+</body>
+</html>

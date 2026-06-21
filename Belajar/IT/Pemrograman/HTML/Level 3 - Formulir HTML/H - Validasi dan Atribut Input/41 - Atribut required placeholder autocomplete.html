@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atribut required, placeholder & autocomplete</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        h1 { color: #0d6efd; border-bottom: 3px solid #0d6efd; padding-bottom: 8px; }
+        h2 { color: #0b5ed7; margin-top: 30px; }
+        section { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        pre { background: #f1f3f5; padding: 15px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #0d6efd; }
+        code { font-family: 'Courier New', monospace; font-size: 14px; }
+        .contoh { background: #e7f5ff; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        details { background: #f8f9fa; padding: 12px; border-radius: 8px; margin: 8px 0; cursor: pointer; }
+        details summary { font-weight: bold; color: #0d6efd; }
+        .form-demo { background: #e9ecef; padding: 20px; border-radius: 8px; margin-top: 10px; }
+        .form-demo label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-demo input { width: 100%; padding: 10px; margin-bottom: 15px; border: 2px solid #ced4da; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        .form-demo input:focus { border-color: #0d6efd; outline: none; }
+        .form-demo button { background: #0d6efd; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        .form-demo button:hover { background: #0b5ed7; }
+    </style>
+</head>
+<body>
+
+    <h1>&#128209; Atribut <code>required</code>, <code>placeholder</code> & <code>autocomplete</code></h1>
+
+    <section>
+        <h2>&#128196; Penjelasan</h2>
+        <p><strong><code>required</code></strong> — atribut yang mewajibkan pengguna mengisi suatu kolom sebelum formulir bisa dikirim. Jika tidak diisi, browser akan menampilkan pesan peringatan dan menghentikan pengiriman.</p>
+        <p><strong><code>placeholder</code></strong> — teks petunjuk ringan di dalam kolom yang akan hilang secara otomatis begitu pengguna mulai mengetik. Berguna untuk memberi contoh format isian tanpa memakan tempat.</p>
+        <p><strong><code>autocomplete</code></strong> — atribut yang memungkinkan browser menyarankan atau mengisi otomatis data yang pernah diketik pengguna sebelumnya (seperti nama, email, nomor telepon, alamat) berdasarkan rivayat browsing.</p>
+    </section>
+
+    <section>
+        <h2>&#128640; Fungsi</h2>
+        <ul>
+            <li><strong>required</strong> — memastikan data penting tidak kosong sebelum dikirim ke server.</li>
+            <li><strong>placeholder</strong> — memberi panduan format isian tanpa perlu label tambahan di luar kolom.</li>
+            <li><strong>autocomplete</strong> — mempercepat pengisian formulir berulang dan mengurangi kesalahan ketik.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#128295; Cara Pengimplementasian</h2>
+        <pre><code>&lt;!-- required --&gt;
+&lt;input type="text" name="nama" required&gt;
+
+&lt;!-- placeholder --&gt;
+&lt;input type="email" name="email" placeholder="contoh@email.com"&gt;
+
+&lt;!-- autocomplete --&gt;
+&lt;input type="text" name="nama" autocomplete="name"&gt;
+&lt;input type="email" name="email" autocomplete="email"&gt;
+&lt;input type="tel" name="telpon" autocomplete="tel"&gt;
+
+&lt;!-- Ketiganya bisa digabung --&gt;
+&lt;input type="email" name="email" required placeholder="nama@domain.com" autocomplete="email"&gt;</code></pre>
+
+        <div class="contoh">
+            <p><strong>Nilai umum <code>autocomplete</code>:</strong></p>
+            <ul>
+                <li><code>name</code> — nama lengkap</li>
+                <li><code>given-name</code> — nama depan</li>
+                <li><code>family-name</code> — nama belakang</li>
+                <li><code>email</code> — alamat surel</li>
+                <li><code>tel</code> — nomor telepon</li>
+                <li><code>street-address</code> — alamat jalan</li>
+                <li><code>postal-code</code> — kode pos</li>
+                <li><code>username</code> — nama pengguna</li>
+                <li><code>current-password</code> — kata sandi saat ini</li>
+                <li><code>new-password</code> — kata sandi baru</li>
+            </ul>
+        </div>
+
+        <form class="form-demo">
+            <label for="demo-nama">Nama Lengkap <span style="color:#dc3545;">*</span></label>
+            <input type="text" id="demo-nama" name="nama" required placeholder="Mis: Andi Pratama" autocomplete="name">
+
+            <label for="demo-email">Email <span style="color:#dc3545;">*</span></label>
+            <input type="email" id="demo-email" name="email" required placeholder="andi@email.com" autocomplete="email">
+
+            <label for="demo-telp">Telepon</label>
+            <input type="tel" id="demo-telp" name="telpon" placeholder="0812-3456-7890" autocomplete="tel">
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>&#127968; Analogi — Rumah</h2>
+        <p>Bayangkan rumah Anda memiliki <strong>papan nama</strong> di depan pintu.</p>
+        <ul>
+            <li><strong>required</strong> — seperti stiker merah "WAJIB DIISI" pada kolom nama tamu di buku tamu. Tamu tidak boleh melewatkannya.</li>
+            <li><strong>placeholder</strong> — seperti tulisan samar "Tulis nama lengkap Anda" di dalam kolom kosong yang memudar setelah ditulis.</li>
+            <li><strong>autocomplete</strong> — seperti satpam yang sudah hafal nama dan nomor telepon Anda karena sering datang, lalu langsung mengisikannya tanpa Anda perlu mengetik ulang.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#128161; Dipakai Untuk</h2>
+        <ul>
+            <li>Formulir pendaftaran akun (nama, email, sandi wajib diisi).</li>
+            <li>Formulir checkout toko online (alamat pengiriman, nomor telepon).</li>
+            <li>Formulir login dengan saran username dari browser.</li>
+            <li>Formulir pencarian dengan placeholder "Cari produk...".</li>
+            <li>Formulir kontak yang memanfaatkan autocomplete alamat dan telepon.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#9888;&#65039; Kesalahan Umum</h2>
+        <ul>
+            <li><strong>required tanpa pesan kustom:</strong> Browser menampilkan pesan default "Isi kolom ini". Gunakan <code>setCustomValidity()</code> dengan JavaScript jika ingin pesan sendiri.</li>
+            <li><strong>placeholder menggantikan label:</strong> placeholder bukan pengganti label. Orang dengan gangguan penglihatan menggunakan <em>screen reader</em> tidak bisa membaca placeholder. Tetap gunakan <code>&lt;label&gt;</code>.</li>
+            <li><strong>autocomplete="off" diabaikan browser modern:</strong> Banyak browser mengabaikan <code>autocomplete="off"</code> demi keamanan (terutama untuk password).</li>
+            <li><strong>placeholder terlalu panjang:</strong> placeholder yang lebih panjang dari kolom akan terpotong dan tidak terbaca.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>&#128279; Koneksi dengan Materi Sebelumnya</h2>
+        <p>Atribut ini melengkapi elemen <code>&lt;form&gt;</code> dan <code>&lt;input&gt;</code> yang sudah dipelajari di materi dasar HTML (Level 1 dan 2). <code>required</code> dan <code>pattern</code> (akan dipelajari selanjutnya) bekerja sama sebagai sistem validasi bawaan HTML tanpa JavaScript. <code>autocomplete</code> erat kaitannya dengan <code>type="email"</code>, <code>type="tel"</code>, dan <code>type="url"</code> yang sudah dikenal.</p>
+    </section>
+
+    <section>
+        <h2>&#128221; Soal Latihan</h2>
+
+        <p><strong>Soal 1:</strong> Buatlah input email yang WAJIB diisi, memiliki placeholder "contoh@email.com", dan mendukung autocomplete email. Tulis kode HTML-nya!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <pre><code>&lt;input type="email" name="email" required placeholder="contoh@email.com" autocomplete="email"&gt;</code></pre>
+        </details>
+
+        <p><strong>Soal 2:</strong> Apa perbedaan fungsi <code>placeholder</code> dengan <code>label</code>? Mengapa keduanya tidak bisa saling menggantikan?</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><code>placeholder</code> adalah teks petunjuk di dalam kolom yang hilang saat mengetik, sedangkan <code>label</code> adalah teks penjelas yang tetap terlihat di luar kolom. <code>label</code> penting untuk aksesibilitas <em>screen reader</em> dan area klik yang lebih besar. Placeholder tidak bisa menggantikan label karena pengguna <em>screen reader</em> tidak bisa membacanya dan teksnya menghilang saat mengetik.</p>
+        </details>
+
+        <p><strong>Soal 3:</strong> Sebutkan tiga nilai atribut <code>autocomplete</code> yang bisa digunakan pada formulir kontak!</p>
+        <details>
+            <summary>&#128196; Lihat Jawaban</summary>
+            <p><code>name</code> (nama lengkap), <code>email</code> (alamat surel), <code>tel</code> (nomor telepon). Atau <code>street-address</code>, <code>postal-code</code>, dll.</p>
+        </details>
+    </section>
+
+</body>
+</html>
