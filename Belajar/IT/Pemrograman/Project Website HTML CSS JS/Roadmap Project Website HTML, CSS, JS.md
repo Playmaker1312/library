@@ -2,7 +2,7 @@
 
 ## Filosofi Roadmap Ini
 
-> **"HTML adalah struktur, CSS adalah penampilan, JavaScript adalah perilaku — ketiganya bukan tiga hal terpisah, melainkan satu kesatuan yang bekerja bersama membangun pengalaman web yang luar biasa"** — setiap konsep yang dipelajari ada alasannya, bukan sekadar hafal syntax.
+> **"HTML adalah struktur, CSS adalah penampilan, JavaScript adalah perilaku — ketiganya bukan tiga hal terpisah, melainkan satu kesatuan yang bekerja bersama membangun pengalaman web yang luar biasa"** — setiap konsep yang dipelajari ada alasannya, bukan sekadar hafal syntax.
 
 ### Prinsip Desain
 
@@ -52,15 +52,15 @@ Level 7: + Project Architecture → Aplikasi perpustakaan yang production-ready
 
 ## 🟢 LEVEL 1: FONDASI HTML (Minggu 1-3)
 
-> **Tema**: _"Dari halaman kosong ke dokumen web yang terstruktur"_  
-> **Benang Merah**: Cara browser bekerja → HTML sebagai struktur → Elemen dan atribut → Semantik → Halaman profil perpustakaan  
+> **Tema**: _"Dari halaman kosong ke dokumen web yang terstruktur"_
+> **Benang Merah**: Cara browser bekerja → HTML sebagai struktur → Elemen dan atribut → Semantik → Halaman profil perpustakaan
 > **Output**: Halaman profil perpustakaan yang terstruktur dengan HTML
 
 ---
 
 ### A. Cara Browser Bekerja dan HTML Dasar
 
-> 💡 **Mengapa dimulai di sini?** Sebelum menulis kode, pahami dulu _mengapa_ HTML ada dan _bagaimana_ browser membacanya. Ini mencegah kebingungan "kenapa tag harus ditutup?" atau "apa bedanya div dengan section?"
+> 💡 **Mengapa dimulai di sini?** Sebelum menulis kode, pahami dulu _mengapa_ HTML ada dan _bagaimana_ browser membacanya. Ini mencegah kebingungan "kenapa tag harus ditutup?" atau "apa bedanya div dengan section?"
 
 text
 
@@ -76,7 +76,7 @@ Tag: instruksi untuk browser cara menampilkan konten
 
 #### [[1. Cara Browser Bekerja — Sebelum Menulis Kode]]
 
-- Ketika kamu buka `google.com`, yang terjadi adalah:
+- Ketika kamu buka `google.com`, yang terjadi adalah:
 
 text
 
@@ -99,13 +99,11 @@ Halaman tampil di layarmu
 ```
 
 - **Yang perlu dipahami sejak awal:**
-    
-    - Browser membaca HTML dari **atas ke bawah**
-    - Satu halaman = minimal satu file `.html`
-    - CSS dan JavaScript **terpisah** dari HTML (file berbeda)
-    - Kamu tidak perlu server untuk belajar — buka file `.html` langsung di browser
+  - Browser membaca HTML dari **atas ke bawah**
+  - Satu halaman = minimal satu file `.html`
+  - CSS dan JavaScript **terpisah** dari HTML (file berbeda)
+  - Kamu tidak perlu server untuk belajar — buka file `.html` langsung di browser
 - _Langkah konkret_: Buka browser → tekan F12 → lihat tab Elements → ini adalah HTML yang sedang dilihat browser
-    
 
 #### [[2. Setup Environment — VS Code dan Browser]]
 
@@ -177,13 +175,13 @@ HTML
 </html>
 ```
 
-- _Langkah konkret_: Buat file `index.html` dengan kode di atas, buka dengan Live Server — pastikan teks muncul di browser
+- _Langkah konkret_: Buat file `index.html` dengan kode di atas, buka dengan Live Server — pastikan teks muncul di browser
 
 ---
 
 ### B. Elemen HTML — Blok Pembangun Halaman
 
-> 💡 **Benang Merah ke A**: Browser sudah bisa baca HTML. Sekarang pelajari elemen-elemen HTML yang tersedia — setiap elemen punya makna dan tujuan spesifik.
+> 💡 **Benang Merah ke A**: Browser sudah bisa baca HTML. Sekarang pelajari elemen-elemen HTML yang tersedia — setiap elemen punya makna dan tujuan spesifik.
 
 text
 
@@ -363,7 +361,7 @@ HTML
 
 ### C. HTML Semantik — Makna di Balik Struktur
 
-> 💡 **Mengapa Semantik?** `<div>` bisa membungkus apa saja, tapi tidak punya makna. `<nav>` memberitahu browser, search engine, dan screen reader "ini adalah navigasi". Semantik membuat web lebih accessible dan SEO-friendly.
+> 💡 **Mengapa Semantik?** `<div>` bisa membungkus apa saja, tapi tidak punya makna. `<nav>` memberitahu browser, search engine, dan screen reader "ini adalah navigasi". Semantik membuat web lebih accessible dan SEO-friendly.
 
 #### [[7. Elemen Semantik — HTML yang Bermakna]]
 
@@ -672,15 +670,15 @@ Git: feat: create multi-page library website with semantic HTML
 
 ## 🔵 LEVEL 2: CSS DASAR (Minggu 3-6)
 
-> **Tema**: _"Dari dokumen hitam putih ke halaman web yang menarik secara visual"_  
-> **Benang Merah**: HTML memberikan struktur (Level 1) → CSS memberikan tampilan → Selector memilih elemen → Properties mengubah tampilan → Cascade dan Specificity  
+> **Tema**: _"Dari dokumen hitam putih ke halaman web yang menarik secara visual"_
+> **Benang Merah**: HTML memberikan struktur (Level 1) → CSS memberikan tampilan → Selector memilih elemen → Properties mengubah tampilan → Cascade dan Specificity
 > **Output**: Halaman perpustakaan dengan warna, tipografi, dan spacing yang konsisten
 
 ---
 
 ### E. Cara CSS Bekerja — Fondasi
 
-> 💡 **Mengapa dimulai dengan cara kerja?** CSS punya perilaku yang tidak intuitif (cascade, specificity, inheritance). Memahami ini dari awal mencegah frustasi "kenapa style-ku tidak mau jalan!"
+> 💡 **Mengapa dimulai dengan cara kerja?** CSS punya perilaku yang tidak intuitif (cascade, specificity, inheritance). Memahami ini dari awal mencegah frustasi "kenapa style-ku tidak mau jalan!"
 
 text
 
@@ -760,7 +758,7 @@ a  { color: #3498db; }
 .kartu-buku   { background: white; }
 .btn-primary  { background: #3498db; }
 .teks-merah   { color: red; }   /* Hindari class seperti ini! */
-                                  /* Nama class harus semantik, bukan deskripsi tampilan */
+                                /* Nama class harus semantik, bukan deskripsi tampilan */
 
 /* ID selector: pilih elemen dengan id tertentu */
 /* Diawali tanda pagar (#) */
@@ -1200,15 +1198,15 @@ Git: feat: add CSS styling with variables, typography, and box model
 
 ## 🟡 LEVEL 3: CSS LAYOUT — FLEXBOX, GRID, DAN RESPONSIVE (Minggu 6-10)
 
-> **Tema**: _"Dari elemen yang menumpuk ke layout yang sophisticated dan responsif"_  
-> **Benang Merah**: Styling individual (Level 2) → Flexbox untuk komponen 1D → Grid untuk layout 2D → Media queries untuk responsif → Mobile-first approach  
+> **Tema**: _"Dari elemen yang menumpuk ke layout yang sophisticated dan responsif"_
+> **Benang Merah**: Styling individual (Level 2) → Flexbox untuk komponen 1D → Grid untuk layout 2D → Media queries untuk responsif → Mobile-first approach
 > **Output**: Layout perpustakaan yang responsif sempurna di semua ukuran layar
 
 ---
 
 ### G. Flexbox — Layout Satu Dimensi
 
-> 💡 **Mengapa Flexbox?** Sebelum Flexbox, membuat elemen berjejer horizontal atau memvertikal-tengahkan sesuatu adalah mimpi buruk. Flexbox memecahkan ini dengan elegan. Gunakan Flexbox untuk **komponen** (navbar, kartu, form row).
+> 💡 **Mengapa Flexbox?** Sebelum Flexbox, membuat elemen berjejer horizontal atau memvertikal-tengahkan sesuatu adalah mimpi buruk. Flexbox memecahkan ini dengan elegan. Gunakan Flexbox untuk **komponen** (navbar, kartu, form row).
 
 text
 
@@ -1341,23 +1339,7 @@ CSS
 
 .kartu-buku__konten { flex: 1; }   /* konten mengisi space */
 .kartu-buku__footer { flex-shrink: 0; }  /* footer selalu di bawah */
-
-/* 4. Form row: label dan input berjejer */
-.form-row {
-    display: flex;
-    align-items: center;
-    gap: var(--spasi-md);
-}
-
-.form-row label { flex: 0 0 120px; }  /* label width tetap */
-.form-row input  { flex: 1; }          /* input isi sisa space */
 ```
-
----
-
-### H. CSS Grid — Layout Dua Dimensi
-
-> 💡 **Flexbox vs Grid:** Gunakan **Flexbox** untuk layout 1D (satu baris ATAU satu kolom). Gunakan **Grid** untuk layout 2D (baris DAN kolom sekaligus). Grid untuk halaman layout, Flexbox untuk komponen.
 
 #### [[16. CSS Grid — Layout yang Powerful]]
 
@@ -1483,7 +1465,7 @@ CSS
 
 ### I. Responsive Design — Mobile First
 
-> 💡 **Mengapa Mobile First?** Lebih dari 60% traffic web berasal dari mobile. Mobile first berarti: desain untuk layar kecil dulu, lalu tambahkan complexity untuk layar besar. Ini lebih mudah daripada sebaliknya.
+> 💡 **Mengapa Mobile First?** Lebih dari 60% traffic web berasal dari mobile. Mobile first berarti: desain untuk layar kecil dulu, lalu tambahkan complexity untuk layar besar. Ini lebih mudah daripada sebaliknya.
 
 #### [[17. Media Queries dan Responsive Design]]
 
@@ -1770,15 +1752,15 @@ Git: feat: implement Flexbox, Grid, responsive design, and animations
 
 ## 🟠 LEVEL 4: JAVASCRIPT DASAR (Minggu 10-14)
 
-> **Tema**: _"Dari halaman statis ke halaman yang bisa berpikir dan bereaksi"_  
-> **Benang Merah**: HTML dan CSS (Level 1-3) tidak bisa bereaksi terhadap user → JavaScript memberikan logika dan interaktivitas → variabel, kondisi, loop, fungsi → halaman yang "hidup"  
+> **Tema**: _"Dari halaman statis ke halaman yang bisa berpikir dan bereaksi"_
+> **Benang Merah**: HTML dan CSS (Level 1-3) tidak bisa bereaksi terhadap user → JavaScript memberikan logika dan interaktivitas → variabel, kondisi, loop, fungsi → halaman yang "hidup"
 > **Output**: Halaman perpustakaan yang merespons aksi pengguna
 
 ---
 
 ### K. JavaScript Dasar — Bahasa yang Membuat Web Hidup
 
-> 💡 **Mengapa setelah HTML dan CSS?** JavaScript tanpa fondasi HTML/CSS yang kuat akan membuat kamu tidak tahu _apa_ yang ingin kamu manipulasi atau _bagaimana_ tampilannya. Urutan ini sengaja.
+> 💡 **Mengapa setelah HTML dan CSS?** JavaScript tanpa fondasi HTML/CSS yang kuat akan membuat kamu tidak tahu _apa_ yang ingin kamu manipulasi atau _bagaimana_ tampilannya. Urutan ini sengaja.
 
 text
 
@@ -2265,15 +2247,15 @@ Git: feat: learn JavaScript basics — variables, functions, array methods
 
 ## 🔴 LEVEL 5: DOM MANIPULATION (Minggu 14-18)
 
-> **Tema**: _"Dari kode di konsol ke halaman yang benar-benar interaktif"_  
-> **Benang Merah**: JavaScript dasar (Level 4) → DOM: representasi HTML sebagai object → seleksi elemen → ubah konten dan gaya → tangani event user  
+> **Tema**: _"Dari kode di konsol ke halaman yang benar-benar interaktif"_
+> **Benang Merah**: JavaScript dasar (Level 4) → DOM: representasi HTML sebagai object → seleksi elemen → ubah konten dan gaya → tangani event user
 > **Output**: Katalog buku dinamis dengan pencarian, filter, dan CRUD tanpa reload halaman
 
 ---
 
 ### K. DOM — Document Object Model
 
-> 💡 **Apa itu DOM?** Saat browser membaca HTML, ia membuat representasi object-nya dalam memori — ini adalah DOM. JavaScript bisa membaca dan mengubah DOM, dan browser akan otomatis memperbarui tampilan.
+> 💡 **Apa itu DOM?** Saat browser membaca HTML, ia membuat representasi object-nya dalam memori — ini adalah DOM. JavaScript bisa membaca dan mengubah DOM, dan browser akan otomatis memperbarui tampilan.
 
 text
 
@@ -2293,7 +2275,7 @@ JavaScript
 ```
 // js/main.js
 
-// ─── Seleksi Elemen ───────────────────────────────────────────────────────
+// ─── Seleksi Elemen ───────────────────────────────────────────────────
 
 // querySelector: pilih elemen PERTAMA yang cocok (CSS selector)
 const header    = document.querySelector("header");
@@ -2828,17 +2810,17 @@ Git: feat: implement DOM manipulation, search, filter, and modal
 
 ## ⚫ LEVEL 6: FETCH API, LOCALSTORAGE, DAN ASYNC (Minggu 18-24)
 
-> **Tema**: _"Dari data hardcode ke data dari server yang sesungguhnya"_  
-> **Benang Merah**: Data di array di memori (Level 5) → ambil data dari API eksternal → simpan data di browser → handle async dengan Promise dan async/await  
+> **Tema**: _"Dari data hardcode ke data dari server yang sesungguhnya"_
+> **Benang Merah**: Data di array di memori (Level 5) → ambil data dari API eksternal → simpan data di browser → handle async dengan Promise dan async/await
 > **Output**: Aplikasi perpustakaan yang mengambil data dari API nyata dan menyimpan preferensi user
 
 ---
 
 ### M. Async JavaScript — Promise dan Async/Await
 
-> 💡 **Mengapa Async?** JavaScript adalah single-threaded. Tanpa async, request ke server akan membekukan seluruh halaman sampai data datang. Async memungkinkan JavaScript melakukan request sambil tetap merespons user.
+> 💡 **Mengapa Async?** JavaScript adalah single-threaded. Tanpa async, request ke server akan membekukan seluruh halaman sampai data datang. Async memungkinkan JavaScript melakukan request sambil tetap merespons user.
 
-#### [[31. Promise dan Async/Await — Handle Operasi Async]]
+#### [[31. Promise dan Async-Await — Handle Operasi Async]]
 
 JavaScript
 
@@ -2910,6 +2892,12 @@ async function fetchData(url, opsi = {}) {
 
 // GET: ambil data
 const buku = await fetchData("/api/buku/1");
+
+// POST: kirim data baru
+const bukuBaru = await fetchData("/api/buku", {
+    method: "POST",
+    body: JSON.stringify({ judul: "Buku Baru", pengarang: "Penulis" }),
+});
 
 // POST: kirim data baru
 const bukuBaru = await fetchData("/api/buku", {
@@ -3192,8 +3180,8 @@ Git: feat: integrate Fetch API, localStorage, and handle loading/error states
 
 ## 🟣 LEVEL 7: ARSITEKTUR PROJECT DAN PRODUCTION (Minggu 24+)
 
-> **Tema**: _"Dari kode yang bekerja ke aplikasi yang maintainable dan production-ready"_  
-> **Benang Merah**: Fitur sudah lengkap (Level 6) → organisasi kode yang bersih → performa → aksesibilitas → build tools → deploy  
+> **Tema**: _"Dari kode yang bekerja ke aplikasi yang maintainable dan production-ready"_
+> **Benang Merah**: Fitur sudah lengkap (Level 6) → organisasi kode yang bersih → performa → aksesibilitas → build tools → deploy
 > **Output**: Aplikasi perpustakaan production-ready yang cepat, accessible, dan mudah dikembangkan
 
 ---
@@ -3770,77 +3758,6 @@ Level 1: Halaman HTML perpustakaan — struktur semantik, form, multi-halaman
 
 |Level|Topik|Durasi|Output Konkret|
 |---|---|---|---|
-|🟢 **1**|1-8|Minggu 1-3|Website multi-halaman dengan HTML semantik|
-|🔵 **2**|9-14|Minggu 3-6|Halaman yang cantik dengan CSS modern|
-|🟡 **3**|15-18|Minggu 6-10|Layout responsif Flexbox + Grid|
-|🟠 **4**|19-24|Minggu 10-14|JavaScript dasar, logika, array methods|
-|🔴 **5**|25-30|Minggu 14-18|DOM interaktif, pencarian, modal|
-|⚫ **6**|31-33|Minggu 18-24|Fetch API, localStorage, loading/error states|
-|🟣 **7**|34-38|Minggu 24+|Arsitektur, performa, a11y, deploy|
-
----
-
-### Benang Merah Utama Sepanjang Roadmap
-
-text
-
-```
-Poin 1  (cara browser bekerja)   → Fondasi SEMUA konsep web development
-Poin 3  (boilerplate HTML)       → DOCTYPE, charset, viewport — selalu ada
-Poin 7  (HTML semantik)          → Fondasi aksesibilitas dan SEO
-Poin 8  (form HTML)              → Basis semua interaksi user
-Poin 9  (external CSS)           → Satu CSS untuk banyak halaman
-Poin 10 (CSS selector)           → Cara pilih elemen — dasar semua styling
-Poin 11 (cascade + specificity)  → Mengapa style "tidak mau jalan"
-Poin 14 (box model)              → Layout tidak benar? ini penyebabnya
-Poin 15 (Flexbox)                → Komponen 1D: navbar, kartu, form row
-Poin 16 (CSS Grid)               → Layout 2D: halaman, katalog grid
-Poin 17 (responsive + mobile-first) → Standard industri 2024
-Poin 20 (const vs let)           → Kebiasaan coding yang benar dari awal
-Poin 21 (=== bukan ==)           → Hindari bug type coercion
-Poin 23 (array methods)          → map, filter, reduce — dipakai setiap hari
-Poin 25 (querySelector)          → Cara akses DOM — fondasi Level 5-7
-Poin 27 (createElement)          → Buat elemen dinamis tanpa innerHTML berbahaya
-Poin 28 (event delegation)       → Satu listener untuk banyak elemen dinamis
-Poin 29 (debounce)               → Real-time search tanpa membebani browser
-Poin 31 (async/await)            → Cara modern handle operasi asynchronous
-Poin 32 (localStorage)           → Persisten data tanpa backend
-Poin 34 (ES Modules)             → Kode yang terorganisir dan maintainable
-Poin 36 (aksesibilitas)          → Web untuk semua orang — bukan opsional
-Poin 38 (Vite + deploy)          → Dari lokal ke internet
-```
-
----
-
-## 💡 Cara Menggunakan Roadmap Ini
-
-text
-
-```
-Setiap poin mengikuti format:
-┌──────────────────────────────────────────────────────────┐
-│ 💡 Konteks: mengapa konsep ini ada dan kapan dipakai     │
-│ 🔗 Benang Merah: koneksi ke poin sebelum dan sesudahnya  │
-│ 📋 Kode: implementasi di project perpustakaan            │
-│          yang langsung bisa dicoba di browser            │
-│ ✅ Langkah konkret: verifikasi berhasil                  │
-└──────────────────────────────────────────────────────────┘
-```
-
-**Aturan yang Tidak Boleh Dilanggar:**
-
-1. **Selalu tulis `DOCTYPE`, `charset`, `viewport`** — setiap file HTML, tanpa kecuali
-2. **Semantic HTML sebelum styling** — struktur harus benar dulu, baru cantik
-3. **External CSS** — jangan inline style kecuali dari JavaScript
-4. **`const` selalu, `let` jika perlu, tidak pernah `var`**
-5. **`===` bukan `==`** — JavaScript type coercion adalah sumber bug tersembunyi
-6. **`textContent` untuk data user, `innerHTML` untuk template yang dikontrol**
-7. **Event delegation** untuk elemen yang dibuat secara dinamis
-8. **Alt text untuk semua gambar** — aksesibilitas bukan opsional
-9. **DevTools selalu terbuka saat coding** — Console, Elements, Network adalah teman
-10. **Commit setelah setiap checkpoint** — git history adalah safety net
-
----
-
-_Roadmap HTML, CSS, JavaScript v1.0 — Step-by-Step, Semantic First, One Project_  
-_Setiap baris kode ditulis dengan sadar — pahami mengapa sebelum bagaimana_
+|🟢 **1**|1-8|Minggu 1-3|Website multi-halaman dengan HTML semantik|
+|🔵 **2**|9-14|Minggu 3-6|Halaman yang cantik dengan CSS modern|
+|🟡 **3**|
