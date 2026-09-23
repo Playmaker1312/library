@@ -3452,7 +3452,7 @@ user=www-data
 stdout_logfile=/var/www/perpustakaan/storage/logs/scheduler.log
 ```
 
-#### [[37. CI/CD dengan GitHub Actions]]
+#### [[37. CI-CD dengan GitHub Actions]]
 
 YAML
 

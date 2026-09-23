@@ -211,7 +211,7 @@ Kalimat Pertama yang Bisa Digunakan
 17. `[[17. Kata Ganti Orang — Siapa yang Berbicara & dengan Siapa]]`
     
     - Kata ganti orang pertama : abdi (lemes), aing (kasar), kuring (sedeng), kami
-    - Kata ganti orang kedua : anjeun (lemes), manéh (kasar), hidep, sira
+    - Kata ganti orang kedua : anjeun (lemes), manéh (kasar), hidep, sia
     - Kata ganti orang ketiga : anjeunna, manéhna, maranéhna
     - Koneksi ke : undak usuk basa (Poin 3) — pilihan kata ganti menentukan tingkat kesopanan
     - _Micro-practice_ : Latih penggunaan kata ganti yang tepat dalam 10 situasi berbeda
